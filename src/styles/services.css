@@ -1,0 +1,864 @@
+/* ==========================================
+   SERVICES PAGE SPECIFIC STYLES
+   ========================================== */
+
+/* ==========================================
+   TRANSPARENT NAVIGATION
+   ========================================== */
+.transparent-nav {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.transparent-nav.scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.transparent-nav .logo {
+  color: #fff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  font-weight: 800 !important;
+  font-size: 1.8rem !important;
+  letter-spacing: -0.5px !important;
+}
+
+.transparent-nav.scrolled .logo {
+  color: var(--primary) !important;
+  text-shadow: none !important;
+}
+
+.transparent-nav .nav a {
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--radius) !important;
+  transition: all 0.2s ease !important;
+}
+
+.transparent-nav.scrolled .nav a {
+  color: var(--foreground) !important;
+  text-shadow: none !important;
+}
+
+.transparent-nav .nav a:hover, 
+.transparent-nav .nav a.active {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  text-shadow: none !important;
+  transform: translateY(-1px) !important;
+}
+
+.transparent-nav .hamburger span {
+  background: #fff !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.transparent-nav.scrolled .hamburger span {
+  background: var(--primary) !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================
+   SERVICES HERO SECTION
+   ========================================== */
+.services-hero {
+  position: relative;
+  padding: 8rem 2rem 6rem;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.services-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+.services-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.services-hero-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.services-header {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1);
+}
+
+.services-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.services-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================
+   MAIN SERVICES SECTION
+   ========================================== */
+.main-services-section {
+  padding: 4rem 2rem;
+  background: var(--background);
+}
+
+.main-services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+/* Services Page Specific Card Height */
+.services-grid .service-card {
+  background: var(--background);
+  border-radius: 1.5rem;
+  padding: 0;
+  box-shadow: 0 8px 32px rgba(76, 124, 84, 0.08);
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+}
+
+/* Global Service Card (for other pages like home) */
+.service-card {
+  background: var(--background);
+  border-radius: 1.5rem;
+  padding: 0;
+  box-shadow: 0 8px 32px rgba(76, 124, 84, 0.08);
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+  opacity: 0;
+  transform: translateY(30px);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(76, 124, 84, 0.2);
+  border-color: var(--primary);
+}
+
+.service-card:hover .icon-bg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service-card:hover .card-badge {
+  transform: scale(1.05);
+}
+
+/* Card Badge Styles */
+.card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #4CAF50;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(76, 124, 84, 0.3);
+}
+
+.card-badge.featured {
+  background: #1D4ED8;
+  animation: pulse 2s infinite;
+}
+
+.card-badge.premium {
+  background: #1E3A8A;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Service Header */
+.service-header {
+  padding: 2rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card .service-icon svg {
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon svg {
+  color: var(--secondary);
+  transform: scale(1.1);
+}
+
+.service-icon {
+  flex-shrink: 0;
+}
+
+.icon-bg {
+  width: 60px;
+  height: 60px;
+  background: #4CAF50;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card .service-icon .icon-bg svg {
+  width: 50px !important;
+  height: 50px !important;
+  color: white !important;
+}
+
+.icon-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-card:hover .icon-bg::before {
+  left: 100%;
+}
+
+
+/* Service Content */
+.service-content {
+  padding: 0 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+
+.feature-tag {
+  background: var(--surface);
+  color: var(--primary);
+  padding: 0.25rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.feature-tag:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+
+/* Theme Variations */
+.theme-standard .icon-bg {
+  background: #4CAF50;
+}
+
+.theme-premium .icon-bg {
+  background: #4CAF50;
+}
+
+.theme-support .icon-bg {
+  background: #4CAF50;
+}
+
+
+/* ==========================================
+   COUNTRIES RECRUITMENT SECTION
+   ========================================== */
+.countries-recruitment-section {
+  padding: 4rem 2rem;
+  background: var(--surface);
+}
+
+.countries-recruitment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* New Flag-Focused Country Cards */
+.country-flag-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(.4,0,.2,1);
+  position: relative;
+}
+
+.country-flag-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flag-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.flag-container:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.flag-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all 0.4s ease;
+  animation: flagWave 6s ease-in-out infinite;
+}
+
+/* Special handling for Nepal's unique triangular flag */
+.flag-image.nepal-shape {
+  object-fit: contain;
+  object-position: left center;
+  background: linear-gradient(135deg, #003893 0%, #dc143c 50%, #003893 100%);
+  animation: nepalWave 6s ease-in-out infinite;
+}
+
+/* Subtle wind animation */
+@keyframes flagWave {
+  0%, 100% { 
+    transform: translateX(0px) rotateY(0deg);
+    filter: brightness(1);
+  }
+  25% { 
+    transform: translateX(1px) rotateY(0.5deg);
+    filter: brightness(1.05);
+  }
+  50% { 
+    transform: translateX(-1px) rotateY(0deg);
+    filter: brightness(1);
+  }
+  75% { 
+    transform: translateX(0.5px) rotateY(-0.5deg);
+    filter: brightness(1.02);
+  }
+}
+
+@keyframes nepalWave {
+  0%, 100% { 
+    transform: translateX(0px) skewX(0deg);
+    filter: brightness(1);
+  }
+  25% { 
+    transform: translateX(1px) skewX(0.3deg);
+    filter: brightness(1.05);
+  }
+  50% { 
+    transform: translateX(-1px) skewX(0deg);
+    filter: brightness(1);
+  }
+  75% { 
+    transform: translateX(0.5px) skewX(-0.3deg);
+    filter: brightness(1.02);
+  }
+}
+
+.flag-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+.flag-container:hover .flag-overlay {
+  transform: translateY(0);
+}
+
+.flag-overlay .country-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.flag-overlay .country-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.country-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.country-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(76, 124, 84, 0.2);
+  border-color: var(--primary);
+}
+
+.country-card:hover .country-flag-modern img {
+  transform: scale(1.1);
+}
+
+.country-card:hover .card-badge {
+  transform: scale(1.05);
+}
+
+/* Country Header */
+.country-header {
+  padding: 2rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.country-flag-modern {
+  flex-shrink: 0;
+  width: 60px;
+  height: 45px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(76, 124, 84, 0.15);
+  position: relative;
+}
+
+.country-flag-modern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.country-category {
+  background: var(--surface);
+  color: var(--primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--border);
+}
+
+/* Country Content */
+.country-content {
+  padding: 0 2rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.country-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.country-description {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.country-specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.specialty-tag {
+  background: var(--surface);
+  color: var(--primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.specialty-tag:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Country Footer */
+.country-footer {
+  padding: 0 2rem 2rem;
+  margin-top: auto;
+}
+
+.country-cta {
+  width: 100%;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.country-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.country-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 124, 84, 0.3);
+}
+
+.country-cta:hover::before {
+  left: 100%;
+}
+
+.country-cta:active {
+  transform: translateY(0);
+}
+
+/* Country Theme Variations */
+.theme-local .country-cta {
+  background: linear-gradient(135deg, #4c7c54 0%, #60b26c 100%);
+}
+
+.theme-international .country-cta {
+  background: linear-gradient(135deg, #60b26c 0%, #5dc968 100%);
+}
+
+.theme-professional .country-cta {
+  background: linear-gradient(135deg, #4c7c54 0%, #2d5a35 100%);
+}
+
+.card-badge.local {
+  background: linear-gradient(135deg, #4c7c54 0%, #60b26c 100%);
+}
+
+/* Service card animation delays */
+.service-card[data-delay="0"] { transition-delay: 0ms; }
+.service-card[data-delay="200"] { transition-delay: 100ms; }
+.service-card[data-delay="400"] { transition-delay: 200ms; }
+.service-card[data-delay="600"] { transition-delay: 300ms; }
+.service-card[data-delay="800"] { transition-delay: 400ms; }
+.service-card[data-delay="1000"] { transition-delay: 500ms; }
+
+/* Country card animation delays */
+.country-card[data-delay="0"] { transition-delay: 0ms; }
+.country-card[data-delay="200"] { transition-delay: 100ms; }
+.country-card[data-delay="400"] { transition-delay: 200ms; }
+.country-card[data-delay="600"] { transition-delay: 300ms; }
+.country-card[data-delay="800"] { transition-delay: 400ms; }
+
+/* ==========================================
+   RESPONSIVE DESIGN - SERVICES PAGE
+   ========================================== */
+
+/* Tablet specific styles */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .services-hero-title {
+    font-size: 3rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .service-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-hero {
+    padding: 4rem 1rem 3rem;
+    min-height: auto;
+  }
+
+  .services-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .services-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .main-services-section,
+  .countries-recruitment-section {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .services-grid .service-card {
+    min-height: 450px;
+  }
+
+  .countries-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    min-height: auto !important;
+  }
+  
+  .services-hero {
+    padding: 6rem 1rem 3rem;
+    min-height: 45vh;
+  }
+
+  .services-hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .services-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .main-services-section,
+  .countries-recruitment-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .service-header {
+    padding: 1.5rem 1.5rem 1rem;
+    justify-content: center;
+  }
+
+  .service-content {
+    padding: 0 1.5rem 3rem;
+  }
+
+
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+  }
+
+  .icon-bg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .service-card .service-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .card-badge {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+
+  .feature-tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+
+  /* New Flag Cards Responsive */
+  .countries-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .flag-container {
+    height: 150px;
+  }
+
+  .flag-overlay {
+    padding: 1rem;
+  }
+
+  .flag-overlay .country-name {
+    font-size: 1.2rem;
+  }
+
+  .flag-overlay .country-subtitle {
+    font-size: 0.8rem;
+  }
+
+  /* Reduce animation intensity on mobile */
+  .flag-image {
+    animation: flagWave 8s ease-in-out infinite;
+  }
+
+  .flag-image.nepal-shape {
+    animation: nepalWave 8s ease-in-out infinite;
+  }
+}

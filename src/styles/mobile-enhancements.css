@@ -1,0 +1,503 @@
+/* ==========================================
+   MOBILE-FIRST ENHANCEMENTS FOR ALL PAGES
+   ========================================== */
+
+/* ==========================================
+   GLOBAL MOBILE IMPROVEMENTS
+   ========================================== */
+
+/* Ensure no horizontal overflow */
+html, body {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+/* Better scrolling on mobile */
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix any remaining min-width issues */
+* {
+  min-width: 0 !important;
+}
+
+/* Exception for buttons - keep reasonable min-width */
+.btn, 
+.button,
+input[type="submit"],
+input[type="button"],
+button {
+  min-width: 100px !important;
+}
+
+/* ==========================================
+   ENHANCED RESPONSIVE CONTAINERS
+   ========================================== */
+
+/* Standardized container classes */
+.container,
+.section-container,
+.content-wrapper,
+.hero-container,
+.about-container,
+.services-container,
+.pricing-container,
+.recruitment-container,
+.contact-container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+@media (min-width: 576px) {
+  .container,
+  .section-container,
+  .content-wrapper,
+  .hero-container,
+  .about-container,
+  .services-container,
+  .pricing-container,
+  .recruitment-container,
+  .contact-container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .container,
+  .section-container,
+  .content-wrapper,
+  .hero-container,
+  .about-container,
+  .services-container,
+  .pricing-container,
+  .recruitment-container,
+  .contact-container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE GRID IMPROVEMENTS
+   ========================================== */
+
+/* Cards and grid layouts */
+.card-grid,
+.services-grid,
+.team-grid,
+.features-grid {
+  display: grid !important;
+  gap: 1.5rem !important;
+  grid-template-columns: 1fr !important;
+}
+
+@media (min-width: 576px) {
+  .card-grid,
+  .services-grid,
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid,
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 2rem !important;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* ==========================================
+   HERO SECTION RESPONSIVE IMPROVEMENTS
+   ========================================== */
+
+.hero,
+.hero-section,
+.about-hero,
+.services-hero,
+.recruitment-hero,
+.pricing-hero,
+.contact-hero {
+  min-height: 60vh !important;
+  padding: 6rem 1rem 4rem !important;
+}
+
+@media (min-width: 768px) {
+  .hero,
+  .hero-section,
+  .about-hero,
+  .services-hero,
+  .recruitment-hero,
+  .pricing-hero,
+  .contact-hero {
+    min-height: 70vh !important;
+    padding: 8rem 2rem 6rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero,
+  .hero-section,
+  .about-hero,
+  .services-hero,
+  .recruitment-hero,
+  .pricing-hero,
+  .contact-hero {
+    min-height: 80vh !important;
+  }
+}
+
+/* Hero typography */
+.hero-title,
+.hero h1,
+.about-hero-title,
+.services-hero-title,
+.recruitment-hero-title,
+.pricing-hero-title,
+.contact-hero-title {
+  font-size: clamp(1.8rem, 5vw, 3.5rem) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 1rem !important;
+}
+
+.hero-subtitle,
+.hero p,
+.about-hero-subtitle,
+.services-hero-subtitle,
+.recruitment-hero-subtitle,
+.pricing-hero-subtitle,
+.contact-hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem) !important;
+  line-height: 1.5 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* ==========================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================== */
+
+/* Section headings */
+.section-title,
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem) !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1rem !important;
+}
+
+.section-subtitle,
+h3 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem) !important;
+  line-height: 1.3 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.section-description,
+.lead {
+  font-size: clamp(1rem, 2vw, 1.2rem) !important;
+  line-height: 1.6 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Body text */
+p, body {
+  font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+  line-height: 1.6 !important;
+}
+
+/* ==========================================
+   FORM RESPONSIVENESS
+   ========================================== */
+
+.form-container,
+.contact-form,
+form {
+  width: 100% !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+.form-group {
+  margin-bottom: 1.5rem !important;
+}
+
+.form-row {
+  display: flex !important;
+  gap: 1rem !important;
+  flex-direction: column !important;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    flex-direction: row !important;
+  }
+  
+  .form-row .form-group {
+    flex: 1 !important;
+  }
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  width: 100% !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 16px !important; /* Prevents zoom on iOS */
+  border: 2px solid var(--border) !important;
+  border-radius: 8px !important;
+  transition: border-color 0.3s ease !important;
+  box-sizing: border-box !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1) !important;
+}
+
+/* Form labels */
+label {
+  display: block !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 600 !important;
+  color: var(--text-dark) !important;
+}
+
+/* ==========================================
+   BUTTON RESPONSIVENESS
+   ========================================== */
+
+.btn,
+.button,
+.cta-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  min-height: 44px !important;
+  min-width: 120px !important;
+  text-align: center !important;
+}
+
+@media (max-width: 767px) {
+  .btn,
+  .button,
+  .cta-button {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .btn-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-group {
+    display: flex !important;
+    gap: 1rem !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* ==========================================
+   TABLE RESPONSIVENESS
+   ========================================== */
+
+.table-responsive {
+  overflow-x: auto !important;
+  margin-bottom: 1rem !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.table-responsive table {
+  width: 100% !important;
+  min-width: 0 !important;
+  border-collapse: collapse !important;
+}
+
+@media (max-width: 767px) {
+  .table-responsive {
+    font-size: 0.8rem !important;
+  }
+  
+  .table-responsive table {
+    font-size: 0.8rem !important;
+  }
+  
+  .table-responsive th,
+  .table-responsive td {
+    padding: 0.5rem 0.25rem !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Show scroll hint - REMOVED */
+}
+
+/* ==========================================
+   IMAGE RESPONSIVENESS
+   ========================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.hero-image,
+.about-image,
+.service-image,
+.team-image {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+}
+
+/* ==========================================
+   SPACING UTILITIES
+   ========================================== */
+
+.section {
+  padding: 4rem 0 !important;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0 !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 8rem 0 !important;
+  }
+}
+
+/* Margin utilities */
+.mb-1 { margin-bottom: 0.5rem !important; }
+.mb-2 { margin-bottom: 1rem !important; }
+.mb-3 { margin-bottom: 1.5rem !important; }
+.mb-4 { margin-bottom: 2rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+
+.mt-1 { margin-top: 0.5rem !important; }
+.mt-2 { margin-top: 1rem !important; }
+.mt-3 { margin-top: 1.5rem !important; }
+.mt-4 { margin-top: 2rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+/* ==========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ========================================== */
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute !important;
+  top: -40px !important;
+  left: 6px !important;
+  background: var(--primary) !important;
+  color: white !important;
+  padding: 8px !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  z-index: 1000 !important;
+}
+
+.skip-link:focus {
+  top: 6px !important;
+}
+
+/* Focus indicators */
+*:focus {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+/* ==========================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+
+/* Will-change for animations */
+.hamburger,
+.mobile-nav,
+.overlay {
+  will-change: transform !important;
+}
+
+/* Optimize font rendering */
+body {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeSpeed !important;
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+  .header,
+  .hamburger,
+  .mobile-nav,
+  .overlay,
+  .footer {
+    display: none !important;
+  }
+  
+  .hero {
+    min-height: auto !important;
+    padding: 2rem 0 !important;
+  }
+  
+  * {
+    color: black !important;
+    background: white !important;
+  }
+}

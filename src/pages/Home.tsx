@@ -1,0 +1,429 @@
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const Home: React.FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible', 'animate');
+          
+          // Special handling for recruitment sources section to animate country items
+          if (entry.target.classList.contains('recruitment-sources-container')) {
+            const countryItems = entry.target.querySelectorAll('.country-item');
+            countryItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('animate');
+              }, index * 200);
+            });
+          }
+          
+          // Special handling for services section to animate service cards
+          if (entry.target.classList.contains('new-services-container')) {
+            const serviceCards = entry.target.querySelectorAll('.new-value-item');
+            serviceCards.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add('animate');
+              }, index * 150);
+            });
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements
+    const aboutContent = document.getElementById('aboutText');
+    const servicesContainer = document.getElementById('servicesContainer');
+    const clientsContainer = document.getElementById('clientsContainer');
+    const contactContainer = document.getElementById('contactContainer');
+    const recruitmentSourcesContainer = document.getElementById('recruitmentSourcesContainer');
+
+    if (aboutContent) observer.observe(aboutContent);
+    if (servicesContainer) observer.observe(servicesContainer);
+    if (clientsContainer) observer.observe(clientsContainer);
+    if (contactContainer) observer.observe(contactContainer);
+    if (recruitmentSourcesContainer) observer.observe(recruitmentSourcesContainer);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <>
+      {/* Full Screen Video Hero */}
+      <div id="home" className="hero">
+        <video className="hero-video" src="https://www.w3schools.com/howto/rain.mp4" autoPlay loop muted playsInline></video>
+        <div className="hero-overlay"></div>
+        <div className="hero-content">
+          <div className="hero-headline">Where<br/>Careers<br/>Begin</div>
+          <div className="hero-sub">Unlock Your Career Potential.<br/>We Make the Connection</div>
+          <button className="hero-btn" onClick={() => navigate('/contact')}>Contact Us</button>
+        </div>
+      </div>
+
+      {/* About Section */}
+      <section id="about" className="about-section">
+        <div className="about-container">
+          <div className="about-content" id="aboutText">
+            <div className="about-badge">
+              <div className="badge-circle"></div>
+              <span>About Our Agency</span>
+            </div>
+            <h2 className="about-title">Professional Manpower Solutions for Over a Decade</h2>
+            <p className="about-desc">
+              Established for more than 10 years, Agensi Pekerjaan PI Management Sdn Bhd is a licence C legalised manpower supply company which stands for professionalism in providing legal local and foreign workers. We are dedicated to helping various industries through our comprehensive services, striving to bring a hassle-free manpower solution that meets the requirements of your industry.
+            </p>
+            <div className="about-stats">
+              <div className="stat-item">
+                <div className="stat-number">10+</div>
+                <div className="stat-label">Years Experience</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">500+</div>
+                <div className="stat-label">Clients Served</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">100%</div>
+                <div className="stat-label">Legal Compliance</div>
+              </div>
+            </div>
+            <button className="about-btn" onClick={() => navigate('/about')}>Learn More</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Where We Recruit Section */}
+      <section className="recruitment-sources-section">
+        <div className="recruitment-sources-container" id="recruitmentSourcesContainer">
+          <div className="recruitment-sources-header">
+            <h2 className="recruitment-sources-title">Where We Recruit Your Workers</h2>
+            <div className="title-underline"></div>
+          </div>
+          
+          <div className="countries-grid">
+            <div className="country-item" data-delay="0">
+              <div className="country-flag">
+                <img src="https://flagcdn.com/w320/my.png" alt="Malaysia Flag" />
+              </div>
+              <h3 className="country-name">Malaysia</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+            
+            <div className="country-item" data-delay="200">
+              <div className="country-flag">
+                <img src="https://flagcdn.com/w320/np.png" alt="Nepal Flag" />
+              </div>
+              <h3 className="country-name">Nepal</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+            
+            <div className="country-item" data-delay="400">
+              <div className="country-flag">
+                <img src="https://flagcdn.com/w320/bd.png" alt="Bangladesh Flag" />
+              </div>
+              <h3 className="country-name">Bangladesh</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+            
+            <div className="country-item" data-delay="600">
+              <div className="country-flag">
+                <img src="https://flagcdn.com/w320/mm.png" alt="Myanmar Flag" />
+              </div>
+              <h3 className="country-name">Myanmar</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+            
+            <div className="country-item" data-delay="800">
+              <div className="country-flag">
+                <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag" />
+              </div>
+              <h3 className="country-name">Vietnam</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+          </div>
+          
+          <div className="recruitment-sources-footer">
+            <button className="more-sources-btn" onClick={() => navigate('/recruitment')}>MORE SOURCES</button>
+          </div>
+        </div>
+        
+        {/* Globe Background */}
+        <div className="globe-background">
+          <div className="globe-dots"></div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="new-services-section">
+        <div className="new-services-container" id="servicesContainer">
+          <h2 className="new-section-title">Our Services</h2>
+          <div className="new-services-grid">
+            <div className="new-value-item theme-legal" data-delay="0">
+              <div className="card-badge premium">Legal</div>
+              <div className="value-header">
+                <div className="value-icon">
+                  <div className="icon-bg">⚖️</div>
+                </div>
+                <div className="value-category">Legal</div>
+              </div>
+              <div className="value-content">
+                <h3 className="new-value-title">Immigration/KDN/JTK Cases</h3>
+                <p className="new-value-text">Complete legal assistance for immigration cases and compliance with government regulations.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Legal Compliance</span>
+                  <span className="feature-tag">✓ Government Relations</span>
+                  <span className="feature-tag">✓ Professional Support</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-processing" data-delay="200">
+              <div className="card-badge featured">Popular</div>
+              <div className="value-header">
+                <div className="value-icon">
+                  <div className="icon-bg">📄</div>
+                </div>
+                <div className="value-category">Processing</div>
+              </div>
+              <div className="value-content">
+                <h3 className="new-value-title">Foreign Worker Approval</h3>
+                <p className="new-value-text">Streamlined application process for foreign worker permits and approvals with full documentation support.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Fast Processing</span>
+                  <span className="feature-tag">✓ Complete Documentation</span>
+                  <span className="feature-tag">✓ Government Approved</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-workforce" data-delay="400">
+              <div className="card-badge">Core Service</div>
+              <div className="value-header">
+                <div className="value-icon">
+                  <div className="icon-bg">👥</div>
+                </div>
+                <div className="value-category">Workforce</div>
+              </div>
+              <div className="value-content">
+                <h3 className="new-value-title">Local & Foreign Workers</h3>
+                <p className="new-value-text">Professional recruitment of skilled local and foreign workers for all industries with thorough background verification.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Skilled Workers</span>
+                  <span className="feature-tag">✓ Background Verified</span>
+                  <span className="feature-tag">✓ Industry Experienced</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-domestic" data-delay="600">
+              <div className="value-header">
+                <div className="value-icon">
+                  <div className="icon-bg">🏠</div>
+                </div>
+                <div className="value-category">Domestic</div>
+              </div>
+              <div className="value-content">
+                <h3 className="new-value-title">Domestic Helper Supply</h3>
+                <p className="new-value-text">Reliable domestic helpers and maids with thorough screening and verification for household and commercial needs.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Thoroughly Screened</span>
+                  <span className="feature-tag">✓ Experienced</span>
+                  <span className="feature-tag">✓ Reliable Service</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-support" data-delay="800">
+              <div className="value-header">
+                <div className="value-icon">
+                  <div className="icon-bg">🚐</div>
+                </div>
+                <div className="value-category">Support</div>
+              </div>
+              <div className="value-content">
+                <h3 className="new-value-title">Accommodation & Transportation</h3>
+                <p className="new-value-text">Complete accommodation and transportation services for foreign workers ensuring comfort and compliance.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Safe Accommodation</span>
+                  <span className="feature-tag">✓ Transportation</span>
+                  <span className="feature-tag">✓ Compliance Standards</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-documentation" data-delay="1000">
+              <div className="value-header">
+                <div className="value-icon">
+                  <div className="icon-bg">📋</div>
+                </div>
+                <div className="value-category">Documentation</div>
+              </div>
+              <div className="value-content">
+                <h3 className="new-value-title">Passport & Insurance Renewal</h3>
+                <p className="new-value-text">Complete documentation services including passport, permit, and insurance renewal with ongoing support.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Document Renewal</span>
+                  <span className="feature-tag">✓ Insurance Coverage</span>
+                  <span className="feature-tag">✓ Ongoing Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Clients Section */}
+      <section className="clients-section">
+        <div className="clients-container" id="clientsContainer">
+          <div className="clients-header">
+            <h2 className="clients-title">Our Clients</h2>
+            <p className="clients-subtitle">Forward-thinking brands trust us to drive scalable growth and engagement. We partner with companies ready to embrace the future of digital solutions.</p>
+          </div>
+          <div className="clients-grid">
+            <div className="client-item">
+              <div className="client-icon">in</div>
+              <span className="client-name">LinkedIn</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon travelata">t</div>
+              <span className="client-name">Travelata</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon tele2">t2</div>
+              <span className="client-name">Tele2</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon s7">S7</div>
+              <span className="client-name">S7</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon joom">J</div>
+              <span className="client-name">Joom</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon lazada">laz</div>
+              <span className="client-name">Lazada</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon ff">ff</div>
+              <span className="client-name">Facebook</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon binomo">⚡</div>
+              <span className="client-name">Binomo</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon hoff">Hoff</div>
+              <span className="client-name">Hoff</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon binance">◈</div>
+              <span className="client-name">Binance</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon alibaba">🟠</div>
+              <span className="client-name">Alibaba Group</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon exness">Ex</div>
+              <span className="client-name">Exness</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon alibaba-text">alibaba.com</div>
+              <span className="client-name">Alibaba.com</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon sunlight">☀️</div>
+              <span className="client-name">Sunlight</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon indrive">iD</div>
+              <span className="client-name">inDrive</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon joom2">Joom</div>
+              <span className="client-name">Joom</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon kion">Ki</div>
+              <span className="client-name">Kion</span>
+            </div>
+            <div className="client-item">
+              <div className="client-icon binance2">◈</div>
+              <span className="client-name">Binance</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Get In Touch Section */}
+      <section id="contact" className="get-in-touch-section">
+        <div className="get-in-touch-container" id="contactContainer">
+          <div className="get-in-touch-content">
+            <div className="get-in-touch-badge">
+              <div className="badge-circle"></div>
+              <span>Get In Touch</span>
+            </div>
+            <h2 className="get-in-touch-title">Ready to Transform Your Business?</h2>
+            <p className="get-in-touch-description">
+              Take the next step in finding the perfect manpower solution for your industry. Our experienced team is ready to provide professional consultation and customized recruitment services that meet your specific business needs. From local workforce to international talent, we connect you with the right people for sustainable growth.
+            </p>
+            <div className="get-in-touch-features">
+              <div className="feature-item">
+                <div className="feature-icon">✓</div>
+                <span>Free consultation and assessment</span>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">✓</div>
+                <span>Customized recruitment solutions</span>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">✓</div>
+                <span>Legal compliance guaranteed</span>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">✓</div>
+                <span>24/7 professional support</span>
+              </div>
+            </div>
+            <div className="get-in-touch-cta">
+              <button className="contact-us-btn" onClick={() => navigate('/contact')}>Contact Us</button>
+              <p className="contact-info">
+                Call us directly at <a href="tel:+60735264008">07-352 6408</a> or 
+                <a href="tel:+60735813184">07-358 1318</a>
+              </p>
+            </div>
+          </div>
+          
+          <div className="get-in-touch-visual">
+            <div className="visual-bg">
+              <div className="floating-elements">
+                <div className="floating-card">
+                  <div className="card-icon">👥</div>
+                  <span>Professional Team</span>
+                </div>
+                <div className="floating-card">
+                  <div className="card-icon">🌏</div>
+                  <span>Global Network</span>
+                </div>
+                <div className="floating-card">
+                  <div className="card-icon">⚡</div>
+                  <span>Fast Processing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Home;
