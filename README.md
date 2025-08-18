@@ -123,8 +123,8 @@ The `vercel.json` file ensures all routes redirect to `index.html`, enabling cle
 ## 📞 Support
 
 For technical support or questions about the website:
-- **Email**: worldaimer@yahoo.com
-- **Phone**: 07-352 6408 / 07-358 1318
+- **Email**: info@agencyperkerjaanpi.com
+- **Phone**: +60 16-770 2098 / +60 11-2102 9545
 
 ## 📄 License
 

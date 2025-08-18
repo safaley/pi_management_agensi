@@ -1,25 +1,22 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "PI Management",
+  "name": "Agensi Pekerjaan PI Management - Professional Manpower Solutions",
   "icons": [
+    {
+      "src": "images/agency_logo.png",
+      "sizes": "512x512 192x192 96x96 64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#4CAF50",
+  "background_color": "#ffffff",
+  "description": "Professional manpower recruitment agency providing local and foreign worker supply, immigration services, and comprehensive workforce solutions in Malaysia",
+  "categories": ["business", "productivity"]
 }

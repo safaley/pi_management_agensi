@@ -5,6 +5,15 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // SEO optimization for homepage
+    document.title = 'Agensi Pekerjaan PI Management - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services';
+    
+    // Update meta description dynamically
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Leading manpower recruitment agency in Malaysia. Agensi Pekerjaan PI Management provides professional local and foreign worker supply, legal immigration services, and comprehensive workforce solutions for over 10 years in Johor Bahru.');
+    }
+
     // Scroll animations
     const observerOptions = {
       threshold: 0.1,
@@ -22,7 +31,7 @@ const Home: React.FC = () => {
             countryItems.forEach((item, index) => {
               setTimeout(() => {
                 item.classList.add('animate');
-              }, index * 200);
+              }, index * 50);
             });
           }
           
@@ -42,13 +51,13 @@ const Home: React.FC = () => {
     // Observe elements
     const aboutContent = document.getElementById('aboutText');
     const servicesContainer = document.getElementById('servicesContainer');
-    const clientsContainer = document.getElementById('clientsContainer');
+    // const clientsContainer = document.getElementById('clientsContainer'); // Hidden section
     const contactContainer = document.getElementById('contactContainer');
     const recruitmentSourcesContainer = document.getElementById('recruitmentSourcesContainer');
 
     if (aboutContent) observer.observe(aboutContent);
     if (servicesContainer) observer.observe(servicesContainer);
-    if (clientsContainer) observer.observe(clientsContainer);
+    // if (clientsContainer) observer.observe(clientsContainer); // Hidden section
     if (contactContainer) observer.observe(contactContainer);
     if (recruitmentSourcesContainer) observer.observe(recruitmentSourcesContainer);
 
@@ -59,12 +68,12 @@ const Home: React.FC = () => {
     <>
       {/* Full Screen Video Hero */}
       <div id="home" className="hero">
-        <video className="hero-video" src="https://www.w3schools.com/howto/rain.mp4" autoPlay loop muted playsInline></video>
+        <video className="hero-video" src="/videos/petronas_tower.mp4" autoPlay loop muted playsInline></video>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <div className="hero-headline">Where<br/>Careers<br/>Begin</div>
-          <div className="hero-sub">Unlock Your Career Potential.<br/>We Make the Connection</div>
-          <button className="hero-btn" onClick={() => navigate('/contact')}>Contact Us</button>
+          <h1 className="hero-headline">Agensi Pekerjaan PI Management - Professional Manpower Solutions Malaysia</h1>
+          <div className="hero-sub">Leading Worker Recruitment Agency in Malaysia<br/>Connecting Businesses with Skilled Local & Foreign Workers</div>
+          <button className="hero-btn" onClick={() => navigate('/contact')}>Get Workers Now</button>
         </div>
       </div>
 
@@ -76,9 +85,9 @@ const Home: React.FC = () => {
               <div className="badge-circle"></div>
               <span>About Our Agency</span>
             </div>
-            <h2 className="about-title">Professional Manpower Solutions for Over a Decade</h2>
+            <h2 className="about-title">Malaysia's Trusted Manpower Recruitment Agency for Over a Decade</h2>
             <p className="about-desc">
-              Established for more than 10 years, Agensi Pekerjaan PI Management Sdn Bhd is a licence C legalised manpower supply company which stands for professionalism in providing legal local and foreign workers. We are dedicated to helping various industries through our comprehensive services, striving to bring a hassle-free manpower solution that meets the requirements of your industry.
+              Established for more than 10 years, <strong>Agensi Pekerjaan PI Management Sdn Bhd</strong> is a licensed Class C manpower supply company specializing in professional recruitment services. As a leading <strong>worker recruitment agency in Malaysia</strong>, we provide comprehensive <strong>local and foreign worker supply</strong> solutions across various industries in Johor Bahru and throughout Malaysia. Our expertise includes <strong>immigration services</strong>, work permit processing, and complete workforce management solutions for businesses seeking reliable manpower.
             </p>
             <div className="about-stats">
               <div className="stat-item">
@@ -163,16 +172,9 @@ const Home: React.FC = () => {
       {/* Services Section */}
       <section id="services" className="new-services-section">
         <div className="new-services-container" id="servicesContainer">
-          <h2 className="new-section-title">Our Services</h2>
+          <h2 className="new-section-title">Professional Manpower & Recruitment Services in Malaysia</h2>
           <div className="new-services-grid">
             <div className="new-value-item theme-legal" data-delay="0">
-              <div className="card-badge premium">Legal</div>
-              <div className="value-header">
-                <div className="value-icon">
-                  <div className="icon-bg">⚖️</div>
-                </div>
-                <div className="value-category">Legal</div>
-              </div>
               <div className="value-content">
                 <h3 className="new-value-title">Immigration/KDN/JTK Cases</h3>
                 <p className="new-value-text">Complete legal assistance for immigration cases and compliance with government regulations.</p>
@@ -185,13 +187,6 @@ const Home: React.FC = () => {
             </div>
 
             <div className="new-value-item theme-processing" data-delay="200">
-              <div className="card-badge featured">Popular</div>
-              <div className="value-header">
-                <div className="value-icon">
-                  <div className="icon-bg">📄</div>
-                </div>
-                <div className="value-category">Processing</div>
-              </div>
               <div className="value-content">
                 <h3 className="new-value-title">Foreign Worker Approval</h3>
                 <p className="new-value-text">Streamlined application process for foreign worker permits and approvals with full documentation support.</p>
@@ -204,13 +199,6 @@ const Home: React.FC = () => {
             </div>
 
             <div className="new-value-item theme-workforce" data-delay="400">
-              <div className="card-badge">Core Service</div>
-              <div className="value-header">
-                <div className="value-icon">
-                  <div className="icon-bg">👥</div>
-                </div>
-                <div className="value-category">Workforce</div>
-              </div>
               <div className="value-content">
                 <h3 className="new-value-title">Local & Foreign Workers</h3>
                 <p className="new-value-text">Professional recruitment of skilled local and foreign workers for all industries with thorough background verification.</p>
@@ -223,12 +211,6 @@ const Home: React.FC = () => {
             </div>
 
             <div className="new-value-item theme-domestic" data-delay="600">
-              <div className="value-header">
-                <div className="value-icon">
-                  <div className="icon-bg">🏠</div>
-                </div>
-                <div className="value-category">Domestic</div>
-              </div>
               <div className="value-content">
                 <h3 className="new-value-title">Domestic Helper Supply</h3>
                 <p className="new-value-text">Reliable domestic helpers and maids with thorough screening and verification for household and commercial needs.</p>
@@ -241,12 +223,6 @@ const Home: React.FC = () => {
             </div>
 
             <div className="new-value-item theme-support" data-delay="800">
-              <div className="value-header">
-                <div className="value-icon">
-                  <div className="icon-bg">🚐</div>
-                </div>
-                <div className="value-category">Support</div>
-              </div>
               <div className="value-content">
                 <h3 className="new-value-title">Accommodation & Transportation</h3>
                 <p className="new-value-text">Complete accommodation and transportation services for foreign workers ensuring comfort and compliance.</p>
@@ -259,12 +235,6 @@ const Home: React.FC = () => {
             </div>
 
             <div className="new-value-item theme-documentation" data-delay="1000">
-              <div className="value-header">
-                <div className="value-icon">
-                  <div className="icon-bg">📋</div>
-                </div>
-                <div className="value-category">Documentation</div>
-              </div>
               <div className="value-content">
                 <h3 className="new-value-title">Passport & Insurance Renewal</h3>
                 <p className="new-value-text">Complete documentation services including passport, permit, and insurance renewal with ongoing support.</p>
@@ -280,7 +250,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="clients-section">
+      <section className="clients-section hidden">
         <div className="clients-container" id="clientsContainer">
           <div className="clients-header">
             <h2 className="clients-title">Our Clients</h2>
@@ -396,8 +366,8 @@ const Home: React.FC = () => {
             <div className="get-in-touch-cta">
               <button className="contact-us-btn" onClick={() => navigate('/contact')}>Contact Us</button>
               <p className="contact-info">
-                Call us directly at <a href="tel:+60735264008">07-352 6408</a> or 
-                <a href="tel:+60735813184">07-358 1318</a>
+                Call us directly at <a href="tel:+60167702098">+60 16-770 2098</a> or 
+                <a href="tel:+60112102954">+60 11-2102 9545</a>
               </p>
             </div>
           </div>

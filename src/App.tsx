@@ -13,7 +13,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Recruitment from './pages/Recruitment';
-import Pricing from './pages/Pricing';
+// import Pricing from './pages/Pricing';
 import Contact from './pages/Contact';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/recruitment" element={<Recruitment />} />
-            <Route path="/pricing" element={<Pricing />} />
+            {/* <Route path="/pricing" element={<Pricing />} /> */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

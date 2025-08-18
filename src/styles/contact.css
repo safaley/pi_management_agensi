@@ -336,16 +336,232 @@
 }
 
 /* ==========================================
-   OFFICE LOCATIONS SECTION
+   OFFICE INFORMATION SECTION
    ========================================== */
-.office-locations-section {
+.office-info-section {
   padding: 4rem 2rem;
   background: var(--surface);
 }
 
-.office-locations-container {
+.office-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.office-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.office-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.office-subtitle {
+  color: var(--text-gray);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.office-card {
+  background: var(--background);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.office-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Office Name Section */
+.office-name-section {
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.company-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.license-info {
+  color: var(--text-gray);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Office Address */
+.office-address {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: 1rem;
+  border: 1px solid var(--border-light);
+}
+
+.address-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.address-text {
+  flex: 1;
+}
+
+.address-label {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.address-details {
+  color: var(--text-dark);
+  line-height: 1.5;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Office Services */
+.office-services {
+  margin-bottom: 1rem;
+}
+
+.services-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.service-check {
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.service-item span {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+/* Office Action */
+.office-action {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.directions-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--secondary);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.directions-button:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+}
+
+.directions-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design for Office Section */
+@media (max-width: 900px) {
+  .office-info-section {
+    padding: 4rem 1rem;
+  }
+
+  .office-title {
+    font-size: 1.5rem;
+  }
+
+  .office-card {
+    padding: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .office-info-section {
+    padding: 3rem 1rem;
+  }
+
+  .office-title {
+    font-size: 1.3rem;
+  }
+
+  .office-card {
+    padding: 1.5rem;
+  }
+
+  .company-title {
+    font-size: 1.3rem;
+  }
+
+  .office-address {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .directions-button {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
 }
 
 .section-header {

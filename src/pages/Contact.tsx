@@ -96,6 +96,7 @@ const Contact: React.FC = () => {
             
             <div className="contact-map-container">
               <iframe 
+                title="Office Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5537537537537!2d103.7621!3d1.4655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12c6c2c2c2c2%3A0x12345678!2sJalan%20Harmoni%203%2F1%2C%20Taman%20Desa%20Harmoni%2C%2081100%20Johor%20Bahru%2C%20Johor%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1234567890"
                 width="100%" 
                 height="400" 
@@ -112,8 +113,8 @@ const Contact: React.FC = () => {
                 <div className="quick-info-content">
                   <span className="quick-info-label">Phone</span>
                   <span className="quick-info-value">
-                    <a href="tel:+60735264008">07-352 6408</a> / 
-                    <a href="tel:+60735813184">07-358 1318</a>
+                    <a href="tel:+60167702098">+60 16-770 2098</a> / 
+                    <a href="tel:+60112102954">+60 11-2102 9545</a>
                   </span>
                 </div>
               </div>
@@ -123,7 +124,7 @@ const Contact: React.FC = () => {
                 <div className="quick-info-content">
                   <span className="quick-info-label">Email</span>
                   <span className="quick-info-value">
-                    <a href="mailto:worldaimer@yahoo.com">worldaimer@yahoo.com</a>
+                    <a href="mailto:info@agencyperkerjaanpi.com">info@agencyperkerjaanpi.com</a>
                   </span>
                 </div>
               </div>
@@ -140,102 +141,73 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      {/* Office Locations Section */}
-      <section className="office-locations-section">
-        <div className="office-locations-container">
-          <div className="section-header">
-            <h2 className="section-title">Our Office Locations</h2>
-            <p className="section-subtitle">Find us at our professional offices designed to serve you better.</p>
+      {/* Office Information Section */}
+      <section className="office-info-section">
+        <div className="office-container">
+          <div className="office-header">
+            <h2 className="office-title">Our Office</h2>
+            <p className="office-subtitle">Professional manpower solutions center in Johor Bahru</p>
           </div>
           
-          <div className="offices-grid">
-            <div className="office-card main-office">
-              <div className="office-header">
-                <div className="office-badge">Main Office</div>
-                <h3 className="office-name">Johor Bahru Headquarters</h3>
+          <div className="office-card">
+            <div className="office-details">
+              <div className="office-name-section">
+                <h3 className="company-title">Agensi Pekerjaan PI Management</h3>
+                <p className="license-info">Licensed Class C Manpower Supply Company</p>
               </div>
-              <div className="office-details">
-                <div className="office-address">
-                  <div className="address-icon">📍</div>
-                  <div className="address-text">
+              
+              <div className="office-address">
+                <div className="address-icon">📍</div>
+                <div className="address-text">
+                  <span className="address-label">Address</span>
+                  <p className="address-details">
                     No. 9-01, Jalan Harmoni 3/1,<br/>
                     Taman Desa Harmoni,<br/>
-                    81100 Johor Bahru,<br/>
-                    Johor, Malaysia.
-                  </div>
+                    81100 Johor Bahru, Johor
+                  </p>
                 </div>
-                
-                <div className="office-contact-grid">
-                  <div className="office-contact-item">
-                    <div className="contact-icon">📞</div>
-                    <div className="contact-details">
-                      <span className="contact-label">Phone</span>
-                      <span className="contact-value">
-                        <a href="tel:+60735264008">07-352 6408</a><br/>
-                        <a href="tel:+60735813184">07-358 1318</a>
-                      </span>
-                    </div>
+              </div>
+              
+              <div className="office-services">
+                <h4 className="services-header">Available Services</h4>
+                <div className="services-grid">
+                  <div className="service-item">
+                    <span className="service-check">✓</span>
+                    <span>Free Consultation</span>
                   </div>
-                  
-                  <div className="office-contact-item">
-                    <div className="contact-icon">✉️</div>
-                    <div className="contact-details">
-                      <span className="contact-label">Email</span>
-                      <span className="contact-value">
-                        <a href="mailto:worldaimer@yahoo.com">worldaimer@yahoo.com</a>
-                      </span>
-                    </div>
+                  <div className="service-item">
+                    <span className="service-check">✓</span>
+                    <span>Document Processing</span>
                   </div>
-                  
-                  <div className="office-contact-item">
-                    <div className="contact-icon">🕒</div>
-                    <div className="contact-details">
-                      <span className="contact-label">Hours</span>
-                      <span className="contact-value">
-                        Mon - Fri: 9:00 AM - 6:00 PM<br/>
-                        Sat: 9:00 AM - 1:00 PM
-                      </span>
-                    </div>
+                  <div className="service-item">
+                    <span className="service-check">✓</span>
+                    <span>Worker Registration</span>
                   </div>
-                  
-                  <div className="office-contact-item">
-                    <div className="contact-icon">🚗</div>
-                    <div className="contact-details">
-                      <span className="contact-label">Parking</span>
-                      <span className="contact-value">Free parking available</span>
-                    </div>
+                  <div className="service-item">
+                    <span className="service-check">✓</span>
+                    <span>Permit Services</span>
+                  </div>
+                  <div className="service-item">
+                    <span className="service-check">✓</span>
+                    <span>Free Parking</span>
+                  </div>
+                  <div className="service-item">
+                    <span className="service-check">✓</span>
+                    <span>Professional Support</span>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="office-services">
-              <h3 className="services-title">Services Available</h3>
-              <div className="services-list">
-                <div className="service-item">
-                  <div className="service-icon">✓</div>
-                  <span>Consultation & Assessment</span>
-                </div>
-                <div className="service-item">
-                  <div className="service-icon">✓</div>
-                  <span>Documentation Support</span>
-                </div>
-                <div className="service-item">
-                  <div className="service-icon">✓</div>
-                  <span>Worker Registration</span>
-                </div>
-                <div className="service-item">
-                  <div className="service-icon">✓</div>
-                  <span>Permit Processing</span>
-                </div>
-                <div className="service-item">
-                  <div className="service-icon">✓</div>
-                  <span>Insurance Services</span>
-                </div>
-                <div className="service-item">
-                  <div className="service-icon">✓</div>
-                  <span>24/7 Emergency Support</span>
-                </div>
+              
+              <div className="office-action">
+                <a href="https://maps.google.com/?q=No.+9-01,+Jalan+Harmoni+3/1,+Taman+Desa+Harmoni,+81100+Johor+Bahru,+Johor" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="directions-button">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 11l19-9-9 19-2-8-8-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Get Directions
+                </a>
               </div>
             </div>
           </div>

@@ -57,7 +57,6 @@ const Header: React.FC = () => {
           <Link to="/about" className={isActive('/about')}>About</Link>
           <Link to="/services" className={isActive('/services')}>Services</Link>
           <Link to="/recruitment" className={isActive('/recruitment')}>Recruitment</Link>
-          <Link to="/pricing" className={isActive('/pricing')}>Pricing</Link>
           <Link to="/contact" className={isActive('/contact')}>Contact</Link>
         </nav>
         <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} id="hamburger" onClick={toggleMobileNav}>
@@ -89,10 +88,6 @@ const Header: React.FC = () => {
           <Link to="/recruitment" className={`mobile-nav-item ${isActive('/recruitment')}`} onClick={closeMobileNav}>
             <div className="nav-icon">👥</div>
             <span className="nav-text">Recruitment</span>
-          </Link>
-          <Link to="/pricing" className={`mobile-nav-item ${isActive('/pricing')}`} onClick={closeMobileNav}>
-            <div className="nav-icon">💰</div>
-            <span className="nav-text">Pricing Table</span>
           </Link>
           <Link to="/contact" className={`mobile-nav-item ${isActive('/contact')}`} onClick={closeMobileNav}>
             <div className="nav-icon">💬</div>

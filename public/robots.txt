@@ -1,3 +1,32 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://agencypekerjaanpi.com/sitemap.xml
+
+# Specific crawl rules
+Allow: /about
+Allow: /services
+Allow: /recruitment
+Allow: /pricing
+Allow: /contact
+Allow: /images/
+
+# Block unnecessary files
+Disallow: /static/js/
+Disallow: /static/css/
+Disallow: /*.json$
+Disallow: /manifest.json
+
+# Allow Google and Bing specific access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+# Host directive
+Host: https://agencypekerjaanpi.com

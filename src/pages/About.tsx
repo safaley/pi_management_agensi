@@ -32,13 +32,13 @@ const About: React.FC = () => {
     // Observe elements
     const heroAboutText = document.getElementById('heroAboutText');
     const valuesContainer = document.querySelector('.new-values-container');
-    const teamContainer = document.querySelector('.team-grid-container');
-    const ceoContainer = document.getElementById('ceoContainer');
+    // const teamContainer = document.querySelector('.team-grid-container'); // Hidden for now
+    // const ceoContainer = document.getElementById('ceoContainer'); // Hidden for now
 
     if (heroAboutText) observer.observe(heroAboutText);
     if (valuesContainer) observer.observe(valuesContainer);
-    if (teamContainer) observer.observe(teamContainer);
-    if (ceoContainer) observer.observe(ceoContainer);
+    // if (teamContainer) observer.observe(teamContainer); // Hidden for now
+    // if (ceoContainer) observer.observe(ceoContainer); // Hidden for now
 
     return () => observer.disconnect();
   }, []);
@@ -154,7 +154,8 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Our Team Section */}
+      {/* Our Team Section - HIDDEN FOR NOW */}
+      {/* 
       <section className="team-grid-section">
         <div className="team-grid-container">
           <div className="team-intro">
@@ -245,8 +246,10 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+      */}
 
-      {/* CEO Message Section */}
+      {/* CEO Message Section - HIDDEN FOR NOW */}
+      {/* 
       <section id="ceo-message" className="ceo-section">
         <div className="ceo-container" id="ceoContainer">
           <div className="ceo-header">
@@ -269,6 +272,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+      */}
     </>
   );
 };
