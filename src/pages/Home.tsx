@@ -8,6 +8,52 @@ const Home: React.FC = () => {
     // SEO optimization for homepage
     document.title = 'Agensi Pekerjaan PI Management - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services';
     
+    // Video loading optimization
+    const video = document.querySelector('.hero-video') as HTMLVideoElement;
+    if (video) {
+      // Check if user prefers reduced data usage (mobile)
+      const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+      const isMobile = window.innerWidth <= 768;
+      const isSlowConnection = connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g');
+      
+      if (isMobile || isSlowConnection) {
+        // Don't autoplay video on mobile or slow connections
+        video.autoplay = false;
+        video.preload = 'none';
+        
+        // Add click to play functionality
+        const playButton = document.createElement('button');
+        playButton.innerHTML = '▶️ Play Video';
+        playButton.className = 'video-play-btn';
+        playButton.style.cssText = `
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: rgba(0,0,0,0.7);
+          color: white;
+          border: none;
+          padding: 1rem 2rem;
+          border-radius: 50px;
+          font-size: 1rem;
+          cursor: pointer;
+          z-index: 10;
+        `;
+        
+        playButton.onclick = () => {
+          video.play();
+          playButton.remove();
+        };
+        
+        video.parentElement?.appendChild(playButton);
+      }
+      
+      // Add loaded event listener
+      video.addEventListener('loadeddata', () => {
+        video.setAttribute('data-loaded', 'true');
+      });
+    }
+    
     // Update meta description dynamically
     let metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -68,7 +114,26 @@ const Home: React.FC = () => {
     <>
       {/* Full Screen Video Hero */}
       <div id="home" className="hero">
-        <video className="hero-video" src="/videos/petronas_tower.mp4" autoPlay loop muted playsInline></video>
+        <video 
+          className="hero-video" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          preload="metadata"
+          poster="/images/petronas_tower_poster.jpg"
+        >
+          <source src="/videos/petronas_tower.webm" type="video/webm" />
+          <source src="/videos/petronas_tower.mp4" type="video/mp4" />
+          {/* Fallback for unsupported browsers */}
+          <div className="video-fallback" style={{
+            backgroundImage: 'url(/images/petronas_tower_fallback.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            width: '100%',
+            height: '100%'
+          }}></div>
+        </video>
         <div className="hero-overlay"></div>
         <div className="hero-content">
           <h1 className="hero-headline">Agensi Pekerjaan PI Management - Professional Manpower Solutions Malaysia</h1>
@@ -119,7 +184,14 @@ const Home: React.FC = () => {
           <div className="countries-grid">
             <div className="country-item" data-delay="0">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/my.png" alt="Malaysia Flag" />
+                <img 
+                  src="/images/flags/malaysia.png" 
+                  alt="Malaysia Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
               </div>
               <h3 className="country-name">Malaysia</h3>
               <p className="country-label">Demographics</p>
@@ -127,7 +199,14 @@ const Home: React.FC = () => {
             
             <div className="country-item" data-delay="200">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/np.png" alt="Nepal Flag" />
+                <img 
+                  src="/images/flags/nepal.png" 
+                  alt="Nepal Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="195"
+                />
               </div>
               <h3 className="country-name">Nepal</h3>
               <p className="country-label">Demographics</p>
@@ -135,7 +214,14 @@ const Home: React.FC = () => {
             
             <div className="country-item" data-delay="400">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/bd.png" alt="Bangladesh Flag" />
+                <img 
+                  src="/images/flags/bangladesh.png" 
+                  alt="Bangladesh Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="96"
+                />
               </div>
               <h3 className="country-name">Bangladesh</h3>
               <p className="country-label">Demographics</p>
@@ -143,7 +229,14 @@ const Home: React.FC = () => {
             
             <div className="country-item" data-delay="600">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/mm.png" alt="Myanmar Flag" />
+                <img 
+                  src="/images/flags/myanmar.png" 
+                  alt="Myanmar Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
               </div>
               <h3 className="country-name">Myanmar</h3>
               <p className="country-label">Demographics</p>
@@ -151,7 +244,14 @@ const Home: React.FC = () => {
             
             <div className="country-item" data-delay="800">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag" />
+                <img 
+                  src="/images/flags/vietnam.png" 
+                  alt="Vietnam Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
               </div>
               <h3 className="country-name">Vietnam</h3>
               <p className="country-label">Demographics</p>

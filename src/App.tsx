@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/global.css';
 import './styles/responsive-overrides.css';
 import './styles/mobile-enhancements.css';
+import './styles/performance.css';
 
 // Import components
 import Header from './components/Header';

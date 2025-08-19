@@ -1,0 +1,147 @@
+/* ==========================================
+   PERFORMANCE OPTIMIZATIONS
+   ========================================== */
+
+/* Video Performance Optimizations */
+.hero-video {
+  /* Optimize video rendering for crisp quality */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: auto;
+  
+  /* Ensure proper video sizing */
+  object-fit: cover;
+  object-position: center;
+  
+  /* Remove any blur effects */
+  filter: none !important;
+  
+  /* Improve video quality */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* Remove background that might cause border */
+  background: transparent;
+  
+  /* Ensure full coverage */
+  width: 100%;
+  height: 100%;
+}
+
+/* Add loading placeholder for video */
+.hero-video:not([data-loaded="true"]) {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: cover;
+}
+
+/* Video Fallback Styling */
+.video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Image Loading Performance */
+.country-flag img {
+  /* Improve image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  
+  /* Fast loading for local images */
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  
+  /* Ensure proper sizing */
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  .hero-video {
+    /* Remove blur filters for crisp video */
+    filter: none !important;
+    
+    /* Ensure high quality rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Mobile flag optimizations */
+  .country-flag img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Remove blue background gradients and borders */
+.hero::before,
+.hero::after {
+  display: none !important;
+}
+
+.hero-video.loaded ~ .hero::before {
+  display: none !important;
+}
+
+/* Fix hero section positioning and borders */
+.hero {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  
+  /* Ensure no gap between hero and next section */
+  margin-bottom: 0 !important;
+}
+
+/* Ensure section after hero has no top margin/padding */
+.about-section {
+  margin-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Critical font loading */
+@font-display: swap;
+
+/* Remove blur effects from hero overlay */
+.hero-overlay {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  
+  /* Ensure overlay doesn't affect video clarity */
+  filter: none !important;
+}
+
+/* Improve scrolling performance */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* GPU acceleration for animations */
+.country-item,
+.service-card,
+.stat-item {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Content visibility for better rendering */
+.recruitment-sources-section,
+.new-services-section,
+.get-in-touch-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
+/* Reduce paint operations */
+.hero-content {
+  will-change: transform, opacity;
+}
