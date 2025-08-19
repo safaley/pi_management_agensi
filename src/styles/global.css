@@ -672,7 +672,8 @@ main {
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
 }
 
 .footer-nav a {
@@ -824,7 +825,7 @@ main {
   }
 
   .footer {
-    padding: 3rem 1rem 2rem;
+    padding: 2rem 1rem 2rem;
   }
 
   .footer-company-name {

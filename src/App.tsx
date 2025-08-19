@@ -7,6 +7,7 @@ import './styles/mobile-enhancements.css';
 // Import components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 // Import pages
 import Home from './pages/Home';
@@ -20,6 +21,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <ScrollToTop />
         <Header />
         <main>
           <Routes>

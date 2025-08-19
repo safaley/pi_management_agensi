@@ -69,30 +69,43 @@ const Header: React.FC = () => {
       {/* Mobile Navigation */}
       <div className={`overlay ${isMenuOpen ? 'active' : ''}`} id="overlay" onClick={closeMobileNav}></div>
       <nav className={`mobile-nav ${isMenuOpen ? 'active' : ''}`} id="mobileNav">
-        <div className="mobile-nav-header">
-          <h2 className="mobile-nav-title">Menu</h2>
+        <div className="mobile-nav-links">
+          <Link to="/" className={isActive('/')} onClick={closeMobileNav}>
+            Home
+          </Link>
+          <Link to="/about" className={isActive('/about')} onClick={closeMobileNav}>
+            About
+          </Link>
+          <Link to="/services" className={isActive('/services')} onClick={closeMobileNav}>
+            Services
+          </Link>
+          <Link to="/recruitment" className={isActive('/recruitment')} onClick={closeMobileNav}>
+            Recruitment
+          </Link>
+          <Link to="/contact" className={isActive('/contact')} onClick={closeMobileNav}>
+            Contact
+          </Link>
         </div>
-        <div className="mobile-nav-menu">
-          <Link to="/" className={`mobile-nav-item ${isActive('/')}`} onClick={closeMobileNav}>
-            <div className="nav-icon">🏠</div>
-            <span className="nav-text">Home</span>
-          </Link>
-          <Link to="/about" className={`mobile-nav-item ${isActive('/about')}`} onClick={closeMobileNav}>
-            <div className="nav-icon">ℹ️</div>
-            <span className="nav-text">About Information</span>
-          </Link>
-          <Link to="/services" className={`mobile-nav-item ${isActive('/services')}`} onClick={closeMobileNav}>
-            <div className="nav-icon">🔧</div>
-            <span className="nav-text">Our Services</span>
-          </Link>
-          <Link to="/recruitment" className={`mobile-nav-item ${isActive('/recruitment')}`} onClick={closeMobileNav}>
-            <div className="nav-icon">👥</div>
-            <span className="nav-text">Recruitment</span>
-          </Link>
-          <Link to="/contact" className={`mobile-nav-item ${isActive('/contact')}`} onClick={closeMobileNav}>
-            <div className="nav-icon">💬</div>
-            <span className="nav-text">Contact Us</span>
-          </Link>
+        
+        <div className="mobile-nav-footer">
+          <div className="mobile-nav-company">
+            <h3>Agensi Pekerjaan PI Management</h3>
+            <p>Professional Manpower Solutions</p>
+          </div>
+          <div className="mobile-nav-contact">
+            <div className="contact-item">
+              <a href="tel:+60167702098">+60 16-770 2098</a>
+            </div>
+            <div className="contact-item">
+              <a href="tel:+60112102954">+60 11-2102 9545</a>
+            </div>
+            <div className="contact-item">
+              <a href="mailto:info@agencyperkerjaanpi.com">info@agencyperkerjaanpi.com</a>
+            </div>
+          </div>
+          <div className="mobile-nav-copyright">
+            <p>© 2025 All rights reserved.</p>
+          </div>
         </div>
       </nav>
     </>

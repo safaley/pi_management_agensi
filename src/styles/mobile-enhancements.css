@@ -479,6 +479,61 @@ body {
 }
 
 /* ==========================================
+   HOME PAGE CONTACT SECTION MOBILE OPTIMIZATION
+   ========================================== */
+
+/* Hide the floating visual elements (Global Network, Professional Team, etc.) on mobile and tablet */
+@media (max-width: 991px) {
+  .get-in-touch-visual {
+    display: none !important;
+  }
+  
+  .get-in-touch-container {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .get-in-touch-content {
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ==========================================
+   FOOTER MOBILE OPTIMIZATIONS
+   ========================================== */
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 1.5rem 1rem 1.5rem !important;
+  }
+  
+  .footer-content {
+    gap: 1.5rem !important;
+  }
+  
+  .footer-bottom {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding: 1rem 0.75rem 1rem !important;
+  }
+  
+  .footer-content {
+    gap: 1rem !important;
+  }
+  
+  .footer-bottom {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ==========================================
    PRINT STYLES
    ========================================== */
 
