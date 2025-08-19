@@ -90,21 +90,6 @@ const Header: React.FC = () => {
         <div className="mobile-nav-footer">
           <div className="mobile-nav-company">
             <h3>Agensi Pekerjaan PI Management</h3>
-            <p>Professional Manpower Solutions</p>
-          </div>
-          <div className="mobile-nav-contact">
-            <div className="contact-item">
-              <a href="tel:+60167702098">+60 16-770 2098</a>
-            </div>
-            <div className="contact-item">
-              <a href="tel:+60112102954">+60 11-2102 9545</a>
-            </div>
-            <div className="contact-item">
-              <a href="mailto:info@agencyperkerjaanpi.com">info@agencyperkerjaanpi.com</a>
-            </div>
-          </div>
-          <div className="mobile-nav-copyright">
-            <p>© 2025 All rights reserved.</p>
           </div>
         </div>
       </nav>
