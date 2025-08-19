@@ -30,7 +30,7 @@
 
 /* Add loading placeholder for video */
 .hero-video:not([data-loaded="true"]) {
-  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: #1a1a1a;
   background-size: cover;
 }
 
@@ -61,6 +61,36 @@
   max-width: 100%;
   height: auto;
   object-fit: contain;
+  
+  /* Prevent flash during loading */
+  background: transparent;
+}
+
+/* Flag container background to prevent flash */
+.country-flag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+/* Ensure sections maintain their background during scrolling */
+.about-section,
+.recruitment-sources-section,
+.new-services-section,
+.get-in-touch-section {
+  background: var(--background);
+  position: relative;
+  z-index: 1;
+}
+
+/* Optimize scrolling performance */
+.about-section,
+.recruitment-sources-section,
+.new-services-section,
+.get-in-touch-section {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 /* Mobile-specific optimizations */

@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/recruitment.css';
 
 const Recruitment: React.FC = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     document.title = 'Recruitment Procedure – Agency';
 
@@ -322,7 +325,7 @@ const Recruitment: React.FC = () => {
             <p className="cta-description">
               Contact us today to discuss your manpower requirements and let us guide you through our comprehensive recruitment procedure.
             </p>
-            <a href="#contact" className="cta-button">Get Started</a>
+            <button className="cta-button" onClick={() => navigate('/contact')}>Get Started</button>
           </div>
         </div>
       </section>

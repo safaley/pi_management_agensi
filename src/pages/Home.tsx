@@ -187,7 +187,7 @@ const Home: React.FC = () => {
                 <img 
                   src="/images/flags/malaysia.png" 
                   alt="Malaysia Flag" 
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="160"
                   height="107"
@@ -202,7 +202,7 @@ const Home: React.FC = () => {
                 <img 
                   src="/images/flags/nepal.png" 
                   alt="Nepal Flag" 
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="160"
                   height="195"
@@ -217,7 +217,7 @@ const Home: React.FC = () => {
                 <img 
                   src="/images/flags/bangladesh.png" 
                   alt="Bangladesh Flag" 
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="160"
                   height="96"
@@ -232,7 +232,7 @@ const Home: React.FC = () => {
                 <img 
                   src="/images/flags/myanmar.png" 
                   alt="Myanmar Flag" 
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="160"
                   height="107"
@@ -247,7 +247,7 @@ const Home: React.FC = () => {
                 <img 
                   src="/images/flags/vietnam.png" 
                   alt="Vietnam Flag" 
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="160"
                   height="107"
