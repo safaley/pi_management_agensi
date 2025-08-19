@@ -16,8 +16,8 @@ const Home: React.FC = () => {
       const isMobile = window.innerWidth <= 768;
       const isSlowConnection = connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g');
       
-      if (isMobile || isSlowConnection) {
-        // Don't autoplay video on mobile or slow connections
+      if (isSlowConnection && !isMobile) {
+        // Only show play button on slow connections but not on mobile
         video.autoplay = false;
         video.preload = 'none';
         
@@ -46,6 +46,9 @@ const Home: React.FC = () => {
         };
         
         video.parentElement?.appendChild(playButton);
+      } else if (isMobile) {
+        // On mobile, just reduce video quality but still autoplay
+        video.preload = 'metadata';
       }
       
       // Add loaded event listener

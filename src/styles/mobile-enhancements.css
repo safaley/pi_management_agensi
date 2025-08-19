@@ -556,3 +556,30 @@ body {
     background: white !important;
   }
 }
+
+/* ==========================================
+   FIX MOBILE VIEWPORT HEIGHT ISSUES
+   ========================================== */
+
+@media (max-width: 768px) {
+  html, body {
+    height: auto !important;
+    min-height: auto !important;
+  }
+  
+  /* Ensure footer sticks properly without white space */
+  body {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+  }
+  
+  main {
+    flex: 1 !important;
+  }
+  
+  .footer {
+    flex-shrink: 0 !important;
+    margin-top: auto !important;
+  }
+}
