@@ -63,7 +63,7 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #fff;
+  color: var(--text-inverse);
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
@@ -95,7 +95,7 @@
 }
 
 .transparent-nav .logo {
-  color: #fff !important;
+  color: var(--text-inverse) !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
   font-weight: 800 !important;
   font-size: 1.8rem !important;
@@ -108,7 +108,7 @@
 }
 
 .transparent-nav .nav a {
-  color: #fff !important;
+  color: var(--text-inverse) !important;
   font-weight: 600 !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
   padding: 0.5rem 1rem !important;
@@ -130,7 +130,7 @@
 }
 
 .transparent-nav .hamburger span {
-  background: #fff !important;
+  background: var(--background) !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -208,7 +208,7 @@
 .contact-form .form-group select {
   width: 100%;
   padding: 1rem 1.2rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: 1rem;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
@@ -251,8 +251,8 @@
   box-shadow: 0 8px 25px rgba(76, 124, 84, 0.3);
 }
 
-/* Map Section Styles */
-.contact-map-wrap {
+/* Quick Contact Info Section Styles */
+.contact-quick-info-wrap {
   background: var(--background);
   border-radius: 1.5rem;
   padding: 2rem;
@@ -260,28 +260,21 @@
   border: 1px solid var(--border);
 }
 
-.contact-map-header {
+.contact-quick-info-header {
   margin-bottom: 1.5rem;
 }
 
-.contact-map-title {
+.contact-quick-info-title {
   font-size: 1.75rem;
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
-.contact-map-subtitle {
+.contact-quick-info-subtitle {
   color: var(--text-gray);
   font-size: 1rem;
   line-height: 1.6;
-}
-
-.contact-map-container {
-  margin-bottom: 1.5rem;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .contact-quick-info {
@@ -292,23 +285,31 @@
 
 .quick-info-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
-  padding: 0.75rem;
+  padding: 1rem;
   background: var(--surface);
   border-radius: 1rem;
   border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.quick-info-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .quick-info-icon {
   font-size: 1.2rem;
   flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
 .quick-info-content {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  flex: 1;
 }
 
 .quick-info-label {
@@ -320,9 +321,10 @@
 }
 
 .quick-info-value {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--text-dark);
+  line-height: 1.5;
 }
 
 .quick-info-value a {
@@ -336,152 +338,354 @@
 }
 
 /* ==========================================
-   OFFICE INFORMATION SECTION
+   OFFICE LOCATIONS SECTION
    ========================================== */
-.office-info-section {
+.office-locations-section {
   padding: 4rem 2rem;
   background: var(--surface);
 }
 
-.office-container {
+.office-locations-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.office-header {
+/* Section Header Styles */
+.section-header {
   text-align: center;
   margin-bottom: 3rem;
 }
 
-.office-title {
-  font-size: 1.75rem;
+.section-title {
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.office-subtitle {
+.section-subtitle {
   color: var(--text-gray);
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-}
-
-.office-card {
-  background: var(--background);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--border);
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.office-details {
+/* ==========================================
+   MODERN OFFICE CARDS - REDESIGNED
+   ========================================== */
+
+/* Modern Offices Grid */
+.modern-offices-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Modern Office Card Base */
+.modern-office-card {
+  background: linear-gradient(145deg, var(--background) 0%, var(--surface) 100%);
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  animation: modernSlideIn 0.7s ease-out forwards;
+  overflow: hidden;
+  position: relative;
+}
+
+.modern-office-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.modern-office-card.main-office::before {
+  background: linear-gradient(90deg, var(--primary), var(--primary-hover));
+}
+
+.modern-office-card.branch-office::before {
+  background: linear-gradient(90deg, var(--secondary), #025384);
+}
+
+.modern-office-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.modern-office-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.12),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes modernSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Office Card Header */
+.office-card-header {
+  padding: 24px 24px 0 24px;
+  margin-bottom: 20px;
+}
+
+.office-location-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge-icon {
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.badge-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2px;
 }
 
-/* Office Name Section */
-.office-name-section {
-  text-align: center;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.company-title {
-  font-size: 1.5rem;
+.badge-title {
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.license-info {
+.badge-subtitle {
+  font-size: 0.7rem;
   color: var(--text-gray);
-  font-size: 1rem;
+  font-weight: 500;
+}
+
+.office-city {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-dark);
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
-/* Office Address */
-.office-address {
+/* Office Details Section */
+.office-details-section {
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.office-info-row,
+.office-hours-row {
   display: flex;
-  gap: 1rem;
-  padding: 1.5rem;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
   background: var(--surface);
-  border-radius: 1rem;
+  border-radius: 12px;
   border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
 }
 
-.address-icon {
-  font-size: 1.2rem;
+.office-info-row:hover,
+.office-hours-row:hover {
+  background: var(--background);
+  transform: translateX(4px);
+}
+
+.info-icon {
+  font-size: 18px;
   flex-shrink: 0;
-  margin-top: 0.2rem;
+  margin-top: 2px;
 }
 
-.address-text {
+.info-content {
   flex: 1;
 }
 
-.address-label {
-  display: block;
+.info-title {
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  margin: 0 0 8px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.address-details {
-  color: var(--text-dark);
-  line-height: 1.5;
-  font-size: 0.95rem;
+.info-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-gray);
   margin: 0;
+  font-weight: 500;
 }
 
-/* Office Services */
-.office-services {
-  margin-bottom: 1rem;
-}
-
-.services-header {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.services-grid {
+/* Contact Row */
+.office-contact-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
-.service-item {
+.contact-item-modern {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  background: var(--surface);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
 }
 
-.service-check {
-  width: 20px;
-  height: 20px;
+.contact-item-modern:hover {
+  background: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-item-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-item-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.contact-item-values {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-link {
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--secondary);
+}
+
+/* Hours Grid */
+.hours-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.hours-grid span:nth-child(odd) {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.hours-grid span:nth-child(even) {
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+/* Modern Office Map */
+.office-map-modern {
+  margin: 0 24px 20px 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.office-map-modern:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+/* Office Action Footer */
+.office-action-footer {
+  padding: 20px 24px 24px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--border-light);
+}
+
+.directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid;
+}
+
+.directions-btn.primary {
   background: var(--primary);
   color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  flex-shrink: 0;
+  border-color: var(--primary);
 }
 
-.service-item span {
-  font-size: 0.9rem;
-  color: var(--text-gray);
+.directions-btn.primary:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+.directions-btn.secondary {
+  background: var(--secondary);
+  color: white;
+  border-color: var(--secondary);
+}
+
+.directions-btn.secondary:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.3);
+}
+
+.btn-icon {
+  font-size: 16px;
 }
 
 /* Office Action */
@@ -769,18 +973,22 @@
   }
   
   .contact-form-wrap,
-  .contact-map-wrap {
+  .contact-quick-info-wrap {
     padding: 2rem;
   }
   
-  .offices-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  .section-title {
+    font-size: 2.2rem;
   }
   
-  .office-contact-grid {
+  .modern-offices-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .office-contact-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 10px;
   }
 }
 
@@ -808,12 +1016,12 @@
   }
 
   .contact-form-wrap,
-  .contact-map-wrap {
+  .contact-quick-info-wrap {
     padding: 1.75rem;
   }
 
   .contact-form-title,
-  .contact-map-title {
+  .contact-quick-info-title {
     font-size: 1.5rem;
   }
 
@@ -827,22 +1035,37 @@
   }
 
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
-  .offices-grid {
+  .modern-offices-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
-  .office-card,
-  .office-services {
-    padding: 2rem;
+  .office-card-header {
+    padding: 20px 20px 0 20px;
   }
 
-  .office-contact-grid {
+  .office-details-section {
+    padding: 0 20px;
+  }
+
+  .office-map-modern {
+    margin: 0 20px 16px 20px;
+  }
+
+  .office-action-footer {
+    padding: 16px 20px 20px 20px;
+  }
+
+  .office-contact-row {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 8px;
+  }
+
+  .office-city {
+    font-size: 1.5rem;
   }
 }
 
@@ -867,9 +1090,7 @@
   }
 
   .contact-form-wrap,
-  .contact-map-wrap,
-  .office-card,
-  .office-services {
+  .contact-quick-info-wrap {
     padding: 1.5rem;
   }
 
@@ -878,15 +1099,43 @@
   }
 
   .contact-form-title,
-  .contact-map-title {
+  .contact-quick-info-title {
     font-size: 1.3rem;
   }
 
-  .office-name {
-    font-size: 1.5rem;
+  .office-card-header {
+    padding: 16px 16px 0 16px;
   }
 
-  .services-title {
+  .office-details-section {
+    padding: 0 16px;
+  }
+
+  .office-map-modern {
+    margin: 0 16px 16px 16px;
+  }
+
+  .office-action-footer {
+    padding: 16px 16px 20px 16px;
+  }
+
+  .office-city {
     font-size: 1.3rem;
+  }
+
+  .office-contact-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .office-location-badge {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+    padding: 12px;
+  }
+
+  .badge-icon {
+    font-size: 20px;
   }
 }

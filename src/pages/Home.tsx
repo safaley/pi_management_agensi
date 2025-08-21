@@ -8,54 +8,8 @@ const Home: React.FC = () => {
     // SEO optimization for homepage
     document.title = 'Agensi Pekerjaan PI Management - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services';
     
-    // Video loading optimization
-    const video = document.querySelector('.hero-video') as HTMLVideoElement;
-    if (video) {
-      // Check if user prefers reduced data usage (mobile)
-      const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
-      const isMobile = window.innerWidth <= 768;
-      const isSlowConnection = connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g');
-      
-      if (isSlowConnection && !isMobile) {
-        // Only show play button on slow connections but not on mobile
-        video.autoplay = false;
-        video.preload = 'none';
-        
-        // Add click to play functionality
-        const playButton = document.createElement('button');
-        playButton.innerHTML = '▶️ Play Video';
-        playButton.className = 'video-play-btn';
-        playButton.style.cssText = `
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: rgba(0,0,0,0.7);
-          color: white;
-          border: none;
-          padding: 1rem 2rem;
-          border-radius: 50px;
-          font-size: 1rem;
-          cursor: pointer;
-          z-index: 10;
-        `;
-        
-        playButton.onclick = () => {
-          video.play();
-          playButton.remove();
-        };
-        
-        video.parentElement?.appendChild(playButton);
-      } else if (isMobile) {
-        // On mobile, just reduce video quality but still autoplay
-        video.preload = 'metadata';
-      }
-      
-      // Add loaded event listener
-      video.addEventListener('loadeddata', () => {
-        video.setAttribute('data-loaded', 'true');
-      });
-    }
+
+
     
     // Update meta description dynamically
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -114,31 +68,29 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <>
-      {/* Full Screen Video Hero */}
+    <div data-page="home">
+      {/* Full Screen Image Hero */}
       <div id="home" className="hero">
-        <video 
-          className="hero-video" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          preload="metadata"
-          poster="/images/petronas_tower_poster.jpg"
-        >
-          <source src="/videos/petronas_tower.webm" type="video/webm" />
-          <source src="/videos/petronas_tower.mp4" type="video/mp4" />
-          {/* Fallback for unsupported browsers */}
-          <div className="video-fallback" style={{
-            backgroundImage: 'url(/images/petronas_tower_fallback.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+        <img
+          src="/videos/petronas_tower_pic.png"
+          alt="Petronas Tower - Professional Manpower Solutions Malaysia"
+          className="hero-video"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
             width: '100%',
-            height: '100%'
-          }}></div>
-        </video>
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center',
+            zIndex: 1,
+            filter: 'brightness(1.2)'
+          }}
+          loading="eager"
+        />
+        
+        <div className="hero-overlay" style={{ zIndex: 4 }}></div>
+        <div className="hero-content" style={{ zIndex: 5 }}>
           <h1 className="hero-headline">Agensi Pekerjaan PI Management - Professional Manpower Solutions Malaysia</h1>
           <div className="hero-sub">Leading Worker Recruitment Agency in Malaysia<br/>Connecting Businesses with Skilled Local & Foreign Workers</div>
           <button className="hero-btn" onClick={() => navigate('/contact')}>Get Workers Now</button>
@@ -176,8 +128,86 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Where We Recruit Section */}
-      <section className="recruitment-sources-section">
+      <section id="services" className="new-services-section">
+        <div className="new-services-container" id="servicesContainer">
+          <h2 className="new-section-title">Professional Manpower & Recruitment Services in Malaysia</h2>
+          <div className="new-services-grid">
+            <div className="new-value-item theme-legal" data-delay="0">
+              <div className="value-content">
+                <h3 className="new-value-title">Immigration/KDN/JTK Cases</h3>
+                <p className="new-value-text">Complete legal assistance for immigration cases and compliance with government regulations.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Legal Compliance</span>
+                  <span className="feature-tag">✓ Government Relations</span>
+                  <span className="feature-tag">✓ Professional Support</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-processing" data-delay="200">
+              <div className="value-content">
+                <h3 className="new-value-title">Foreign Worker Approval</h3>
+                <p className="new-value-text">Streamlined application process for foreign worker permits and approvals with full documentation support.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Fast Processing</span>
+                  <span className="feature-tag">✓ Complete Documentation</span>
+                  <span className="feature-tag">✓ Government Approved</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-workforce" data-delay="400">
+              <div className="value-content">
+                <h3 className="new-value-title">Local & Foreign Workers</h3>
+                <p className="new-value-text">Professional recruitment of skilled local and foreign workers for all industries with thorough background verification.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Skilled Workers</span>
+                  <span className="feature-tag">✓ Background Verified</span>
+                  <span className="feature-tag">✓ Industry Experienced</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-domestic" data-delay="600">
+              <div className="value-content">
+                <h3 className="new-value-title">Domestic Helper Supply</h3>
+                <p className="new-value-text">Reliable domestic helpers and maids with thorough screening and verification for household and commercial needs.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Thoroughly Screened</span>
+                  <span className="feature-tag">✓ Experienced</span>
+                  <span className="feature-tag">✓ Reliable Service</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-support" data-delay="800">
+              <div className="value-content">
+                <h3 className="new-value-title">Accommodation & Transportation</h3>
+                <p className="new-value-text">Complete accommodation and transportation services for foreign workers ensuring comfort and compliance.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Safe Accommodation</span>
+                  <span className="feature-tag">✓ Transportation</span>
+                  <span className="feature-tag">✓ Compliance Standards</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="new-value-item theme-documentation" data-delay="1000">
+              <div className="value-content">
+                <h3 className="new-value-title">Passport & Insurance Renewal</h3>
+                <p className="new-value-text">Complete documentation services including passport, permit, and insurance renewal with ongoing support.</p>
+                <div className="value-features">
+                  <span className="feature-tag">✓ Document Renewal</span>
+                  <span className="feature-tag">✓ Insurance Coverage</span>
+                  <span className="feature-tag">✓ Ongoing Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recruitment" className="recruitment-sources-section">
         <div className="recruitment-sources-container" id="recruitmentSourcesContainer">
           <div className="recruitment-sources-header">
             <h2 className="recruitment-sources-title">Where We Recruit Your Workers</h2>
@@ -259,6 +289,36 @@ const Home: React.FC = () => {
               <h3 className="country-name">Vietnam</h3>
               <p className="country-label">Demographics</p>
             </div>
+            
+            <div className="country-item" data-delay="1000">
+              <div className="country-flag">
+                <img 
+                  src="/images/flags/india.svg" 
+                  alt="India Flag" 
+                  loading="eager"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
+              </div>
+              <h3 className="country-name">India</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+            
+            <div className="country-item" data-delay="1200">
+              <div className="country-flag">
+                <img 
+                  src="/images/flags/pakistan.svg" 
+                  alt="Pakistan Flag" 
+                  loading="eager"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
+              </div>
+              <h3 className="country-name">Pakistan</h3>
+              <p className="country-label">Demographics</p>
+            </div>
           </div>
           
           <div className="recruitment-sources-footer">
@@ -272,87 +332,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="new-services-section">
-        <div className="new-services-container" id="servicesContainer">
-          <h2 className="new-section-title">Professional Manpower & Recruitment Services in Malaysia</h2>
-          <div className="new-services-grid">
-            <div className="new-value-item theme-legal" data-delay="0">
-              <div className="value-content">
-                <h3 className="new-value-title">Immigration/KDN/JTK Cases</h3>
-                <p className="new-value-text">Complete legal assistance for immigration cases and compliance with government regulations.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Legal Compliance</span>
-                  <span className="feature-tag">✓ Government Relations</span>
-                  <span className="feature-tag">✓ Professional Support</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-processing" data-delay="200">
-              <div className="value-content">
-                <h3 className="new-value-title">Foreign Worker Approval</h3>
-                <p className="new-value-text">Streamlined application process for foreign worker permits and approvals with full documentation support.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Fast Processing</span>
-                  <span className="feature-tag">✓ Complete Documentation</span>
-                  <span className="feature-tag">✓ Government Approved</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-workforce" data-delay="400">
-              <div className="value-content">
-                <h3 className="new-value-title">Local & Foreign Workers</h3>
-                <p className="new-value-text">Professional recruitment of skilled local and foreign workers for all industries with thorough background verification.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Skilled Workers</span>
-                  <span className="feature-tag">✓ Background Verified</span>
-                  <span className="feature-tag">✓ Industry Experienced</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-domestic" data-delay="600">
-              <div className="value-content">
-                <h3 className="new-value-title">Domestic Helper Supply</h3>
-                <p className="new-value-text">Reliable domestic helpers and maids with thorough screening and verification for household and commercial needs.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Thoroughly Screened</span>
-                  <span className="feature-tag">✓ Experienced</span>
-                  <span className="feature-tag">✓ Reliable Service</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-support" data-delay="800">
-              <div className="value-content">
-                <h3 className="new-value-title">Accommodation & Transportation</h3>
-                <p className="new-value-text">Complete accommodation and transportation services for foreign workers ensuring comfort and compliance.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Safe Accommodation</span>
-                  <span className="feature-tag">✓ Transportation</span>
-                  <span className="feature-tag">✓ Compliance Standards</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-documentation" data-delay="1000">
-              <div className="value-content">
-                <h3 className="new-value-title">Passport & Insurance Renewal</h3>
-                <p className="new-value-text">Complete documentation services including passport, permit, and insurance renewal with ongoing support.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Document Renewal</span>
-                  <span className="feature-tag">✓ Insurance Coverage</span>
-                  <span className="feature-tag">✓ Ongoing Support</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Clients Section */}
       <section className="clients-section hidden">
         <div className="clients-container" id="clientsContainer">
           <div className="clients-header">
@@ -436,7 +415,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Get In Touch Section */}
       <section id="contact" className="get-in-touch-section">
         <div className="get-in-touch-container" id="contactContainer">
           <div className="get-in-touch-content">
@@ -495,7 +473,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Test</title>
+</head>
+<body>
+    <h1>Video Test Page</h1>
+    <p>Testing if the video file loads correctly:</p>
+    
+    <video width="600" height="400" controls>
+        <source src="/videos/petronas_tower.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <p>If you can see and play the video above, then the file is working correctly.</p>
+    
+    <script>
+        const video = document.querySelector('video');
+        video.addEventListener('loadstart', () => console.log('Load started'));
+        video.addEventListener('loadeddata', () => console.log('Data loaded'));
+        video.addEventListener('canplay', () => console.log('Can play'));
+        video.addEventListener('error', (e) => {
+            console.error('Video error:', e);
+            console.error('Error code:', video.error?.code);
+            console.error('Error message:', video.error?.message);
+        });
+    </script>
+</body>
+</html>

@@ -320,13 +320,13 @@
 }
 
 .step-badge.permit {
-  background: rgba(16, 185, 129, 0.1);
-  color: #059669;
+  background: rgba(0, 187, 173, 0.1);
+  color: var(--primary-hover);
 }
 
 .step-badge.transport {
-  background: rgba(99, 102, 241, 0.1);
-  color: #4f46e5;
+  background: rgba(2, 83, 132, 0.1);
+  color: #025384;
 }
 
 .step-badge.renewal {

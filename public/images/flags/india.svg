@@ -1,0 +1,16 @@
+<svg width="160" height="107" viewBox="0 0 160 107" xmlns="http://www.w3.org/2000/svg">
+  <!-- Orange stripe -->
+  <rect width="160" height="35.67" fill="#FF9933"/>
+  <!-- White stripe -->
+  <rect y="35.67" width="160" height="35.67" fill="#FFFFFF"/>
+  <!-- Green stripe -->
+  <rect y="71.33" width="160" height="35.67" fill="#138808"/>
+  <!-- Ashoka Chakra -->
+  <circle cx="80" cy="53.5" r="12" fill="none" stroke="#000080" stroke-width="1.5"/>
+  <g transform="translate(80,53.5)">
+    <line x1="0" y1="-12" x2="0" y2="12" stroke="#000080" stroke-width="1"/>
+    <line x1="-12" y1="0" x2="12" y2="0" stroke="#000080" stroke-width="1"/>
+    <line x1="-8.5" y1="-8.5" x2="8.5" y2="8.5" stroke="#000080" stroke-width="1"/>
+    <line x1="8.5" y1="-8.5" x2="-8.5" y2="8.5" stroke="#000080" stroke-width="1"/>
+  </g>
+</svg>

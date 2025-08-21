@@ -8,7 +8,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://agencypekerjaanpi.com/</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
@@ -17,7 +17,7 @@
   <!-- About Page -->
   <url>
     <loc>https://agencypekerjaanpi.com/about</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
@@ -26,7 +26,7 @@
   <!-- Services Page -->
   <url>
     <loc>https://agencypekerjaanpi.com/services</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -35,7 +35,7 @@
   <!-- Recruitment Page -->
   <url>
     <loc>https://agencypekerjaanpi.com/recruitment</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
@@ -44,7 +44,7 @@
   <!-- Pricing Page -->
   <url>
     <loc>https://agencypekerjaanpi.com/pricing</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
@@ -53,7 +53,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://agencypekerjaanpi.com/contact</loc>
-    <lastmod>2024-08-18</lastmod>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>

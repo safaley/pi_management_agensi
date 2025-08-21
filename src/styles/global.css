@@ -11,23 +11,31 @@
   --surface-alt: #E5E7EB;      /* Alternative light gray for dividers */
   
   /* Text Colors */
-  --text-primary: #1A1A1A;     /* Almost black - Primary text for readability */
+  --text-primary: #111827;     /* Dark Gray - Primary text for modern look */
   --text-inverse: #FFFFFF;     /* White text for dark backgrounds */
   --text-gray: #6B7280;        /* Medium gray - Secondary text */
   
   /* Accent & Action Colors */
-  --primary: #4CAF50;          /* Green - Primary accent for buttons, toggles, success */
-  --primary-hover: #43A047;    /* Green hover state */
-  --secondary: #1E3A8A;        /* Dark Blue - Links, headings, highlights */
-  --secondary-hover: #1D4ED8;  /* Blue hover state */
+  --primary: #00bbad;          /* Custom Green - Primary brand color, buttons, links, highlights */
+  --primary-hover: #009688;    /* Custom Dark Green hover state */
+  --secondary: #025384;        /* Custom Blue - Accent for nav bar highlights, footer links */
+  --secondary-hover: #013A5E;  /* Darker custom blue hover state */
   
-  /* Dark Sections (Hero, Footer, CTA) */
-  --dark-section-bg: #1E3A8A;  /* Dark blue background */
+  /* Dark Sections (Footer) */
+  --dark-section-bg: #1F2937;  /* Dark Gray background for footer */
   --dark-section-text: #FFFFFF; /* White text on dark sections */
   
   /* Borders & Dividers */
   --border: #E5E7EB;           /* Light gray borders */
   --border-light: #F3F4F6;     /* Very light borders */
+  
+  /* Status Colors */
+  --success: #e0f7f5;          /* Custom Light Green success state */
+  --success-text: #009688;     /* Custom Dark Green text for success */
+  --error: #DC2626;            /* Red error state */
+  --error-bg: #FEE2E2;         /* Light Red background for errors */
+  --info: #025384;             /* Custom Blue info state */
+  --info-bg: #DBEAFE;          /* Light Blue background for info */
   
   /* Legacy Compatibility - Mapped to new system */
   --accent: var(--primary);
@@ -38,10 +46,8 @@
   --foreground: var(--text-primary);
   --primary-foreground: var(--text-inverse);
   
-  /* Semantic Colors */
-  --success: var(--primary);
+  /* Semantic Colors - Updated to new palette */
   --success-hover: var(--primary-hover);
-  --info: var(--secondary);
   --info-hover: var(--secondary-hover);
   --muted: var(--surface);
   --muted-foreground: var(--text-gray);
@@ -101,7 +107,7 @@ main {
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: -1px;
-  background: #4CAF50;
+  background: var(--primary);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   position: fixed;
   top: 0;
@@ -112,11 +118,10 @@ main {
 }
 
 .header.scrolled {
-  background: #4CAF50;
+  background: var(--primary);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 2px 20px rgba(76, 175, 80, 0.4);
 }
 
 .logo {
@@ -130,6 +135,15 @@ main {
   display: flex;
   align-items: center;
   gap: 0.2rem;
+  outline: none !important;
+  border: none !important;
+}
+
+.logo:focus,
+.logo:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .logo .logo-image {
@@ -153,11 +167,11 @@ main {
 }
 
 .logo-main {
-  color: #4CAF50;
+  color: var(--primary);
 }
 
 .logo-accent {
-  color: #1E3A8A;
+  color: var(--secondary);
   font-weight: 900;
   position: relative;
 }
@@ -169,7 +183,7 @@ main {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #4CAF50, #1E3A8A);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   border-radius: 1px;
 }
 
@@ -207,7 +221,7 @@ main {
 }
 
 .nav a:hover, .nav a.active {
-  background: #43A047;
+  background: var(--primary-hover);
   color: var(--text-inverse);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(67, 160, 71, 0.4);
@@ -215,7 +229,7 @@ main {
 
 .header.scrolled .nav a:hover, 
 .header.scrolled .nav a.active {
-  background: #43A047;
+  background: var(--primary-hover);
   color: var(--text-inverse);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(67, 160, 71, 0.4);
@@ -278,14 +292,14 @@ main {
 
 .mobile-nav-item:hover {
   background: rgba(76, 175, 80, 0.08);
-  color: #4CAF50;
+  color: var(--primary);
   transform: translateX(4px);
 }
 
 .mobile-nav-item.active {
   background: rgba(30, 58, 138, 0.08);
-  color: #1E3A8A;
-  border-left: 4px solid #1E3A8A;
+  color: var(--secondary);
+  border-left: 4px solid var(--secondary);
 }
 
 .nav-icon {
@@ -320,11 +334,11 @@ main {
 }
 
 .mobile-nav-item:hover::after {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 .mobile-nav-item.active::after {
-  background: #1E3A8A;
+  background: var(--secondary);
 }
 
 .mobile-nav-header::before {
@@ -445,7 +459,7 @@ main {
 .form-group textarea {
   width: 100%;
   padding: 1rem 1.2rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: 1rem;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
@@ -457,7 +471,7 @@ main {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(76, 124, 84, 0.1);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1), 0 0 0 1px var(--primary), 0 0 8px rgba(37, 99, 235, 0.15);
 }
 
 .form-group textarea {
@@ -620,10 +634,10 @@ main {
    ========================================== */
 
 .footer {
-  background: #0f1629;
+  background: var(--dark-section-bg);
   color: var(--dark-section-text);
   padding: 4rem 2rem 2rem;
-  margin-top: auto;
+  margin-top: 0;
   position: relative;
   z-index: 2;
   clear: both;
@@ -665,7 +679,7 @@ main {
 .footer-company-name {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: white;
   line-height: 1.2;
 }
 
@@ -695,7 +709,7 @@ main {
 .footer-contact h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary);
+  color: white;
   margin-bottom: 1.5rem;
 }
 
@@ -733,9 +747,8 @@ main {
   width: 100%;
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid #444;
   margin-top: 2rem;
-  color: #888;
+  color: #6B7280;
   font-size: 0.9rem;
 }
 
@@ -940,6 +953,7 @@ main {
   margin-bottom: 3rem;
   font-weight: 400;
   line-height: 1.4;
+  color: #D1D5DB;
   text-shadow: 1px 1px 10px rgba(0,0,0,0.3);
   animation: fadeInUp 1.2s ease-out 0.6s both;
 }
@@ -1300,7 +1314,7 @@ main {
   border-radius: 1rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--border-light);
   opacity: 0;
   transform: translateY(20px);
   animation: slideInUp 0.6s ease-out forwards;
@@ -1345,13 +1359,13 @@ main {
 }
 
 /* Default client icon styles */
-.client-item:nth-child(1) .client-icon { background: #0077b5; } /* LinkedIn */
+.client-item:nth-child(1) .client-icon { background: #025384; } /* LinkedIn */
 .client-item:nth-child(2) .client-icon { background: #00bcd4; } /* Travelata */
 .client-item:nth-child(3) .client-icon { background: #000; } /* Tele2 */
 .client-item:nth-child(4) .client-icon { background: #b8e24f; color: #333; } /* S7 */
 .client-item:nth-child(5) .client-icon { background: #8b5cf6; } /* Joom */
-.client-item:nth-child(6) .client-icon { background: #1565c0; } /* Lazada */
-.client-item:nth-child(7) .client-icon { background: #1877f2; } /* Facebook */
+.client-item:nth-child(6) .client-icon { background: #025384; } /* Lazada */
+.client-item:nth-child(7) .client-icon { background: #025384; } /* Facebook */
 .client-item:nth-child(8) .client-icon { background: #ffd700; color: #333; } /* Binomo */
 .client-item:nth-child(9) .client-icon { background: #dc2626; } /* Hoff */
 .client-item:nth-child(10) .client-icon { background: #f3ba2f; color: #333; } /* Binance */
@@ -1359,7 +1373,7 @@ main {
 .client-item:nth-child(12) .client-icon { background: #ffd700; color: #333; } /* Exness */
 .client-item:nth-child(13) .client-icon { background: transparent; color: #333; font-size: 0.7rem; width: auto; padding: 0.3rem; } /* Alibaba Text */
 .client-item:nth-child(14) .client-icon { background: #ef4444; } /* Sunlight */
-.client-item:nth-child(15) .client-icon { background: #10b981; } /* InDrive */
+.client-item:nth-child(15) .client-icon { background: #00bbad; } /* InDrive */
 .client-item:nth-child(16) .client-icon { background: #8b5cf6; } /* Joom */
 .client-item:nth-child(17) .client-icon { background: #7c3aed; } /* Kion */
 .client-item:nth-child(18) .client-icon { background: #f3ba2f; color: #333; } /* Binance */
@@ -1388,10 +1402,11 @@ main {
    GET IN TOUCH SECTION
    ========================================== */
 .get-in-touch-section {
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 4rem;
   background: var(--background);
   position: relative;
   overflow: hidden;
+  min-height: fit-content;
 }
 
 .get-in-touch-container {
@@ -1413,6 +1428,8 @@ main {
 
 .get-in-touch-content {
   padding: 2rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .get-in-touch-badge {
@@ -1561,7 +1578,7 @@ main {
   position: relative;
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, var(--surface) 0%, var(--muted) 100%);
+  background: #025384;
   border-radius: 2rem;
   display: flex;
   align-items: center;
@@ -1577,8 +1594,8 @@ main {
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 25% 25%, rgba(76, 124, 84, 0.1) 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, rgba(93, 201, 104, 0.1) 2px, transparent 2px);
+    radial-gradient(circle at 25% 25%, rgba(128, 128, 128, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(128, 128, 128, 0.3) 2px, transparent 2px);
   background-size: 30px 30px;
   animation: backgroundMove 20s linear infinite;
 }
@@ -1690,16 +1707,16 @@ main {
 }
 
 .countries-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: 2rem;
-  margin: 4rem 0;
-  max-width: 100%;
+  margin: 4rem auto;
+  max-width: 1200px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   background: transparent;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .country-item {
@@ -1718,6 +1735,9 @@ main {
   transition: all 0.4s cubic-bezier(.4,0,.2,1);
   position: relative;
   overflow: hidden;
+  flex: 0 0 auto;
+  width: 200px;
+  max-width: calc(25% - 1.5rem);
 }
 
 .country-item.animate {
@@ -2004,7 +2024,7 @@ main {
   }
   /* Get In Touch Responsive */
   .get-in-touch-section {
-    padding: 4rem 1rem;
+    padding: 4rem 1rem 3rem;
   }
   
   .get-in-touch-container {
@@ -2182,7 +2202,7 @@ main {
   }
   /* Get In Touch Mobile */
   .get-in-touch-section {
-    padding: 3rem 1rem;
+    padding: 3rem 1rem 2rem;
   }
   
   .get-in-touch-container {
@@ -2333,7 +2353,7 @@ main {
 }
 
 .transparent-nav .hamburger span {
-  background: #fff !important;
+  background: var(--text-inverse) !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -2778,6 +2798,7 @@ main {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+
 .new-value-item.animate {
   transform: translateY(0);
   opacity: 1;
@@ -2895,7 +2916,7 @@ main {
 
 .team-position {
   font-size: 0.9rem;
-  color: #4f46e5;
+  color: #025384;
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1.4;
@@ -2940,7 +2961,7 @@ main {
 
 .new-team-role {
   font-size: 1.1rem;
-  color: #888;
+  color: #6B7280;
   font-weight: 400;
   font-style: italic;
 }
@@ -3253,7 +3274,7 @@ main {
 }
 
 .transparent-nav .hamburger span {
-  background: #fff !important;
+  background: var(--text-inverse) !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -4152,7 +4173,7 @@ main {
 .pricing-table td {
   padding: 0.75rem 0.5rem;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
 }
 
 .pricing-table th {
@@ -4236,7 +4257,7 @@ main {
 .visa-table td {
   padding: 0.75rem;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
 }
 
 .visa-table th {
@@ -4738,7 +4759,7 @@ main {
 }
 
 .transparent-nav .hamburger span {
-  background: #fff !important;
+  background: var(--text-inverse) !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -4782,7 +4803,7 @@ main {
 .contact-form-title {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #1E3A8A !important;
+  color: #025384 !important;
   margin-bottom: 0.5rem;
 }
 
@@ -4795,7 +4816,7 @@ main {
 .contact-form .form-group select {
   width: 100%;
   padding: 1rem 1.2rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: 1rem;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
@@ -4808,7 +4829,7 @@ main {
 .contact-form .form-group select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(76, 124, 84, 0.1);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1), 0 0 0 1px var(--primary), 0 0 8px rgba(37, 99, 235, 0.15);
 }
 
 .contact-form .submit-btn {
@@ -5382,21 +5403,28 @@ main {
   display: flex !important;
 }
 
-/* Fix countries layout - single row and full flags */
+/* Responsive countries layout - 4 per row on desktop, wrap on smaller screens */
 .countries-grid {
   display: flex !important;
-  flex-wrap: nowrap !important;
+  flex-wrap: wrap !important;
   justify-content: center !important;
+  align-items: flex-start !important;
   gap: 2rem !important;
-  overflow-x: auto !important;
-  padding: 1rem 0 !important;
+  margin: 4rem auto !important;
+  max-width: 1200px !important;
+  overflow: visible !important;
 }
 
 .country-item {
-  flex: 0 0 auto !important;
-  min-width: 140px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
   background: rgba(255, 255, 255, 0.95) !important;
   padding: 1.5rem 1rem !important;
+  flex: 0 0 auto !important;
+  width: 200px !important;
+  max-width: calc(25% - 1.5rem) !important;
 }
 
 .country-flag {
@@ -5409,7 +5437,7 @@ main {
   align-items: center !important;
   justify-content: center !important;
   background: #f0f0f0 !important;
-  border: 1px solid #ddd !important;
+  border: 1px solid var(--border) !important;
 }
 
 .country-flag img {
@@ -5427,25 +5455,46 @@ main {
   text-transform: none !important;
 }
 
-/* Mobile responsive for countries */
-@media (max-width: 768px) {
-  .countries-grid {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+/* Tablet responsive for countries - 3 per row */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .country-item {
+    width: 180px !important;
+    max-width: calc(33.333% - 1rem) !important;
   }
   
+  .countries-grid {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Mobile responsive for countries - 2 per row */
+@media (max-width: 768px) {
   .country-item {
-    min-width: 120px !important;
+    width: 160px !important;
+    max-width: calc(50% - 0.5rem) !important;
+    padding: 1rem 0.5rem !important;
+  }
+  
+  .countries-grid {
+    gap: 1rem !important;
+    margin: 2rem auto !important;
   }
   
   .country-flag {
     width: 80px !important;
-    height: 60px !important;
-    border: 1px solid #ddd !important;
+    height: 53px !important;
+  }
+}
+
+/* Small mobile responsive - 1 per row */
+@media (max-width: 480px) {
+  .country-item {
+    width: 280px !important;
+    max-width: 100% !important;
   }
   
-  .country-flag img {
-    object-fit: contain !important;
+  .countries-grid {
+    gap: 1rem !important;
   }
 }
 
@@ -5506,7 +5555,7 @@ main {
 }
 
 .transparent-nav .hamburger span {
-  background: #fff !important;
+  background: var(--text-inverse) !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -5932,6 +5981,18 @@ main {
   background: var(--background);
 }
 
+/* Services section with blue background */
+#services {
+  background: #025384 !important;
+}
+
+/* Get In Touch section with blue background */
+#contact {
+  background: #025384 !important;
+  border: none !important;
+  border-bottom: none !important;
+}
+
 .new-services-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -6017,13 +6078,31 @@ main {
 /* All pages section titles - blue color (excluding hero sections) */
 .about-title,
 .recruitment-sources-title, 
-.new-section-title,
 .clients-title,
 .get-in-touch-title,
 .section-title,
 .ceo-title,
 .team-main-title {
-  color: #1E3A8A !important;
+  color: #025384 !important;
+}
+
+/* Services section title - white color on blue background */
+#services .new-section-title {
+  color: #fff7d6 !important;
+}
+
+/* Get In Touch section - white text on blue background */
+#contact .get-in-touch-title {
+  color: #fff7d6 !important;
+}
+
+#contact .get-in-touch-description {
+  color: #d1d5db !important; /* Light grey color */
+}
+
+#contact .feature-item span,
+#contact .contact-info {
+  color: #fff7d6 !important;
 }
 
 /* ==========================================
@@ -6282,7 +6361,7 @@ main {
 .recruitment-sources-section .flag-image.nepal-shape {
   object-fit: contain;
   object-position: left center;
-  background: linear-gradient(135deg, #003893 0%, #dc143c 50%, #003893 100%);
+  background: linear-gradient(135deg, #025384 0%, #dc143c 50%, #025384 100%);
   animation: nepalWave 6s ease-in-out infinite;
 }
 
@@ -6358,33 +6437,33 @@ main {
 /* Theme Variations */
 .theme-legal .icon-bg,
 .theme-professional .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 .theme-processing .icon-bg,
 .theme-efficient .icon-bg,
 .theme-international .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 .theme-workforce .icon-bg,
 .theme-transparent .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 .theme-domestic .icon-bg,
 .theme-support .icon-bg,
 .theme-documentation .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 .theme-local .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 /* Service Card Background Images - ONLY for Home Page Services Section */
 #services.new-services-section .theme-legal {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('./../../public/images/services/legal.jpg?v=5') !important;
+  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/legal.jpg?v=5') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -6398,7 +6477,7 @@ main {
 }
 
 #services.new-services-section .theme-processing {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('./../../public/images/services/document.jpg?v=5') !important;
+  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/document.jpg?v=5') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -6412,7 +6491,7 @@ main {
 }
 
 #services.new-services-section .theme-workforce {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('./../../public/images/services/worker.jpg?v=5') !important;
+  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/worker.jpg?v=5') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -6426,7 +6505,7 @@ main {
 }
 
 #services.new-services-section .theme-domestic {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('./../../public/images/services/domestic.jpg?v=5') !important;
+  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/domestic.jpg?v=5') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -6440,7 +6519,7 @@ main {
 }
 
 #services.new-services-section .theme-support {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('./../../public/images/services/accommodation.jpg?v=5') !important;
+  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/accommodation.jpg?v=5') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -6454,7 +6533,7 @@ main {
 }
 
 #services.new-services-section .theme-documentation {
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('./../../public/images/services/passport.jpg?v=5') !important;
+  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/passport.jpg?v=5') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -6503,7 +6582,7 @@ main {
   font-size: 1.5rem !important;
   margin-bottom: 1rem !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
-  color: white !important;
+  color: #F3F4F6 !important;
 }
 
 #services.new-services-section .theme-legal .new-value-text,
@@ -6516,14 +6595,10 @@ main {
   line-height: 1.6 !important;
   margin-bottom: 1.5rem !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
-  color: white !important;
+  color: #E5E7EB !important;
 }
 
 /* Services Page Card Styling - Clean without backgrounds */
-.new-services-section .new-value-item {
-  background: var(--background) !important;
-  color: var(--foreground) !important;
-}
 
 .new-services-section .value-header {
   padding: 1.5rem 2rem 0.5rem !important;
@@ -6913,8 +6988,441 @@ main {
 }
 
 /* ==========================================
+   HERO VIDEO LAZY LOADING
+   ========================================== */
+
+/* Spinner animation for loading indicator */
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Hero placeholder fade out effect */
+.hero-placeholder.fade-out {
+  opacity: 0 !important;
+}
+
+/* Video loading states */
+.hero-video {
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-video.loaded {
+  opacity: 1;
+}
+
+/* Loading indicator styles */
+.video-loading-indicator {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Mobile optimizations for video loading */
+@media (max-width: 768px) {
+  .video-loading-indicator {
+    top: 10px !important;
+    right: 10px !important;
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .loading-spinner {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}
+
+/* Ensure proper hero section positioning */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================
+   ALERT & STATUS COMPONENTS
+   ========================================== */
+
+/* Success Alert */
+.alert-success {
+  background: var(--success);
+  color: var(--success-text);
+  border: 1px solid rgba(6, 95, 70, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.alert-success .icon {
+  color: var(--success-text);
+  font-size: 1.25rem;
+}
+
+/* Error Alert */
+.alert-error {
+  background: var(--error-bg);
+  color: var(--error);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.alert-error .icon {
+  color: var(--error);
+  font-size: 1.25rem;
+}
+
+/* Info Alert */
+.alert-info {
+  background: var(--info-bg);
+  color: var(--info);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.alert-info .icon {
+  color: var(--info);
+  font-size: 1.25rem;
+}
+
+/* Status badges */
+.status-success {
+  background: var(--success);
+  color: var(--success-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-error {
+  background: var(--error-bg);
+  color: var(--error);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-info {
+  background: var(--info-bg);
+  color: var(--info);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* ==========================================
    UTILITY CLASSES
    ========================================== */
 .hidden {
   display: none !important;
+}
+
+/* ==========================================
+   HOME PAGE SPECIFIC STYLING - CUSTOM WHITE
+   ========================================== */
+
+/* Override CSS variables for home page */
+[data-page="home"] {
+  --background: #fff7d6 !important;
+  --surface: #f5f0c8 !important;
+  --card: #fff7d6 !important;
+}
+
+/* Override white backgrounds specifically for home page */
+body:has([data-page="home"]) {
+  background: #fff7d6 !important;
+}
+
+/* Home page specific white color overrides */
+[data-page="home"] .about-section,
+[data-page="home"] .new-services-section,
+[data-page="home"] .recruitment-sources-section,
+[data-page="home"] .get-in-touch-section {
+  background: #fff7d6 !important;
+}
+
+[data-page="home"] .card,
+[data-page="home"] .service-card,
+[data-page="home"] .new-value-item,
+[data-page="home"] .contact-form-wrap,
+[data-page="home"] .contact-quick-info-wrap,
+[data-page="home"] .office-card {
+  background: #fff7d6 !important;
+}
+
+/* Override CSS variable backgrounds for home page */
+[data-page="home"] section {
+  background: #fff7d6 !important;
+}
+
+/* Force all white backgrounds to use custom color on home page */
+[data-page="home"] *[style*="background: white"],
+[data-page="home"] *[style*="background: #FFFFFF"],
+[data-page="home"] *[style*="background: #ffffff"],
+[data-page="home"] *[style*="var(--background)"] {
+  background: #fff7d6 !important;
+}
+
+/* Update white text/titles to use custom white color on home page */
+[data-page="home"] .hero-headline,
+[data-page="home"] .hero-about-title,
+[data-page="home"] .services-hero-title,
+[data-page="home"] .recruitment-hero-title,
+[data-page="home"] .pricing-hero-title,
+[data-page="home"] .contact-hero-title,
+[data-page="home"] .main-title,
+[data-page="home"] .section-title,
+[data-page="home"] .new-section-title,
+[data-page="home"] .get-in-touch-title {
+  color: #fff7d6 !important;
+}
+
+/* Update description text to light grey on home page */
+[data-page="home"] .get-in-touch-description {
+  color: #d1d5db !important; /* Light grey color */
+}
+
+/* Update white text in buttons and other elements */
+[data-page="home"] .btn-primary,
+[data-page="home"] .directions-btn.primary,
+[data-page="home"] .directions-btn.secondary,
+[data-page="home"] .contact-btn,
+[data-page="home"] .feature-tag:hover,
+[data-page="home"] .specialty-tag:hover {
+  color: #fff7d6 !important;
+}
+
+/* Update footer text for home page */
+[data-page="home"] .footer .footer-company-name,
+[data-page="home"] .footer h3,
+[data-page="home"] .footer .footer-title {
+  color: #fff7d6 !important;
+}
+
+/* Update any white color text in general */
+[data-page="home"] *[style*="color: white"],
+[data-page="home"] *[style*="color: #fff"],
+[data-page="home"] *[style*="color: #FFFFFF"] {
+  color: #fff7d6 !important;
+}
+
+/* ==========================================
+   DYNAMIC NAVBAR COLORS BASED ON SECTIONS
+   ========================================== */
+
+/* Remove all shadows and borders from navbar when section-based */
+.header[class*="section-"] {
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+/* Default navbar - transparent with light text for hero section */
+.header.section-home {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-home .logo,
+.header.section-home .nav a {
+  color: #fff7d6 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header.section-home .logo-main,
+.header.section-home .logo-middle {
+  color: #fff7d6 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header.section-home .logo-accent {
+  background: #00bbad !important;
+  color: white !important;
+}
+
+.header.section-home .hamburger span {
+  background: #fff7d6 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* About section - light background with dark text */
+.header.section-about {
+  background: rgba(255, 247, 214, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-about .logo,
+.header.section-about .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-about .logo-main,
+.header.section-about .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-about .logo-accent {
+  background: #00bbad !important;
+  color: white !important;
+}
+
+.header.section-about .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Recruitment section - light background with dark text */
+.header.section-recruitment {
+  background: rgba(255, 247, 214, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-recruitment .logo,
+.header.section-recruitment .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-recruitment .logo-main,
+.header.section-recruitment .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-recruitment .logo-accent {
+  background: #00bbad !important;
+  color: white !important;
+}
+
+.header.section-recruitment .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Services section - dark blue background with light text */
+.header.section-services {
+  background: rgba(2, 83, 132, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-services .logo,
+.header.section-services .nav a {
+  color: #fff7d6 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-services .logo-main,
+.header.section-services .logo-middle {
+  color: #fff7d6 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-services .logo-accent {
+  background: #00bbad !important;
+  color: white !important;
+}
+
+.header.section-services .hamburger span {
+  background: #fff7d6 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Contact section - dark blue background with light text */
+.header.section-contact {
+  background: rgba(2, 83, 132, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-contact .logo,
+.header.section-contact .nav a {
+  color: #fff7d6 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-contact .logo-main,
+.header.section-contact .logo-middle {
+  color: #fff7d6 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-contact .logo-accent {
+  background: #00bbad !important;
+  color: white !important;
+}
+
+.header.section-contact .hamburger span {
+  background: #fff7d6 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Hover effects for navigation links */
+.header.section-home .nav a:hover,
+.header.section-services .nav a:hover,
+.header.section-contact .nav a:hover {
+  color: #00bbad !important;
+  transform: translateY(-1px);
+}
+
+.header.section-about .nav a:hover,
+.header.section-recruitment .nav a:hover {
+  color: #00bbad !important;
+  transform: translateY(-1px);
+}
+
+/* Active link styling */
+.header.section-home .nav a.active,
+.header.section-services .nav a.active,
+.header.section-contact .nav a.active {
+  background: rgba(0, 187, 173, 0.2) !important;
+  color: #00bbad !important;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+.header.section-about .nav a.active,
+.header.section-recruitment .nav a.active {
+  background: rgba(0, 187, 173, 0.1) !important;
+  color: #00bbad !important;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
 }

@@ -238,7 +238,7 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #4CAF50;
+  background: var(--primary);
   color: white;
   padding: 0.4rem 0.8rem;
   border-radius: 1rem;
@@ -252,12 +252,12 @@
 }
 
 .card-badge.featured {
-  background: #1D4ED8;
+  background: #025384;
   animation: pulse 2s infinite;
 }
 
 .card-badge.premium {
-  background: #1E3A8A;
+  background: #013A5E;
 }
 
 @keyframes pulse {
@@ -290,7 +290,7 @@
 .icon-bg {
   width: 60px;
   height: 60px;
-  background: #4CAF50;
+  background: var(--primary);
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -375,15 +375,15 @@
 
 /* Theme Variations */
 .theme-standard .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 .theme-premium .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 .theme-support .icon-bg {
-  background: #4CAF50;
+  background: var(--primary);
 }
 
 
@@ -449,7 +449,7 @@
 .flag-image.nepal-shape {
   object-fit: contain;
   object-position: left center;
-  background: linear-gradient(135deg, #003893 0%, #dc143c 50%, #003893 100%);
+  background: linear-gradient(135deg, #025384 0%, #dc143c 50%, #025384 100%);
   animation: nepalWave 6s ease-in-out infinite;
 }
 
@@ -634,7 +634,7 @@
 
 .country-cta {
   width: 100%;
-  background: #4CAF50;
+  background: var(--primary);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -673,19 +673,19 @@
 
 /* Country Theme Variations */
 .theme-local .country-cta {
-  background: linear-gradient(135deg, #4c7c54 0%, #60b26c 100%);
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
 }
 
 .theme-international .country-cta {
-  background: linear-gradient(135deg, #60b26c 0%, #5dc968 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary) 100%);
 }
 
 .theme-professional .country-cta {
-  background: linear-gradient(135deg, #4c7c54 0%, #2d5a35 100%);
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-hover) 100%);
 }
 
 .card-badge.local {
-  background: linear-gradient(135deg, #4c7c54 0%, #60b26c 100%);
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary) 100%);
 }
 
 /* Service card animation delays */

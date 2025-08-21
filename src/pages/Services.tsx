@@ -246,7 +246,14 @@ const Services: React.FC = () => {
           <div className="countries-grid">
             <div className="country-item" data-delay="0">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/my.png" alt="Malaysia Flag" />
+                <img 
+                  src="/images/flags/malaysia.png" 
+                  alt="Malaysia Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
               </div>
               <h3 className="country-name">Malaysia</h3>
               <p className="country-label">Demographics</p>
@@ -254,7 +261,14 @@ const Services: React.FC = () => {
             
             <div className="country-item" data-delay="200">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/np.png" alt="Nepal Flag" />
+                <img 
+                  src="/images/flags/nepal.png" 
+                  alt="Nepal Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="195"
+                />
               </div>
               <h3 className="country-name">Nepal</h3>
               <p className="country-label">Demographics</p>
@@ -262,7 +276,14 @@ const Services: React.FC = () => {
             
             <div className="country-item" data-delay="400">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/bd.png" alt="Bangladesh Flag" />
+                <img 
+                  src="/images/flags/bangladesh.png" 
+                  alt="Bangladesh Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="96"
+                />
               </div>
               <h3 className="country-name">Bangladesh</h3>
               <p className="country-label">Demographics</p>
@@ -270,7 +291,14 @@ const Services: React.FC = () => {
             
             <div className="country-item" data-delay="600">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/mm.png" alt="Myanmar Flag" />
+                <img 
+                  src="/images/flags/myanmar.png" 
+                  alt="Myanmar Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
               </div>
               <h3 className="country-name">Myanmar</h3>
               <p className="country-label">Demographics</p>
@@ -278,9 +306,46 @@ const Services: React.FC = () => {
             
             <div className="country-item" data-delay="800">
               <div className="country-flag">
-                <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag" />
+                <img 
+                  src="/images/flags/vietnam.png" 
+                  alt="Vietnam Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
               </div>
               <h3 className="country-name">Vietnam</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+            
+            <div className="country-item" data-delay="1000">
+              <div className="country-flag">
+                <img 
+                  src="/images/flags/india.svg" 
+                  alt="India Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
+              </div>
+              <h3 className="country-name">India</h3>
+              <p className="country-label">Demographics</p>
+            </div>
+            
+            <div className="country-item" data-delay="1200">
+              <div className="country-flag">
+                <img 
+                  src="/images/flags/pakistan.svg" 
+                  alt="Pakistan Flag" 
+                  loading="lazy"
+                  decoding="async"
+                  width="160"
+                  height="107"
+                />
+              </div>
+              <h3 className="country-name">Pakistan</h3>
               <p className="country-label">Demographics</p>
             </div>
           </div>

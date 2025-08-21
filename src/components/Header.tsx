@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentSection, setCurrentSection] = useState('');
   const location = useLocation();
 
   const closeMobileNav = () => {
@@ -41,17 +42,61 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Section detection for navbar color change
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setCurrentSection('');
+      return;
+    }
+
+    const detectCurrentSection = () => {
+      const sections = [
+        { id: 'home', element: document.getElementById('home') },
+        { id: 'about', element: document.getElementById('about') },
+        { id: 'services', element: document.getElementById('services') },
+        { id: 'recruitment', element: document.getElementById('recruitment') },
+        { id: 'contact', element: document.getElementById('contact') }
+      ];
+
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.element) {
+          const rect = section.element.getBoundingClientRect();
+          const sectionTop = window.scrollY + rect.top;
+          
+          if (scrollPosition >= sectionTop) {
+            if (currentSection !== section.id) {
+              setCurrentSection(section.id);
+            }
+            break;
+          }
+        }
+      }
+    };
+
+    // Initial detection
+    detectCurrentSection();
+
+    window.addEventListener('scroll', detectCurrentSection);
+    return () => window.removeEventListener('scroll', detectCurrentSection);
+  }, [location.pathname, currentSection]);
+
   const isActive = (path: string) => {
     return location.pathname === path ? 'active' : '';
   };
 
   return (
     <>
-      <div className={`header ${isScrolled ? 'scrolled' : ''}`} id="header">
-        <span className="logo">
+      <div className={`header ${isScrolled ? 'scrolled' : ''} ${currentSection ? `section-${currentSection}` : ''}`} id="header">
+        <Link to="/" className="logo">
           <span className="logo-main">Agensi</span>
+          <span className="logo-separator"> </span>
+          <span className="logo-middle">Pekerjaan</span>
+          <span className="logo-separator"> </span>
           <span className="logo-accent">PI</span>
-        </span>
+        </Link>
         <nav className="nav">
           <Link to="/" className={isActive('/')}>Home</Link>
           <Link to="/about" className={isActive('/about')}>About</Link>
