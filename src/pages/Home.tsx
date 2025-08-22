@@ -72,7 +72,7 @@ const Home: React.FC = () => {
       {/* Full Screen Image Hero */}
       <div id="home" className="hero">
         <img
-          src="/videos/petronas_tower_pic.png"
+          src="/images/thumbnails/hero/home-hero-bg.jpg"
           alt="Petronas Tower - Professional Manpower Solutions Malaysia"
           className="hero-video"
           style={{

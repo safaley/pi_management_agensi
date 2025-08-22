@@ -16,8 +16,8 @@
   --text-gray: #6B7280;        /* Medium gray - Secondary text */
   
   /* Accent & Action Colors */
-  --primary: #00bbad;          /* Custom Green - Primary brand color, buttons, links, highlights */
-  --primary-hover: #009688;    /* Custom Dark Green hover state */
+  --primary: #0a6036;          /* Custom Green - Primary brand color, buttons, links, highlights */
+  --primary-hover: #084d2a;    /* Custom Dark Green hover state */
   --secondary: #025384;        /* Custom Blue - Accent for nav bar highlights, footer links */
   --secondary-hover: #013A5E;  /* Darker custom blue hover state */
   
@@ -31,7 +31,7 @@
   
   /* Status Colors */
   --success: #e0f7f5;          /* Custom Light Green success state */
-  --success-text: #009688;     /* Custom Dark Green text for success */
+  --success-text: #084d2a;     /* Custom Dark Green text for success */
   --error: #DC2626;            /* Red error state */
   --error-bg: #FEE2E2;         /* Light Red background for errors */
   --info: #025384;             /* Custom Blue info state */
@@ -1373,7 +1373,7 @@ main {
 .client-item:nth-child(12) .client-icon { background: #ffd700; color: #333; } /* Exness */
 .client-item:nth-child(13) .client-icon { background: transparent; color: #333; font-size: 0.7rem; width: auto; padding: 0.3rem; } /* Alibaba Text */
 .client-item:nth-child(14) .client-icon { background: #ef4444; } /* Sunlight */
-.client-item:nth-child(15) .client-icon { background: #00bbad; } /* InDrive */
+.client-item:nth-child(15) .client-icon { background: #0a6036; } /* InDrive */
 .client-item:nth-child(16) .client-icon { background: #8b5cf6; } /* Joom */
 .client-item:nth-child(17) .client-icon { background: #7c3aed; } /* Kion */
 .client-item:nth-child(18) .client-icon { background: #f3ba2f; color: #333; } /* Binance */
@@ -2382,7 +2382,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('./../../public/images/thumbnails/hero/about-hero-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -5981,13 +5981,13 @@ main {
   background: var(--background);
 }
 
-/* Services section with blue background */
-#services {
+/* Services section with blue background - ONLY for Home page */
+[data-page="home"] #services {
   background: #025384 !important;
 }
 
-/* Get In Touch section with blue background */
-#contact {
+/* Get In Touch section with blue background - ONLY for Home page */
+[data-page="home"] #contact {
   background: #025384 !important;
   border: none !important;
   border-bottom: none !important;
@@ -6086,14 +6086,14 @@ main {
   color: #025384 !important;
 }
 
-/* Services section title - white color on blue background */
-#services .new-section-title {
-  color: #fff7d6 !important;
+/* Services section title - white color on blue background - ONLY for Home page */
+[data-page="home"] #services .new-section-title {
+  color: #fffcf0 !important;
 }
 
 /* Get In Touch section - white text on blue background */
 #contact .get-in-touch-title {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
 }
 
 #contact .get-in-touch-description {
@@ -6102,7 +6102,7 @@ main {
 
 #contact .feature-item span,
 #contact .contact-info {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
 }
 
 /* ==========================================
@@ -6461,13 +6461,87 @@ main {
   background: var(--primary);
 }
 
-/* Service Card Background Images - ONLY for Home Page Services Section */
-#services.new-services-section .theme-legal {
-  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/legal.jpg?v=5') !important;
+/* Service Card Background Images - ONLY for Home Page Services Section - OPTIMIZED THUMBNAILS */
+[data-page="home"] #services.new-services-section .theme-legal {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./../../public/images/thumbnails/services/legal.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   color: white !important;
+}
+
+[data-page="home"] #services.new-services-section .theme-processing {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./../../public/images/thumbnails/services/document.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  color: white !important;
+}
+
+[data-page="home"] #services.new-services-section .theme-workforce {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./../../public/images/thumbnails/services/worker.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  color: white !important;
+}
+
+[data-page="home"] #services.new-services-section .theme-domestic {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./../../public/images/thumbnails/services/domestic.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  color: white !important;
+}
+
+[data-page="home"] #services.new-services-section .theme-support {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./../../public/images/thumbnails/services/accommodation.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  color: white !important;
+}
+
+[data-page="home"] #services.new-services-section .theme-documentation {
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('./../../public/images/thumbnails/services/passport.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  color: white !important;
+}
+
+/* Home Page Service Cards - Text styling for cards with background images */
+[data-page="home"] #services.new-services-section .theme-legal .new-value-title,
+[data-page="home"] #services.new-services-section .theme-processing .new-value-title,
+[data-page="home"] #services.new-services-section .theme-workforce .new-value-title,
+[data-page="home"] #services.new-services-section .theme-domestic .new-value-title,
+[data-page="home"] #services.new-services-section .theme-support .new-value-title,
+[data-page="home"] #services.new-services-section .theme-documentation .new-value-title {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+  font-weight: 700 !important;
+}
+
+[data-page="home"] #services.new-services-section .theme-legal .new-value-text,
+[data-page="home"] #services.new-services-section .theme-processing .new-value-text,
+[data-page="home"] #services.new-services-section .theme-workforce .new-value-text,
+[data-page="home"] #services.new-services-section .theme-domestic .new-value-text,
+[data-page="home"] #services.new-services-section .theme-support .new-value-text,
+[data-page="home"] #services.new-services-section .theme-documentation .new-value-text {
+  color: #f0f0f0 !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7) !important;
+}
+
+[data-page="home"] #services.new-services-section .theme-legal .feature-tag,
+[data-page="home"] #services.new-services-section .theme-processing .feature-tag,
+[data-page="home"] #services.new-services-section .theme-workforce .feature-tag,
+[data-page="home"] #services.new-services-section .theme-domestic .feature-tag,
+[data-page="home"] #services.new-services-section .theme-support .feature-tag,
+[data-page="home"] #services.new-services-section .theme-documentation .feature-tag {
+  background: rgba(255,255,255,0.15) !important;
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
 }
 
 .theme-legal .new-value-title,
@@ -6476,13 +6550,7 @@ main {
   color: white !important;
 }
 
-#services.new-services-section .theme-processing {
-  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/document.jpg?v=5') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  color: white !important;
-}
+/* Removed background image for Services page cards */
 
 .theme-processing .new-value-title,
 .theme-processing .new-value-text,
@@ -6490,13 +6558,7 @@ main {
   color: white !important;
 }
 
-#services.new-services-section .theme-workforce {
-  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/worker.jpg?v=5') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  color: white !important;
-}
+/* Removed background image for Services page cards */
 
 .theme-workforce .new-value-title,
 .theme-workforce .new-value-text,
@@ -6504,13 +6566,7 @@ main {
   color: white !important;
 }
 
-#services.new-services-section .theme-domestic {
-  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/domestic.jpg?v=5') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  color: white !important;
-}
+/* Removed background image for Services page cards */
 
 .theme-domestic .new-value-title,
 .theme-domestic .new-value-text,
@@ -6518,13 +6574,7 @@ main {
   color: white !important;
 }
 
-#services.new-services-section .theme-support {
-  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/accommodation.jpg?v=5') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  color: white !important;
-}
+/* Removed background image for Services page cards */
 
 .theme-support .new-value-title,
 .theme-support .new-value-text,
@@ -6532,13 +6582,7 @@ main {
   color: white !important;
 }
 
-#services.new-services-section .theme-documentation {
-  background-image: linear-gradient(rgba(255,247,214,0.3), rgba(0,0,0,0.3)), url('./../../public/images/services/passport.jpg?v=5') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  color: white !important;
-}
+/* Removed background image for Services page cards */
 
 .theme-documentation .new-value-title,
 .theme-documentation .new-value-text,
@@ -6547,56 +6591,14 @@ main {
 }
 
 /* Feature tags styling for dark backgrounds - ONLY Home Page */
-#services.new-services-section .theme-legal .feature-tag,
-#services.new-services-section .theme-processing .feature-tag,
-#services.new-services-section .theme-workforce .feature-tag,
-#services.new-services-section .theme-domestic .feature-tag,
-#services.new-services-section .theme-support .feature-tag,
-#services.new-services-section .theme-documentation .feature-tag {
-  background: rgba(255,255,255,0.2) !important;
-  color: white !important;
-  border: 1px solid rgba(255,255,255,0.3) !important;
-}
+/* Removed feature tag styles for Services page cards with images */
 
 /* Simplified card content styling - ONLY Home Page */
-#services.new-services-section .theme-legal .value-content,
-#services.new-services-section .theme-processing .value-content,
-#services.new-services-section .theme-workforce .value-content,
-#services.new-services-section .theme-domestic .value-content,
-#services.new-services-section .theme-support .value-content,
-#services.new-services-section .theme-documentation .value-content {
-  padding: 2.5rem 2rem !important;
-  text-align: left !important;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+/* Removed card content styles for Services page cards with images */
 
-#services.new-services-section .theme-legal .new-value-title,
-#services.new-services-section .theme-processing .new-value-title,
-#services.new-services-section .theme-workforce .new-value-title,
-#services.new-services-section .theme-domestic .new-value-title,
-#services.new-services-section .theme-support .new-value-title,
-#services.new-services-section .theme-documentation .new-value-title {
-  font-size: 1.5rem !important;
-  margin-bottom: 1rem !important;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
-  color: #F3F4F6 !important;
-}
+/* Removed title styles for Services page cards with images */
 
-#services.new-services-section .theme-legal .new-value-text,
-#services.new-services-section .theme-processing .new-value-text,
-#services.new-services-section .theme-workforce .new-value-text,
-#services.new-services-section .theme-domestic .new-value-text,
-#services.new-services-section .theme-support .new-value-text,
-#services.new-services-section .theme-documentation .new-value-text {
-  font-size: 1rem !important;
-  line-height: 1.6 !important;
-  margin-bottom: 1.5rem !important;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5) !important;
-  color: #E5E7EB !important;
-}
+/* Removed text styles for Services page cards with images */
 
 /* Services Page Card Styling - Clean without backgrounds */
 
@@ -7147,14 +7149,14 @@ main {
 
 /* Override CSS variables for home page */
 [data-page="home"] {
-  --background: #fff7d6 !important;
-  --surface: #f5f0c8 !important;
-  --card: #fff7d6 !important;
+  --background: #fffcf0 !important;
+  --surface: #faf8f0 !important;
+  --card: #fffcf0 !important;
 }
 
 /* Override white backgrounds specifically for home page */
 body:has([data-page="home"]) {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
 }
 
 /* Home page specific white color overrides */
@@ -7162,7 +7164,7 @@ body:has([data-page="home"]) {
 [data-page="home"] .new-services-section,
 [data-page="home"] .recruitment-sources-section,
 [data-page="home"] .get-in-touch-section {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
 }
 
 [data-page="home"] .card,
@@ -7171,12 +7173,12 @@ body:has([data-page="home"]) {
 [data-page="home"] .contact-form-wrap,
 [data-page="home"] .contact-quick-info-wrap,
 [data-page="home"] .office-card {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
 }
 
 /* Override CSS variable backgrounds for home page */
 [data-page="home"] section {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
 }
 
 /* Force all white backgrounds to use custom color on home page */
@@ -7184,7 +7186,7 @@ body:has([data-page="home"]) {
 [data-page="home"] *[style*="background: #FFFFFF"],
 [data-page="home"] *[style*="background: #ffffff"],
 [data-page="home"] *[style*="var(--background)"] {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
 }
 
 /* Update white text/titles to use custom white color on home page */
@@ -7198,7 +7200,7 @@ body:has([data-page="home"]) {
 [data-page="home"] .section-title,
 [data-page="home"] .new-section-title,
 [data-page="home"] .get-in-touch-title {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
 }
 
 /* Update description text to light grey on home page */
@@ -7213,21 +7215,21 @@ body:has([data-page="home"]) {
 [data-page="home"] .contact-btn,
 [data-page="home"] .feature-tag:hover,
 [data-page="home"] .specialty-tag:hover {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
 }
 
 /* Update footer text for home page */
 [data-page="home"] .footer .footer-company-name,
 [data-page="home"] .footer h3,
 [data-page="home"] .footer .footer-title {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
 }
 
 /* Update any white color text in general */
 [data-page="home"] *[style*="color: white"],
 [data-page="home"] *[style*="color: #fff"],
 [data-page="home"] *[style*="color: #FFFFFF"] {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
 }
 
 /* ==========================================
@@ -7251,29 +7253,29 @@ body:has([data-page="home"]) {
 
 .header.section-home .logo,
 .header.section-home .nav a {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
 .header.section-home .logo-main,
 .header.section-home .logo-middle {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
 .header.section-home .logo-accent {
-  background: #00bbad !important;
+  background: #0a6036 !important;
   color: white !important;
 }
 
 .header.section-home .hamburger span {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* About section - light background with dark text */
 .header.section-about {
-  background: rgba(255, 247, 214, 0.95) !important;
+  background: rgba(255, 252, 240, 0.95) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   transition: all 0.3s ease !important;
@@ -7293,7 +7295,7 @@ body:has([data-page="home"]) {
 }
 
 .header.section-about .logo-accent {
-  background: #00bbad !important;
+  background: #0a6036 !important;
   color: white !important;
 }
 
@@ -7304,7 +7306,7 @@ body:has([data-page="home"]) {
 
 /* Recruitment section - light background with dark text */
 .header.section-recruitment {
-  background: rgba(255, 247, 214, 0.95) !important;
+  background: rgba(255, 252, 240, 0.95) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   transition: all 0.3s ease !important;
@@ -7324,7 +7326,7 @@ body:has([data-page="home"]) {
 }
 
 .header.section-recruitment .logo-accent {
-  background: #00bbad !important;
+  background: #0a6036 !important;
   color: white !important;
 }
 
@@ -7344,23 +7346,23 @@ body:has([data-page="home"]) {
 
 .header.section-services .logo,
 .header.section-services .nav a {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 .header.section-services .logo-main,
 .header.section-services .logo-middle {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 .header.section-services .logo-accent {
-  background: #00bbad !important;
+  background: #0a6036 !important;
   color: white !important;
 }
 
 .header.section-services .hamburger span {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -7375,23 +7377,23 @@ body:has([data-page="home"]) {
 
 .header.section-contact .logo,
 .header.section-contact .nav a {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 .header.section-contact .logo-main,
 .header.section-contact .logo-middle {
-  color: #fff7d6 !important;
+  color: #fffcf0 !important;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
 .header.section-contact .logo-accent {
-  background: #00bbad !important;
+  background: #0a6036 !important;
   color: white !important;
 }
 
 .header.section-contact .hamburger span {
-  background: #fff7d6 !important;
+  background: #fffcf0 !important;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -7399,13 +7401,13 @@ body:has([data-page="home"]) {
 .header.section-home .nav a:hover,
 .header.section-services .nav a:hover,
 .header.section-contact .nav a:hover {
-  color: #00bbad !important;
+  color: #0a6036 !important;
   transform: translateY(-1px);
 }
 
 .header.section-about .nav a:hover,
 .header.section-recruitment .nav a:hover {
-  color: #00bbad !important;
+  color: #0a6036 !important;
   transform: translateY(-1px);
 }
 
@@ -7413,16 +7415,639 @@ body:has([data-page="home"]) {
 .header.section-home .nav a.active,
 .header.section-services .nav a.active,
 .header.section-contact .nav a.active {
-  background: rgba(0, 187, 173, 0.2) !important;
-  color: #00bbad !important;
+  background: rgba(10, 96, 54, 0.2) !important;
+  color: #0a6036 !important;
   border-radius: 6px;
   padding: 0.5rem 1rem;
 }
 
 .header.section-about .nav a.active,
 .header.section-recruitment .nav a.active {
-  background: rgba(0, 187, 173, 0.1) !important;
-  color: #00bbad !important;
+  background: rgba(10, 96, 54, 0.1) !important;
+  color: #0a6036 !important;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+/* ==========================================
+   ALTERNATING COLOR SCHEME FOR ALL PAGES
+   ========================================== */
+
+/* ABOUT PAGE - Alternating Colors */
+[data-page="about"] .hero-about-section {
+  /* Keep hero as is */
+}
+
+[data-page="about"] .new-values-section {
+  background: #fffcf0 !important;
+}
+
+[data-page="about"] .new-values-section .new-section-title {
+  color: #025384 !important;
+}
+
+[data-page="about"] .team-grid-section {
+  background: #025384 !important;
+  color: #fffcf0 !important;
+}
+
+[data-page="about"] .team-grid-section .section-title,
+[data-page="about"] .team-grid-section .team-main-title {
+  color: #fffcf0 !important;
+}
+
+[data-page="about"] .ceo-section {
+  background: #fffcf0 !important;
+}
+
+[data-page="about"] .ceo-section .ceo-title,
+[data-page="about"] .ceo-section .section-title {
+  color: #025384 !important;
+}
+
+/* RECRUITMENT PAGE - Alternating Colors */
+[data-page="recruitment"] .recruitment-hero {
+  /* Keep hero as is */
+}
+
+[data-page="recruitment"] .process-overview {
+  background: #fffcf0 !important;
+}
+
+[data-page="recruitment"] .process-overview .overview-title,
+[data-page="recruitment"] .process-overview .section-title {
+  color: #025384 !important;
+}
+
+[data-page="recruitment"] .recruitment-steps {
+  background: #025384 !important;
+  color: #fffcf0 !important;
+}
+
+[data-page="recruitment"] .recruitment-steps .section-title {
+  color: #fffcf0 !important;
+}
+
+[data-page="recruitment"] .recruitment-steps .section-subtitle {
+  color: rgba(255, 252, 240, 0.8) !important;
+}
+
+[data-page="recruitment"] .timeline-summary {
+  background: #fffcf0 !important;
+}
+
+[data-page="recruitment"] .timeline-summary .summary-title,
+[data-page="recruitment"] .timeline-summary .section-title {
+  color: #025384 !important;
+}
+
+[data-page="recruitment"] .recruitment-cta {
+  background: #025384 !important;
+  color: #fffcf0 !important;
+}
+
+[data-page="recruitment"] .recruitment-cta .cta-title {
+  color: #fffcf0 !important;
+}
+
+/* CONTACT PAGE - Alternating Colors */
+[data-page="contact"] .contact-hero {
+  /* Keep hero as is */
+}
+
+[data-page="contact"] .contact-main-section {
+  background: #fffcf0 !important;
+}
+
+[data-page="contact"] .contact-main-section .section-title,
+[data-page="contact"] .contact-main-section .contact-title {
+  color: #025384 !important;
+}
+
+[data-page="contact"] .office-locations-section {
+  background: #025384 !important;
+  color: #fffcf0 !important;
+}
+
+[data-page="contact"] .office-locations-section .section-title {
+  color: #fffcf0 !important;
+}
+
+[data-page="contact"] .office-locations-section .section-subtitle {
+  color: rgba(255, 252, 240, 0.8) !important;
+}
+
+/* PRICING PAGE - Alternating Colors */
+[data-page="pricing"] .pricing-hero {
+  /* Keep hero as is */
+}
+
+[data-page="pricing"] .pricing-section {
+  background: #fffcf0 !important;
+}
+
+[data-page="pricing"] .pricing-section .section-title,
+[data-page="pricing"] .pricing-section .pricing-title {
+  color: #025384 !important;
+}
+
+/* ==========================================
+   DYNAMIC NAVIGATION BAR COLORS FOR ALL PAGES
+   ========================================== */
+
+/* ABOUT PAGE - Dynamic Navigation Based on Sections */
+/* Hero section - transparent with light text */
+.header.section-hero-about {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-hero-about .logo,
+.header.section-hero-about .nav a {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header.section-hero-about .logo-main,
+.header.section-hero-about .logo-middle {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header.section-hero-about .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-hero-about .hamburger span {
+  background: #fffcf0 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Values section - light background with dark text */
+.header.section-values {
+  background: rgba(255, 252, 240, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-values .logo,
+.header.section-values .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-values .logo-main,
+.header.section-values .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-values .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-values .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Team section - blue background with light text */
+.header.section-team {
+  background: rgba(2, 83, 132, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-team .logo,
+.header.section-team .nav a {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-team .logo-main,
+.header.section-team .logo-middle {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-team .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-team .hamburger span {
+  background: #fffcf0 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* CEO section - light background with dark text */
+.header.section-ceo {
+  background: rgba(255, 252, 240, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-ceo .logo,
+.header.section-ceo .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-ceo .logo-main,
+.header.section-ceo .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-ceo .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-ceo .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* SERVICES PAGE - Dynamic Navigation */
+/* Hero section - transparent */
+.header.section-hero {
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-hero .logo,
+.header.section-hero .nav a {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header.section-hero .logo-main,
+.header.section-hero .logo-middle {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header.section-hero .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-hero .hamburger span {
+  background: #fffcf0 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* SERVICES PAGE - Dynamic Navigation */
+/* Services page sections should have light background */
+[data-page="services"] .header.section-hero,
+[data-page="services"] .header.section-services {
+  background: rgba(255, 252, 240, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+[data-page="services"] .header.section-hero .logo,
+[data-page="services"] .header.section-hero .nav a,
+[data-page="services"] .header.section-services .logo,
+[data-page="services"] .header.section-services .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+[data-page="services"] .header.section-hero .logo-main,
+[data-page="services"] .header.section-hero .logo-middle,
+[data-page="services"] .header.section-services .logo-main,
+[data-page="services"] .header.section-services .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+[data-page="services"] .header.section-hero .logo-accent,
+[data-page="services"] .header.section-services .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+[data-page="services"] .header.section-hero .hamburger span,
+[data-page="services"] .header.section-services .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Sources section - blue background */
+.header.section-sources {
+  background: rgba(2, 83, 132, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-sources .logo,
+.header.section-sources .nav a {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-sources .logo-main,
+.header.section-sources .logo-middle {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-sources .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-sources .hamburger span {
+  background: #fffcf0 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* RECRUITMENT PAGE - Dynamic Navigation */
+/* Process section - light background */
+.header.section-process {
+  background: rgba(255, 252, 240, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-process .logo,
+.header.section-process .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-process .logo-main,
+.header.section-process .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-process .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-process .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Steps section - blue background */
+.header.section-steps {
+  background: rgba(2, 83, 132, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-steps .logo,
+.header.section-steps .nav a {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-steps .logo-main,
+.header.section-steps .logo-middle {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-steps .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-steps .hamburger span {
+  background: #fffcf0 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Timeline section - light background */
+.header.section-timeline {
+  background: rgba(255, 252, 240, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-timeline .logo,
+.header.section-timeline .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-timeline .logo-main,
+.header.section-timeline .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-timeline .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-timeline .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* CTA section - blue background */
+.header.section-cta {
+  background: rgba(2, 83, 132, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-cta .logo,
+.header.section-cta .nav a {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-cta .logo-main,
+.header.section-cta .logo-middle {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-cta .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-cta .hamburger span {
+  background: #fffcf0 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* CONTACT PAGE - Dynamic Navigation */
+/* Contact section - light background */
+.header.section-contact {
+  background: rgba(255, 252, 240, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-contact .logo,
+.header.section-contact .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-contact .logo-main,
+.header.section-contact .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-contact .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-contact .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Locations section - blue background */
+.header.section-locations {
+  background: rgba(2, 83, 132, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-locations .logo,
+.header.section-locations .nav a {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-locations .logo-main,
+.header.section-locations .logo-middle {
+  color: #fffcf0 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.header.section-locations .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-locations .hamburger span {
+  background: #fffcf0 !important;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* PRICING PAGE - Dynamic Navigation */
+/* Pricing section - light background */
+.header.section-pricing {
+  background: rgba(255, 252, 240, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: none !important;
+}
+
+.header.section-pricing .logo,
+.header.section-pricing .nav a {
+  color: #111827 !important;
+  text-shadow: none !important;
+}
+
+.header.section-pricing .logo-main,
+.header.section-pricing .logo-middle {
+  color: #025384 !important;
+  text-shadow: none !important;
+}
+
+.header.section-pricing .logo-accent {
+  background: #0a6036 !important;
+  color: white !important;
+}
+
+.header.section-pricing .hamburger span {
+  background: #111827 !important;
+  box-shadow: none !important;
+}
+
+/* Hover effects for all pages */
+.header.section-hero-about .nav a:hover,
+.header.section-hero .nav a:hover,
+.header.section-team .nav a:hover,
+.header.section-sources .nav a:hover,
+.header.section-steps .nav a:hover,
+.header.section-cta .nav a:hover,
+.header.section-locations .nav a:hover {
+  color: #0a6036 !important;
+  transform: translateY(-1px);
+}
+
+.header.section-values .nav a:hover,
+.header.section-ceo .nav a:hover,
+.header.section-services .nav a:hover,
+.header.section-process .nav a:hover,
+.header.section-timeline .nav a:hover,
+.header.section-contact .nav a:hover,
+.header.section-pricing .nav a:hover {
+  color: #0a6036 !important;
+  transform: translateY(-1px);
+}
+
+/* Active link styling for all pages */
+.header.section-hero-about .nav a.active,
+.header.section-hero .nav a.active,
+.header.section-team .nav a.active,
+.header.section-sources .nav a.active,
+.header.section-steps .nav a.active,
+.header.section-cta .nav a.active,
+.header.section-locations .nav a.active {
+  background: rgba(10, 96, 54, 0.2) !important;
+  color: #0a6036 !important;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+.header.section-values .nav a.active,
+.header.section-ceo .nav a.active,
+.header.section-services .nav a.active,
+.header.section-process .nav a.active,
+.header.section-timeline .nav a.active,
+.header.section-contact .nav a.active,
+.header.section-pricing .nav a.active {
+  background: rgba(10, 96, 54, 0.1) !important;
+  color: #0a6036 !important;
   border-radius: 6px;
   padding: 0.5rem 1rem;
 }

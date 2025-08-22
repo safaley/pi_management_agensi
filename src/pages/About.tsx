@@ -44,7 +44,7 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div data-page="about">
       {/* Who Are We Hero Section */}
       <section id="hero-about" className="hero-about-section">
         <div className="hero-about-background"></div>
@@ -78,7 +78,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="new-values-section">
+      <section id="values" className="new-values-section">
         <div className="new-values-container">
           <h2 className="new-section-title">Our Core Values</h2>
           <div className="new-values-grid">
@@ -156,7 +156,7 @@ const About: React.FC = () => {
 
       {/* Our Team Section - HIDDEN FOR NOW */}
       {/* 
-      <section className="team-grid-section">
+      <section id="team" className="team-grid-section">
         <div className="team-grid-container">
           <div className="team-intro">
             <h1 className="team-main-title">Meet Our Professional Team</h1>
@@ -250,7 +250,7 @@ const About: React.FC = () => {
 
       {/* CEO Message Section - HIDDEN FOR NOW */}
       {/* 
-      <section id="ceo-message" className="ceo-section">
+      <section id="ceo" className="ceo-section">
         <div className="ceo-container" id="ceoContainer">
           <div className="ceo-header">
             <h2 className="ceo-title">Message from Our CEO</h2>
@@ -273,7 +273,7 @@ const About: React.FC = () => {
         </div>
       </section>
       */}
-    </>
+    </div>
   );
 };
 

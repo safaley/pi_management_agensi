@@ -22,9 +22,9 @@ const Contact: React.FC = () => {
 
 
   return (
-    <>
+    <div data-page="contact">
       {/* Contact Hero Section */}
-      <section className="contact-hero">
+      <section id="hero" className="contact-hero">
         <div className="contact-hero-container">
           <div className="contact-header" id="contactHeroText">
             <h1 className="contact-hero-title">Get In Touch With Us</h1>
@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Contact Form and Quick Info Section */}
-      <section className="contact-main-section">
+      <section id="contact" className="contact-main-section">
         <div className="contact-main-container">
           <div className="contact-form-wrap">
             <div className="contact-form-header">
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
       </section>
 
       {/* Office Locations Section */}
-      <section className="office-locations-section">
+      <section id="locations" className="office-locations-section">
         <div className="office-locations-container">
           <div className="section-header">
             <h2 className="section-title">Our Office Locations</h2>
@@ -323,7 +323,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-    </>
+    </div>
   );
 };
 

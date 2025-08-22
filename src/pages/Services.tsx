@@ -65,9 +65,9 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div data-page="services">
       {/* Services Hero Section */}
-      <section className="services-hero">
+      <section id="hero" className="services-hero">
         <div className="services-hero-container">
           <div className="services-header" id="servicesHeroText">
             <h1 className="services-hero-title">Our Professional Services</h1>
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Main Services Section */}
-      <section className="new-services-section">
+      <section id="services" className="new-services-section">
         <div className="new-services-container">
           <h2 className="new-section-title">What We Offer</h2>
           <p className="section-subtitle">Complete workforce solutions designed to drive your business forward</p>
@@ -236,7 +236,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* Where We Recruit Section */}
-      <section className="recruitment-sources-section">
+      <section id="sources" className="recruitment-sources-section">
         <div className="recruitment-sources-container" id="recruitmentSourcesContainer">
           <div className="recruitment-sources-header">
             <h2 className="recruitment-sources-title">Where We Recruit Your Workers</h2>
@@ -360,7 +360,7 @@ const Services: React.FC = () => {
           <div className="globe-dots"></div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

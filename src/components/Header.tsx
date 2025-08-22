@@ -44,43 +44,121 @@ const Header: React.FC = () => {
 
   // Section detection for navbar color change
   useEffect(() => {
-    if (location.pathname !== '/') {
-      setCurrentSection('');
-      return;
-    }
-
     const detectCurrentSection = () => {
-      const sections = [
-        { id: 'home', element: document.getElementById('home') },
-        { id: 'about', element: document.getElementById('about') },
-        { id: 'services', element: document.getElementById('services') },
-        { id: 'recruitment', element: document.getElementById('recruitment') },
-        { id: 'contact', element: document.getElementById('contact') }
-      ];
+      let sections: { id: string; element: HTMLElement | null }[] = [];
+      
+      // Define sections based on current page
+      if (location.pathname === '/') {
+        sections = [
+          { id: 'home', element: document.getElementById('home') },
+          { id: 'about', element: document.getElementById('about') },
+          { id: 'services', element: document.getElementById('services') },
+          { id: 'recruitment', element: document.getElementById('recruitment') },
+          { id: 'contact', element: document.getElementById('contact') }
+        ];
+      } else if (location.pathname === '/about') {
+        sections = [
+          { id: 'hero-about', element: document.getElementById('hero-about') },
+          { id: 'values', element: document.getElementById('values') },
+          { id: 'team', element: document.getElementById('team') },
+          { id: 'ceo', element: document.getElementById('ceo') }
+        ];
+      } else if (location.pathname === '/services') {
+        sections = [
+          { id: 'hero', element: document.getElementById('hero') },
+          { id: 'services', element: document.getElementById('services') },
+          { id: 'sources', element: document.getElementById('sources') }
+        ];
+      } else if (location.pathname === '/recruitment') {
+        sections = [
+          { id: 'hero', element: document.getElementById('hero') },
+          { id: 'process', element: document.getElementById('process') },
+          { id: 'steps', element: document.getElementById('steps') },
+          { id: 'timeline', element: document.getElementById('timeline') },
+          { id: 'cta', element: document.getElementById('cta') }
+        ];
+      } else if (location.pathname === '/contact') {
+        sections = [
+          { id: 'hero', element: document.getElementById('hero') },
+          { id: 'contact', element: document.getElementById('contact') },
+          { id: 'locations', element: document.getElementById('locations') }
+        ];
+      } else if (location.pathname === '/pricing') {
+        sections = [
+          { id: 'hero', element: document.getElementById('hero') },
+          { id: 'pricing', element: document.getElementById('pricing') }
+        ];
+      } else {
+        return; // No sections to detect for unknown pages
+      }
 
-      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+      let foundSection = false;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
+      // More robust section detection
+      for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         if (section.element) {
           const rect = section.element.getBoundingClientRect();
           const sectionTop = window.scrollY + rect.top;
+          const sectionBottom = sectionTop + section.element.offsetHeight;
           
-          if (scrollPosition >= sectionTop) {
+          // Check if current scroll position is within this section with better tolerance
+          const tolerance = 200; // Increased tolerance for better detection
+          if (scrollPosition >= (sectionTop - tolerance) && scrollPosition < (sectionBottom + tolerance)) {
             if (currentSection !== section.id) {
               setCurrentSection(section.id);
             }
+            foundSection = true;
             break;
           }
         }
       }
+
+      // Improved fallback logic
+      if (!foundSection) {
+        // Find the closest section based on scroll position
+        let closestSection = null;
+        let closestDistance = Infinity;
+        
+        for (const section of sections) {
+          if (section.element) {
+            const rect = section.element.getBoundingClientRect();
+            const sectionTop = window.scrollY + rect.top;
+            const distance = Math.abs(scrollPosition - sectionTop);
+            
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestSection = section;
+            }
+          }
+        }
+        
+        if (closestSection && currentSection !== closestSection.id) {
+          setCurrentSection(closestSection.id);
+        }
+      }
+    };
+
+    // Throttle scroll events for better performance
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          detectCurrentSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     // Initial detection
-    detectCurrentSection();
+    setTimeout(() => {
+      detectCurrentSection();
+    }, 100);
 
-    window.addEventListener('scroll', detectCurrentSection);
-    return () => window.removeEventListener('scroll', detectCurrentSection);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname, currentSection]);
 
   const isActive = (path: string) => {

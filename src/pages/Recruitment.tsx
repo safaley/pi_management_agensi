@@ -24,9 +24,9 @@ const Recruitment: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div data-page="recruitment">
       {/* Recruitment Hero Section */}
-      <section className="recruitment-hero">
+      <section id="hero" className="recruitment-hero">
         <div className="recruitment-container">
           <div className="recruitment-header">
             <h1 className="recruitment-title">Recruitment Procedure</h1>
@@ -38,7 +38,7 @@ const Recruitment: React.FC = () => {
       </section>
 
       {/* Process Overview Section */}
-      <section className="process-overview">
+      <section id="process" className="process-overview">
         <div className="overview-container">
           <div className="overview-header">
             <h2 className="overview-title">Simple 3-Phase Recruitment Process</h2>
@@ -83,7 +83,7 @@ const Recruitment: React.FC = () => {
       </section>
 
       {/* Detailed Steps Section */}
-      <section className="recruitment-steps">
+      <section id="steps" className="recruitment-steps">
         <div className="steps-container">
           <div className="steps-header">
             <h2 className="section-title">Detailed Step-by-Step Process</h2>
@@ -288,7 +288,7 @@ const Recruitment: React.FC = () => {
       </section>
 
       {/* Timeline Summary Section */}
-      <section className="timeline-summary">
+      <section id="timeline" className="timeline-summary">
         <div className="summary-container">
           <div className="summary-content">
             <h2 className="summary-title">Total Timeline: 6-12 Weeks</h2>
@@ -318,7 +318,7 @@ const Recruitment: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="recruitment-cta">
+      <section id="cta" className="recruitment-cta">
         <div className="cta-container">
           <div className="cta-content">
             <h2 className="cta-title">Ready to Start Your Recruitment Process?</h2>
@@ -329,7 +329,7 @@ const Recruitment: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

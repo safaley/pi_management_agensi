@@ -7,9 +7,9 @@ const Pricing: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <div data-page="pricing">
       {/* Pricing Hero Section */}
-      <section className="pricing-hero">
+      <section id="hero" className="pricing-hero">
         <div className="pricing-hero-container">
           <h1 className="pricing-hero-title">Foreign Worker Processing Fees</h1>
           <p className="pricing-hero-subtitle">Transparent pricing for all industries and nationalities</p>
@@ -17,7 +17,7 @@ const Pricing: React.FC = () => {
       </section>
 
       {/* Main Pricing Table Section */}
-      <section className="pricing-section">
+      <section id="pricing" className="pricing-section">
         <div className="pricing-container">
           <div className="pricing-table-wrapper">
             <h2 className="table-title">Price Table (RM)</h2>
@@ -141,7 +141,7 @@ const Pricing: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
