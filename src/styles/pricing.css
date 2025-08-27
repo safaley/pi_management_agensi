@@ -5,24 +5,7 @@
 /* ==========================================
    NAVIGATION OVERLAY FOR PRICING PAGE
    ========================================== */
-.header {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.05) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  transition: all 0.3s ease;
-}
-
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(20px) !important;
-  border-bottom: 1px solid var(--border) !important;
-}
+/* Removed conflicting header positioning and scrolled states */
 
 /* ==========================================
    PRICING HERO SECTION

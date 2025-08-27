@@ -6,7 +6,9 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-company">
-          <div className="footer-company-name">Agensi Pekerjaan PI Management</div>
+          <div className="footer-company-name">
+            <img src="/pi_management_log/3.svg" alt="PI Management Agency" className="footer-logo" />
+          </div>
           <div className="footer-nav">
             <Link to="/contact">Contact Us</Link>
             <Link to="/services">Our Services</Link>

@@ -165,15 +165,16 @@ const Header: React.FC = () => {
     return location.pathname === path ? 'active' : '';
   };
 
+  // Always use light logo for transparent navbar
+  const getLogoSrc = () => {
+    return '/pi_management_log/4.svg'; // Light logo for transparent navbar
+  };
+
   return (
     <>
       <div className={`header ${isScrolled ? 'scrolled' : ''} ${currentSection ? `section-${currentSection}` : ''}`} id="header">
         <Link to="/" className="logo">
-          <span className="logo-main">Agensi</span>
-          <span className="logo-separator"> </span>
-          <span className="logo-middle">Pekerjaan</span>
-          <span className="logo-separator"> </span>
-          <span className="logo-accent">PI</span>
+          <img src={getLogoSrc()} alt="PI Management Agency" className="logo-image" />
         </Link>
         <nav className="nav">
           <Link to="/" className={isActive('/')}>Home</Link>
@@ -212,7 +213,7 @@ const Header: React.FC = () => {
         
         <div className="mobile-nav-footer">
           <div className="mobile-nav-company">
-            <h3>Agensi Pekerjaan PI Management</h3>
+            <img src="/pi_management_log/4.svg" alt="PI Management Agency" className="mobile-nav-logo" />
           </div>
         </div>
       </nav>
