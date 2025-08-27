@@ -165,16 +165,30 @@ const Header: React.FC = () => {
     return location.pathname === path ? 'active' : '';
   };
 
-  // Always use light logo for transparent navbar
+  // Always use main logo for transparent navbar
   const getLogoSrc = () => {
-    return '/pi_management_log/4.svg'; // Light logo for transparent navbar
+    return '/pi_management_log/main.svg'; // Main logo for transparent navbar
   };
 
   return (
     <>
       <div className={`header ${isScrolled ? 'scrolled' : ''} ${currentSection ? `section-${currentSection}` : ''}`} id="header">
+        <div className="mobile-logo-container">
+          <Link to="/" className="mobile-logo-link">
+            <img src={getLogoSrc()} alt="PI Management Agency" className="mobile-logo-img" />
+            <div className="mobile-logo-text">
+              <div className="mobile-logo-title-green">AGENCY PEKERJAAN</div>
+              <div className="mobile-logo-title-blue">PI MANAGEMENT</div>
+            </div>
+          </Link>
+        </div>
+        
         <Link to="/" className="logo">
           <img src={getLogoSrc()} alt="PI Management Agency" className="logo-image" />
+          <div className="logo-text">
+            <div className="logo-title-green">AGENCY PEKERJAAN</div>
+            <div className="logo-title-blue">PI MANAGEMENT</div>
+          </div>
         </Link>
         <nav className="nav">
           <Link to="/" className={isActive('/')}>Home</Link>
@@ -193,6 +207,14 @@ const Header: React.FC = () => {
       {/* Mobile Navigation */}
       <div className={`overlay ${isMenuOpen ? 'active' : ''}`} id="overlay" onClick={closeMobileNav}></div>
       <nav className={`mobile-nav ${isMenuOpen ? 'active' : ''}`} id="mobileNav">
+        <div className="mobile-nav-header">
+          <img src="/pi_management_log/main.svg" alt="PI Management Agency" className="mobile-nav-header-logo" />
+          <div className="mobile-nav-header-text">
+            <div className="mobile-nav-header-title-green">AGENCY PEKERJAAN</div>
+            <div className="mobile-nav-header-title-blue">PI MANAGEMENT</div>
+          </div>
+        </div>
+        
         <div className="mobile-nav-links">
           <Link to="/" className={isActive('/')} onClick={closeMobileNav}>
             Home
@@ -213,7 +235,9 @@ const Header: React.FC = () => {
         
         <div className="mobile-nav-footer">
           <div className="mobile-nav-company">
-            <img src="/pi_management_log/4.svg" alt="PI Management Agency" className="mobile-nav-logo" />
+            <div className="mobile-nav-company-text">
+              Agensi Pekerjaan PI Management Sdn. Bhd.
+            </div>
           </div>
         </div>
       </nav>

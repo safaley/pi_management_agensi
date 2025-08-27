@@ -104,14 +104,25 @@ main {
   left: 0;
   right: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 0.7rem 0 0.5rem 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  background: transparent;
+  background: rgba(240, 245, 254, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(240, 245, 254, 0.2) !important;
   z-index: 100;
   transition: all 0.3s ease;
-  min-height: 200px;
+  min-height: 63px;
+}
+
+/* Force header background with higher specificity */
+body .header,
+div .header {
+  background: rgba(240, 245, 254, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
 .logo {
@@ -125,14 +136,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.3rem;
+  gap: 0.1rem;
   outline: none !important;
   border: none !important;
-  height: 120px;
+  height: 45px;
   overflow: visible;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  margin-right: 1rem;
-  margin-left: -6rem;
+  filter: none;
+  margin: 0;
+  padding: 0 1rem 0 1rem;
 }
 
 .logo:focus,
@@ -143,12 +154,12 @@ main {
 }
 
 .logo .logo-image {
-  width: 467px !important;
-  height: 120px !important;
-  min-width: 373px !important;
-  min-height: 93px !important;
-  max-width: 507px !important;
-  max-height: 120px !important;
+  width: 65px !important;
+  height: 45px !important;
+  min-width: 45px !important;
+  min-height: 30px !important;
+  max-width: 75px !important;
+  max-height: 55px !important;
   object-fit: contain !important;
   object-position: center !important;
   transition: all 0.3s ease !important;
@@ -157,9 +168,34 @@ main {
 }
 
 .logo .logo-text {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
+  justify-content: center;
+  gap: 0.02rem;
+}
+
+.logo-title-green {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 0.1rem;
+}
+
+.logo-title-blue {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--secondary);
+  line-height: 1.1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .logo-main {
@@ -185,11 +221,11 @@ main {
 
 /* Header scrolled state for better visibility */
 .header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(240, 245, 254, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(240, 245, 254, 0.2) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05) !important;
 }
 
 .header.scrolled .logo {
@@ -207,8 +243,8 @@ main {
   justify-content: flex-end;
   align-items: flex-start;
   margin-left: auto;
-  margin-top: 1rem;
-  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+  padding-top: 0.25rem;
 }
 
 .nav a {
@@ -256,18 +292,22 @@ main {
    MOBILE NAVIGATION
    ========================================== */
 
+/* CLEAN MOBILE NAVIGATION - NO GAPS */
+
+/* Mobile navigation container - completely hidden until hamburger clicked */
 .mobile-nav {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: -100%;
-  width: 320px;
+  width: 280px;
   height: 100vh;
-  background: transparent;
+  background: rgba(240, 245, 254, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(240, 245, 254, 0.2);
   z-index: 200;
-  padding: 0;
-  box-shadow: none;
-  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: left 0.3s ease;
   overflow-y: auto;
 }
 
@@ -275,106 +315,209 @@ main {
   left: 0;
 }
 
+/* Mobile navigation header with logo */
 .mobile-nav-header {
-  padding: 2rem 1.5rem 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.mobile-nav-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #212529;
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.mobile-nav-menu {
-  padding: 1rem 0;
-}
-
-.mobile-nav-item {
+  padding: 2rem 1.5rem 1rem 1.5rem;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1rem 1.5rem;
-  color: #495057;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.1rem;
 }
 
-.mobile-nav-item:hover {
-  background: rgba(76, 175, 80, 0.08);
-  color: var(--primary);
-  transform: translateX(4px);
-}
-
-.mobile-nav-item.active {
-  background: rgba(30, 58, 138, 0.08);
-  color: var(--secondary);
-  border-left: 4px solid var(--secondary);
-}
-
-.nav-icon {
-  font-size: 1.5rem;
-  margin-right: 1rem;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.mobile-nav-header-logo {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
-.nav-text {
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+.mobile-nav-header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.02rem;
 }
 
-/* Mobile nav enhancements */
-.mobile-nav-item::after {
-  content: '';
-  position: absolute;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: transparent;
-  transition: all 0.2s ease;
+.mobile-nav-header-title-green {
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin: 0;
+  text-shadow: none;
 }
 
-.mobile-nav-item:hover::after {
-  background: var(--primary);
+.mobile-nav-header-title-blue {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--secondary);
+  line-height: 1.1;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin: 0;
+  text-shadow: none;
 }
 
-.mobile-nav-item.active::after {
-  background: var(--secondary);
+/* Mobile navigation links container */
+.mobile-nav-links {
+  padding: 2rem 1.5rem 2rem 1.5rem;
 }
 
-.mobile-nav-header::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 1.5rem;
-  right: 1.5rem;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+/* Individual mobile nav links */
+.mobile-nav a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-shadow: none;
+  border-radius: 0;
+  margin: 0 0.5rem;
 }
 
-.mobile-nav-logo {
-  width: 400px !important;
-  height: auto !important;
-  max-width: 90% !important;
-  max-height: 120px !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  transition: all 0.3s ease !important;
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  text-shadow: none;
+  border-radius: 6px;
+  transform: translateY(-1px);
+}
+
+/* Mobile nav footer with logo */
+.mobile-nav-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+.mobile-nav-company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.mobile-nav-company-text {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  margin: 0;
+  text-shadow: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* Mobile logo container - hidden on desktop */
+.mobile-logo-container {
+  display: none;
+}
+
+/* MOBILE - SHOW LOGO CONTAINER ON LEFT, HAMBURGER ON RIGHT */
+@media (max-width: 991px) {
+  /* Header styling for mobile */
+  .header {
+    padding: 0.3rem 1rem !important;
+    justify-content: space-between !important;
+    min-height: 58px !important;
+    align-items: center !important;
+  }
+  
+  /* Show mobile logo container */
+  .mobile-logo-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-shrink: 0 !important;
+    padding-top: 0.2rem !important;
+  }
+  
+  .mobile-logo-link {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0.1rem !important;
+  }
+  
+  .mobile-logo-img {
+    width: 55px !important;
+    height: 45px !important;
+    object-fit: contain !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .mobile-logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.02rem !important;
+  }
+  
+  .mobile-logo-title-green {
+    font-size: 0.4rem !important;
+    font-weight: 700 !important;
+    color: var(--primary) !important;
+    line-height: 1.0 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+  
+  .mobile-logo-title-blue {
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    color: var(--secondary) !important;
+    line-height: 1.0 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+  
+  /* Hide desktop logo on mobile */
+  .logo {
+    display: none !important;
+  }
+  
+  
+  /* Position hamburger at right edge */
+  .hamburger {
+    display: flex !important;
+    margin: 0 !important;
+    padding: 0.4rem !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  /* Hide desktop navigation */
+  .nav {
+    display: none !important;
+  }
+  
+  /* Show mobile navigation */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .hamburger {
@@ -382,16 +525,27 @@ main {
   flex-direction: column;
   cursor: pointer;
   padding: 0.5rem;
+  margin-right: 0;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
+  width: 18px;
+  height: 2px;
   background: #0a6036;
-  margin: 3px 0;
-  transition: 0.3s;
-  border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  margin: 2px 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 1px;
+  transform-origin: center;
+}
+
+.hamburger:hover span {
+  background: var(--primary-hover);
+  transform: scaleX(1.1);
 }
 
 .header.scrolled .hamburger span {
@@ -400,15 +554,16 @@ main {
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(45deg) translateY(6px);
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(-45deg) translateY(-6px);
 }
 
 .overlay {
@@ -818,9 +973,7 @@ main {
     align-self: center;
   }
 
-  .mobile-nav {
-    display: block;
-  }
+  /* mobile-nav removed */
 
   .form-row {
     flex-direction: column;
@@ -8098,15 +8251,15 @@ body:has([data-page="home"]) {
    SIMPLIFIED NAVBAR OVERRIDE - FINAL STYLES
    ========================================== */
 
-/* Override all complex navbar styling with simple transparent navbar */
+/* Override all complex navbar styling with consistent whitish background */
 .header,
 .header[class*="section-"],
 .header.scrolled {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
+  background: rgba(240, 245, 254, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-bottom: 1px solid rgba(240, 245, 254, 0.2) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* All navigation links should be white with text shadow */

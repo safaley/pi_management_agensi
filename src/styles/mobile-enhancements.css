@@ -466,7 +466,7 @@ svg {
 
 /* Will-change for animations */
 .hamburger,
-.mobile-nav,
+/* mobile-nav removed */
 .overlay {
   will-change: transform !important;
 }
@@ -540,7 +540,7 @@ body {
 @media print {
   .header,
   .hamburger,
-  .mobile-nav,
+  /* mobile-nav removed */
   .overlay,
   .footer {
     display: none !important;
