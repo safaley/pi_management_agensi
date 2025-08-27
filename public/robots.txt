@@ -2,13 +2,12 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://agencypekerjaanpi.com/sitemap.xml
+Sitemap: https://www.agencypekerjaanpi.com/sitemap.xml
 
 # Specific crawl rules
 Allow: /about
 Allow: /services
 Allow: /recruitment
-Allow: /pricing
 Allow: /contact
 Allow: /images/
 
@@ -29,4 +28,4 @@ Allow: /
 Crawl-delay: 1
 
 # Host directive
-Host: https://agencypekerjaanpi.com
+Host: https://www.agencypekerjaanpi.com
