@@ -6,7 +6,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     // SEO optimization for homepage
-    document.title = 'Agensi Pekerjaan PI Management - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services';
+    document.title = 'Agensi Pekerjaan Sumber Global - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services';
     
 
 
@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     // Update meta description dynamically
     let metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Leading manpower recruitment agency in Malaysia. Agensi Pekerjaan PI Management provides professional local and foreign worker supply, legal immigration services, and comprehensive workforce solutions for over 10 years in Johor Bahru.');
+      metaDescription.setAttribute('content', 'Leading manpower recruitment agency in Malaysia. Agensi Pekerjaan Sumber Global provides professional local and foreign worker supply, legal immigration services, and comprehensive workforce solutions for over 10 years in Johor Bahru.');
     }
 
     // Scroll animations
@@ -91,7 +91,7 @@ const Home: React.FC = () => {
         
         <div className="hero-overlay" style={{ zIndex: 4 }}></div>
         <div className="hero-content" style={{ zIndex: 5 }}>
-          <h1 className="hero-headline">Agensi Pekerjaan PI Management - Professional Manpower Solutions Malaysia</h1>
+          <h1 className="hero-headline">Agensi Pekerjaan Sumber Global - Professional Manpower Solutions Malaysia</h1>
           <div className="hero-sub">Leading Worker Recruitment Agency in Malaysia<br/>Connecting Businesses with Skilled Local & Foreign Workers</div>
           <button className="hero-btn" onClick={() => navigate('/contact')}>Get Workers Now</button>
         </div>
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
             </div>
             <h2 className="about-title">Malaysia's Trusted Manpower Recruitment Agency for Over a Decade</h2>
             <p className="about-desc">
-              Established for more than 10 years, <strong>Agensi Pekerjaan PI Management Sdn Bhd</strong> is a licensed Class C manpower supply company specializing in professional recruitment services. As a leading <strong>worker recruitment agency in Malaysia</strong>, we provide comprehensive <strong>local and foreign worker supply</strong> solutions across various industries in Johor Bahru and throughout Malaysia. Our expertise includes <strong>immigration services</strong>, work permit processing, and complete workforce management solutions for businesses seeking reliable manpower.
+              Established for more than 10 years, <strong>Agensi Pekerjaan Sumber Global Sdn Bhd</strong> is a licensed Class C manpower supply company specializing in professional recruitment services. As a leading <strong>worker recruitment agency in Malaysia</strong>, we provide comprehensive <strong>local and foreign worker supply</strong> solutions across various industries in Johor Bahru and throughout Malaysia. Our expertise includes <strong>immigration services</strong>, work permit processing, and complete workforce management solutions for businesses seeking reliable manpower.
             </p>
             <div className="about-stats">
               <div className="stat-item">

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const About: React.FC = () => {
   useEffect(() => {
     // Set page title
-    document.title = 'About Us - PI Management | Professional Manpower Solutions';
+    document.title = 'About Us - Sumber Global | Professional Manpower Solutions';
 
     // Scroll animations
     const observerOptions = {
@@ -53,7 +53,7 @@ const About: React.FC = () => {
           <div className="hero-about-content" id="heroAboutText">
             <h1 className="hero-about-title">Who Are We?</h1>
             <div className="hero-about-description">
-              <p>We are <strong>Agensi Pekerjaan PI Management Sdn Bhd</strong>, a licensed C manpower supply company established for over a decade. As a leading recruitment agency in Malaysia, we specialize in providing professional local and foreign workforce solutions across various industries.</p>
+              <p>We are <strong>Agensi Pekerjaan Sumber Global Sdn Bhd</strong>, a licensed C manpower supply company established for over a decade. As a leading recruitment agency in Malaysia, we specialize in providing professional local and foreign workforce solutions across various industries.</p>
               
               <p>Our commitment goes beyond simple placement – we ensure legal compliance, provide comprehensive support, and build lasting partnerships that drive sustainable growth for businesses throughout Johor Bahru and beyond.</p>
               
@@ -262,7 +262,7 @@ const About: React.FC = () => {
             </div>
             <div className="ceo-content">
               <div className="ceo-quote">
-                "At PI Management, we believe the right workforce transforms businesses and meaningful employment changes lives. Our decade of experience in manpower solutions drives us to bridge opportunities between skilled workers and companies, ensuring legal compliance and building lasting partnerships for Malaysia's economy."
+                "At Sumber Global, we believe the right workforce transforms businesses and meaningful employment changes lives. Our decade of experience in manpower solutions drives us to bridge opportunities between skilled workers and companies, ensuring legal compliance and building lasting partnerships for Malaysia's economy."
               </div>
               <div className="ceo-signature">
                 <div className="ceo-name">Ahmad Rahman</div>
