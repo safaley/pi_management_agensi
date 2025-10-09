@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="footer-content">
         <div className="footer-company">
           <div className="footer-company-name">
-            <img src="/pi_management_log/3.svg" alt="Agency Pekerjaan Sumber Global" className="footer-logo" />
+            <img src="/pi_management_log/main.png" alt="Agency Pekerjaan Sumber Global" className="footer-logo" />
           </div>
           <div className="footer-nav">
             <Link to="/contact">Contact Us</Link>

@@ -167,7 +167,7 @@ const Header: React.FC = () => {
 
   // Always use main logo for transparent navbar
   const getLogoSrc = () => {
-    return '/pi_management_log/main.svg'; // Main logo for transparent navbar
+    return '/pi_management_log/main.png'; // Main logo for transparent navbar
   };
 
   return (
@@ -175,7 +175,7 @@ const Header: React.FC = () => {
       <div className={`header ${isScrolled ? 'scrolled' : ''} ${currentSection ? `section-${currentSection}` : ''}`} id="header">
         <div className="mobile-logo-container">
           <Link to="/" className="mobile-logo-link">
-            <img src={getLogoSrc()} alt="PI Management Agency" className="mobile-logo-img" />
+            <img src={getLogoSrc()} alt="Sumber Global Agency" className="mobile-logo-img" />
             <div className="mobile-logo-text">
               <div className="mobile-logo-title-green">AGENCY PEKERJAAN</div>
               <div className="mobile-logo-title-blue">SUMBER GLOBAL</div>
@@ -184,7 +184,7 @@ const Header: React.FC = () => {
         </div>
         
         <Link to="/" className="logo">
-          <img src={getLogoSrc()} alt="PI Management Agency" className="logo-image" />
+          <img src={getLogoSrc()} alt="Sumber Global Agency" className="logo-image" />
           <div className="logo-text">
             <div className="logo-title-green">AGENCY PEKERJAAN</div>
             <div className="logo-title-blue">SUMBER GLOBAL</div>
@@ -208,7 +208,7 @@ const Header: React.FC = () => {
       <div className={`overlay ${isMenuOpen ? 'active' : ''}`} id="overlay" onClick={closeMobileNav}></div>
       <nav className={`mobile-nav ${isMenuOpen ? 'active' : ''}`} id="mobileNav">
         <div className="mobile-nav-header">
-          <img src="/pi_management_log/main.svg" alt="PI Management Agency" className="mobile-nav-header-logo" />
+          <img src="/pi_management_log/main.png" alt="Sumber Global Agency" className="mobile-nav-header-logo" />
           <div className="mobile-nav-header-text">
             <div className="mobile-nav-header-title-green">AGENCY PEKERJAAN</div>
             <div className="mobile-nav-header-title-blue">SUMBER GLOBAL</div>
