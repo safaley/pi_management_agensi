@@ -178,7 +178,7 @@ const Header: React.FC = () => {
             <img src={getLogoSrc()} alt="PI Management Agency" className="mobile-logo-img" />
             <div className="mobile-logo-text">
               <div className="mobile-logo-title-green">AGENCY PEKERJAAN</div>
-              <div className="mobile-logo-title-blue">PI MANAGEMENT</div>
+              <div className="mobile-logo-title-blue">SUMBER GLOBAL</div>
             </div>
           </Link>
         </div>
@@ -187,7 +187,7 @@ const Header: React.FC = () => {
           <img src={getLogoSrc()} alt="PI Management Agency" className="logo-image" />
           <div className="logo-text">
             <div className="logo-title-green">AGENCY PEKERJAAN</div>
-            <div className="logo-title-blue">PI MANAGEMENT</div>
+            <div className="logo-title-blue">SUMBER GLOBAL</div>
           </div>
         </Link>
         <nav className="nav">
@@ -211,7 +211,7 @@ const Header: React.FC = () => {
           <img src="/pi_management_log/main.svg" alt="PI Management Agency" className="mobile-nav-header-logo" />
           <div className="mobile-nav-header-text">
             <div className="mobile-nav-header-title-green">AGENCY PEKERJAAN</div>
-            <div className="mobile-nav-header-title-blue">PI MANAGEMENT</div>
+            <div className="mobile-nav-header-title-blue">SUMBER GLOBAL</div>
           </div>
         </div>
         
@@ -236,7 +236,7 @@ const Header: React.FC = () => {
         <div className="mobile-nav-footer">
           <div className="mobile-nav-company">
             <div className="mobile-nav-company-text">
-              Agensi Pekerjaan PI Management Sdn. Bhd.
+              Agensi Pekerjaan Sumber Global Sdn. Bhd.
             </div>
           </div>
         </div>

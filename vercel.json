@@ -6,8 +6,8 @@
       "permanent": true
     },
     {
-      "source": "/www.agencypekerjaanpi.com/(.*)",
-      "destination": "https://agencypekerjaanpi.com/$1",
+      "source": "/www.apsumberglobal.com/(.*)",
+      "destination": "https://apsumberglobal.com/$1",
       "permanent": true
     }
   ],

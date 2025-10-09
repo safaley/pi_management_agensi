@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="footer-content">
         <div className="footer-company">
           <div className="footer-company-name">
-            <img src="/pi_management_log/3.svg" alt="PI Management Agency" className="footer-logo" />
+            <img src="/pi_management_log/3.svg" alt="Agency Pekerjaan Sumber Global" className="footer-logo" />
           </div>
           <div className="footer-nav">
             <Link to="/contact">Contact Us</Link>
@@ -28,14 +28,14 @@ const Footer: React.FC = () => {
           <div className="contact-item">
             <span className="contact-icon">✉️</span>
             <div className="contact-text">
-              <a href="mailto:info@agencyperkerjaanpi.com">info@agencyperkerjaanpi.com</a>
+              <a href="mailto:admin@apsumberglobal.com">admin@sumberglobal.com</a>
             </div>
           </div>
         </div>
       </div>
       
       <div className="footer-bottom">
-        © 2025 Agensi Pekerjaan PI Management Sdn. Bhd. All rights reserved.
+        © 2025 Agensi Pekerjaan Sumber Global Sdn. Bhd. All rights reserved.
       </div>
     </footer>
   );
