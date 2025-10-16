@@ -164,8 +164,9 @@ const Contact: React.FC = () => {
                   <div className="info-content">
                     <h4 className="info-title">Address</h4>
                     <p className="info-text">
-                      Jalan Harmoni 3/1, Taman Desa Harmoni,<br />
-                      81100 Johor Bahru, Johor, Malaysia
+                   
+                      No. 23-01, Jalan Austin Heights 8/4, <br />
+                      Taman Mount Austin, 8110 Johor Bahru, Johor Darul Takzim, Malaysia
                     </p>
                   </div>
                 </div>
@@ -206,18 +207,18 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="office-map-modern">
-                <iframe 
-                  title="Johor Bahru Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5537537537537!2d103.7621!3d1.4655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da12c6c2c2c2c2%3A0x12345678!2sJalan%20Harmoni%203%2F1%2C%20Taman%20Desa%20Harmoni%2C%2081100%20Johor%20Bahru%2C%20Johor%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1234567890"
-                  width="100%" 
-                  height="180" 
-                  style={{border: 0}} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade">
-                </iframe>
-              </div>
+    <div className="office-map-modern">
+      <iframe 
+        title="Johor Bahru Office Location"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8!2d103.7767!3d1.5652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da6c2a6fc70f11%3A0x4f5e6c7d8e9f0a1b!2sNo.%2023-01%2C%20Jalan%20Austin%20Heights%208%2F4%2C%20Taman%20Mount%20Austin%2C%2081100%20Johor%20Bahru%2C%20Johor%2C%20Malaysia!5e0!3m2!1sen!2smy!4v1697500000000"
+        width="100%" 
+        height="180" 
+        style={{border: 0}} 
+        allowFullScreen 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
 
               <div className="office-action-footer">
                 <a 
