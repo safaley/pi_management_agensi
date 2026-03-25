@@ -55,7 +55,7 @@ const Recruitment: React.FC = () => {
       {/* Hero with Background Image */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <img
-          src="/images/thumbnails/hero/recruitment-hero-bg.jpg"
+          src="/images/thumbnails/hero/recruitment-hero-bg.webp"
           alt="Foreign worker recruitment process and procedure in Malaysia"
           className="absolute inset-0 w-full h-full object-cover object-center z-[1]"
           loading="eager"

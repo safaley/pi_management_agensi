@@ -22,7 +22,7 @@ const About: React.FC = () => {
     <div>
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src="/images/thumbnails/hero/about-hero-bg.jpg" alt="About Agensi Pekerjaan Sumber Global - Licensed Manpower Agency in Johor Bahru Malaysia" className="absolute inset-0 w-full h-full object-cover object-center z-[1]" loading="eager" />
+        <img src="/images/thumbnails/hero/about-hero-bg.webp" alt="About Agensi Pekerjaan Sumber Global - Licensed Manpower Agency in Johor Bahru Malaysia" className="absolute inset-0 w-full h-full object-cover object-center z-[1]" loading="eager" />
         <div className="absolute inset-0 bg-black/40 z-[2]" />
         <div className="relative z-[3] max-w-4xl mx-auto text-center px-4 py-24 lg:py-40 animate-on-scroll" id="heroAboutText">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 tracking-tight leading-tight">Licensed Manpower Recruitment Agency in Malaysia</h1>

@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     <div>
       {/* Hero */}
       <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-        <img src="/images/thumbnails/hero/home-hero-bg.jpg" alt="Petronas Tower - Professional Manpower Solutions Malaysia" className="absolute inset-0 w-full h-full object-cover object-center z-[1]" loading="eager" />
+        <img src="/images/thumbnails/hero/home-hero-bg.webp" alt="Petronas Tower - Professional Manpower Solutions Malaysia" className="absolute inset-0 w-full h-full object-cover object-center z-[1]" loading="eager" />
         <div className="absolute inset-0 bg-black/40 z-[4]" />
         <div className="relative z-[5] text-center text-white max-w-4xl px-4 sm:px-6">
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 tracking-tight opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards] [text-shadow:_0_2px_20px_rgba(0,0,0,0.3)]">

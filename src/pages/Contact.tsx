@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
     <div>
       {/* Hero */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <img src="/images/thumbnails/hero/contact-hero-bg.jpg" alt="Contact Agensi Pekerjaan Sumber Global offices in Johor Bahru and Penang Malaysia" className="absolute inset-0 w-full h-full object-cover object-center z-[1]" loading="eager" />
+        <img src="/images/thumbnails/hero/contact-hero-bg.webp" alt="Contact Agensi Pekerjaan Sumber Global offices in Johor Bahru and Penang Malaysia" className="absolute inset-0 w-full h-full object-cover object-center z-[1]" loading="eager" />
         <div className="absolute inset-0 bg-black/40 z-[2]" />
         <div className="relative z-[3] max-w-3xl mx-auto text-center px-4 py-24 lg:py-40 animate-on-scroll" id="contactHeroText">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight">Contact Our Manpower Agency in Johor Bahru &amp; Penang</h1>

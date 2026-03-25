@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/pi_management_log/main.png"
+                src="/pi_management_log/main.svg"
                 alt="Agensi Pekerjaan Sumber Global - Manpower Agency Malaysia"
                 className="h-14 w-auto object-contain"
                 width="56"
