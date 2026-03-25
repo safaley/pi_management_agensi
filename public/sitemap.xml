@@ -50,4 +50,40 @@
     <mobile:mobile/>
   </url>
 
+  <!-- Foreign Worker Recruitment -->
+  <url>
+    <loc>https://www.apsumberglobal.com/foreign-worker-recruitment-malaysia</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Manpower Agency Johor Bahru -->
+  <url>
+    <loc>https://www.apsumberglobal.com/manpower-agency-johor-bahru</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Manpower Agency Penang -->
+  <url>
+    <loc>https://www.apsumberglobal.com/manpower-agency-penang</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <mobile:mobile/>
+  </url>
+
+  <!-- Domestic Helper Malaysia -->
+  <url>
+    <loc>https://www.apsumberglobal.com/domestic-helper-malaysia</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <mobile:mobile/>
+  </url>
+
 </urlset>

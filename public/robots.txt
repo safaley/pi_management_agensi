@@ -4,7 +4,7 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.apsumberglobal.com/sitemap.xml
 
-# Specific crawl rules
+# Allow all important pages
 Allow: /about
 Allow: /services
 Allow: /recruitment
@@ -12,18 +12,16 @@ Allow: /contact
 Allow: /images/
 
 # Block unnecessary files
-Disallow: /*.json$
+Disallow: /static/js/*.map
 Disallow: /manifest.json
+Disallow: /asset-manifest.json
 
-# Allow Google and Bing specific access
+# Allow Google and Bing full access
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
-
-# Crawl delay for better server performance
-Crawl-delay: 1
 
 # Host directive
 Host: https://www.apsumberglobal.com

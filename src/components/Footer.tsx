@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2 mb-4">
               <img
                 src="/pi_management_log/main.svg"
-                alt="Agensi Pekerjaan Sumber Global - Manpower Agency Malaysia"
+                alt="Agency Sumber Global - Licensed Manpower Recruitment Agency Malaysia"
                 className="h-14 w-auto object-contain"
                 width="56"
                 height="56"
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
                 <div className="text-[0.8rem] font-bold text-brand-blue uppercase tracking-wide leading-none">SUMBER GLOBAL</div>
               </div>
             </div>
-            <p className="text-xs text-gray-500 mb-3 leading-relaxed">Licensed manpower recruitment agency in Malaysia providing professional local and foreign worker supply since 2013.</p>
+            <p className="text-xs text-gray-500 mb-3 leading-relaxed"><strong>Agency Sumber Global</strong> (Agensi Pekerjaan Sumber Global Sdn. Bhd.) &mdash; Licensed manpower recruitment agency in Malaysia providing professional local and foreign worker supply since 2013. Your trusted agency sumber for workforce solutions in Johor Bahru, Penang &amp; nationwide.</p>
             <nav className="flex flex-col gap-1" aria-label="Footer navigation">
               <Link to="/" className="text-gray-500 hover:text-brand-blue transition-colors text-xs font-medium no-underline">Home</Link>
               <Link to="/about" className="text-gray-500 hover:text-brand-blue transition-colors text-xs font-medium no-underline">About Us</Link>

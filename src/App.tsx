@@ -13,6 +13,10 @@ const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Recruitment = lazy(() => import('./pages/Recruitment'));
 const Contact = lazy(() => import('./pages/Contact'));
+const ForeignWorkerRecruitment = lazy(() => import('./pages/ForeignWorkerRecruitment'));
+const ManpowerAgencyJohorBahru = lazy(() => import('./pages/ManpowerAgencyJohorBahru'));
+const ManpowerAgencyPenang = lazy(() => import('./pages/ManpowerAgencyPenang'));
+const DomesticHelperMalaysia = lazy(() => import('./pages/DomesticHelperMalaysia'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
@@ -30,6 +34,10 @@ function App() {
                 <Route path="/services" element={<Services />} />
                 <Route path="/recruitment" element={<Recruitment />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/foreign-worker-recruitment-malaysia" element={<ForeignWorkerRecruitment />} />
+                <Route path="/manpower-agency-johor-bahru" element={<ManpowerAgencyJohorBahru />} />
+                <Route path="/manpower-agency-penang" element={<ManpowerAgencyPenang />} />
+                <Route path="/domestic-helper-malaysia" element={<DomesticHelperMalaysia />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

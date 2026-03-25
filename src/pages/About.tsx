@@ -26,7 +26,7 @@ const About: React.FC = () => {
         <div className="absolute inset-0 bg-black/40 z-[2]" />
         <div className="relative z-[3] max-w-4xl mx-auto text-center px-4 py-24 lg:py-40 animate-on-scroll" id="heroAboutText">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8 tracking-tight leading-tight">Licensed Manpower Recruitment Agency in Malaysia</h1>
-          <div className="space-y-4 text-base sm:text-lg text-brand-blue-100 leading-relaxed max-w-3xl mx-auto">
+          <div className="space-y-4 text-base sm:text-lg text-brand-blue-100 leading-relaxed max-w-3xl mx-auto text-justify">
             <p>We are <strong className="text-white">Agensi Pekerjaan Sumber Global Sdn Bhd</strong>, a licensed C manpower supply company established for over a decade. As a leading recruitment agency in Malaysia, we specialize in providing professional local and foreign workforce solutions across various industries.</p>
             <p>Our commitment goes beyond simple placement &ndash; we ensure legal compliance, provide comprehensive support, and build lasting partnerships that drive sustainable growth for businesses throughout Johor Bahru and beyond.</p>
             <p>With our experienced team and systematic approach, we bridge the gap between skilled workers seeking meaningful opportunities and companies requiring reliable, qualified manpower.</p>

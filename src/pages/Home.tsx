@@ -6,8 +6,8 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 const Home: React.FC = () => {
 
   usePageMeta(
-    'Agensi Pekerjaan Sumber Global - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services',
-    'Leading manpower recruitment agency in Malaysia. Agensi Pekerjaan Sumber Global provides professional local and foreign worker supply, legal immigration services, and comprehensive workforce solutions for over 10 years in Johor Bahru.'
+    'Agency Sumber Global | Agensi Pekerjaan Sumber Global | Manpower Agency Malaysia',
+    'Agency Sumber Global (Agensi Pekerjaan Sumber Global Sdn. Bhd.) - Licensed manpower recruitment agency in Malaysia. Foreign worker recruitment, local worker supply, immigration services & work permits in Johor Bahru & Penang since 2013.'
   );
 
   useScrollAnimation(
@@ -28,10 +28,10 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 bg-black/40 z-[4]" />
         <div className="relative z-[5] text-center text-white max-w-4xl px-4 sm:px-6">
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 tracking-tight opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards] [text-shadow:_0_2px_20px_rgba(0,0,0,0.3)]">
-            Professional Manpower Solutions Malaysia
+            Agency Sumber Global &mdash; Professional Manpower Solutions Malaysia
           </h1>
           <p className="text-base sm:text-xl lg:text-2xl mb-8 sm:mb-10 text-brand-blue-100 font-light leading-relaxed opacity-0 animate-[fadeInUp_1s_ease-out_0.5s_forwards] [text-shadow:_0_1px_10px_rgba(0,0,0,0.3)]">
-            Leading Worker Recruitment Agency in Malaysia<br />Connecting Businesses with Skilled Local &amp; Foreign Workers
+            Agensi Pekerjaan Sumber Global Sdn. Bhd. &mdash; Licensed Manpower Recruitment Agency in Malaysia<br />Connecting Businesses with Skilled Local &amp; Foreign Workers
           </p>
           <Link
             to="/contact"
@@ -50,10 +50,10 @@ const Home: React.FC = () => {
             About Our Agency
           </div>
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
-            Malaysia's Trusted Manpower Recruitment Agency for Over a Decade
+            Agency Sumber Global &mdash; Trusted Manpower Recruitment Agency in Malaysia
           </h2>
-          <p className="text-base sm:text-lg text-gray-500 leading-relaxed mb-8 sm:mb-12 max-w-2xl mx-auto">
-            Established for more than 10 years, <strong className="text-gray-700">Agensi Pekerjaan Sumber Global Sdn Bhd</strong> is a licensed Class C manpower supply company specializing in professional recruitment services. As a leading <strong className="text-gray-700">worker recruitment agency in Malaysia</strong>, we provide comprehensive <strong className="text-gray-700">local and foreign worker supply</strong> solutions across various industries.
+          <p className="text-base sm:text-lg text-gray-500 leading-relaxed mb-8 sm:mb-12 max-w-2xl mx-auto text-justify">
+            Welcome to <strong className="text-gray-700">Agency Sumber Global</strong> &mdash; officially registered as <strong className="text-gray-700">Agensi Pekerjaan Sumber Global Sdn. Bhd.</strong>, we are a licensed manpower recruitment agency based in <strong className="text-gray-700">Johor Bahru</strong> with a branch office in <strong className="text-gray-700">Penang</strong>. As one of Malaysia's trusted agency for foreign worker recruitment, we specialize in sourcing skilled workers from Bangladesh, Nepal, Myanmar, Vietnam, India, and Pakistan. Whether you need <strong className="text-gray-700">foreign workers</strong>, <strong className="text-gray-700">domestic helpers</strong>, or <strong className="text-gray-700">immigration services</strong> including work permits and visa processing, Agency Sumber Global delivers comprehensive workforce solutions with full legal compliance. Serving businesses across <strong className="text-gray-700">Johor</strong>, <strong className="text-gray-700">Penang</strong>, <strong className="text-gray-700">Kuala Lumpur</strong>, <strong className="text-gray-700">Selangor</strong>, and all Malaysian states since 2013.
           </p>
 
           <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 py-4 sm:py-6">

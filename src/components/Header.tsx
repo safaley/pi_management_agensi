@@ -102,7 +102,7 @@ const Header: React.FC = () => {
           <Link to="/" className="flex items-center gap-1 no-underline" onClick={closeMobileNav}>
             <img
               src="/pi_management_log/main.svg"
-              alt="Agensi Pekerjaan Sumber Global - Manpower Agency Malaysia"
+              alt="Agency Sumber Global - Licensed Manpower Recruitment Agency Malaysia"
               className="w-[55px] h-[45px] object-contain"
               width="40"
               height="40"
@@ -118,7 +118,7 @@ const Header: React.FC = () => {
         <Link to="/" className="hidden lg:flex items-center gap-1 no-underline px-4 h-[45px]">
           <img
             src="/pi_management_log/main.svg"
-            alt="Agensi Pekerjaan Sumber Global - Manpower Agency Malaysia"
+            alt="Agency Sumber Global - Licensed Manpower Recruitment Agency Malaysia"
             className="w-[65px] h-[45px] object-contain"
             width="48"
             height="48"
@@ -193,7 +193,7 @@ const Header: React.FC = () => {
         <div className="flex items-center gap-1 p-6 pb-4 border-b border-gray-100">
           <img
             src="/pi_management_log/main.svg"
-            alt="Agensi Pekerjaan Sumber Global - Manpower Agency Malaysia"
+            alt="Agency Sumber Global - Licensed Manpower Recruitment Agency Malaysia"
             className="w-[80px] h-[60px] object-contain"
             width="40"
             height="40"
