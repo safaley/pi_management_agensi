@@ -1,43 +1,43 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './styles/global.css';
-import './styles/responsive-overrides.css';
-import './styles/mobile-enhancements.css';
-import './styles/performance.css';
 
-// Import components
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
+import ErrorBoundary from './components/ErrorBoundary';
 
-// Import pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Recruitment from './pages/Recruitment';
-// import Pricing from './pages/Pricing';
-import Contact from './pages/Contact';
+// Lazy-loaded pages for code splitting
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Recruitment = lazy(() => import('./pages/Recruitment'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <ScrollToTop />
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/recruitment" element={<Recruitment />} />
-            {/* <Route path="/pricing" element={<Pricing />} /> */}
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <ErrorBoundary>
+        <div className="flex flex-col min-h-screen">
+          <ScrollToTop />
+          <Header />
+          <main className="relative z-[1]">
+            <Suspense fallback={<div className="min-h-[60vh] flex items-center justify-center"><div className="w-8 h-8 border-[3px] border-gray-200 border-t-brand-blue rounded-full animate-spin" /></div>}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/recruitment" element={<Recruitment />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </div>
+      </ErrorBoundary>
     </Router>
   );
 }

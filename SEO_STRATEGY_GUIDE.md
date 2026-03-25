@@ -41,7 +41,7 @@ Your website now has **EXCELLENT SEO FOUNDATION**:
    Category: Employment Agency
    Address: [Your full address in Johor Bahru]
    Phone: +60167702098, +60112102954
-   Website: https://agencypekerjaanpi.com
+   Website: https://apsumberglobal.com
    Hours: [Your operating hours]
    ```
 
@@ -92,9 +92,9 @@ Services: Foreign Worker Recruitment, Local Manpower Supply,
          Immigration Services, Work Permit Processing
 Description: Licensed recruitment agency with 10+ years experience 
             providing professional manpower solutions across Malaysia.
-Website: https://agencypekerjaanpi.com
+Website: https://apsumberglobal.com
 Phone: +60167702098
-Email: info@agencyperkerjaanpi.com
+Email: info@apsumberglobal.com
 ```
 
 ### 3. 📝 CONTENT CREATION STRATEGY (Week 2-4)
@@ -174,9 +174,9 @@ Monitor and optimize:
 
 ### 1. **Google Search Console Setup**
 1. Visit: https://search.google.com/search-console
-2. Add property: https://agencypekerjaanpi.com
+2. Add property: https://apsumberglobal.com
 3. Verify ownership using HTML file or DNS
-4. Submit sitemap: https://agencypekerjaanpi.com/sitemap.xml
+4. Submit sitemap: https://apsumberglobal.com/sitemap.xml
 
 #### Key Metrics to Monitor:
 - **Search Impressions**: Target 10,000+/month
@@ -303,4 +303,4 @@ Ensure your business Name, Address, Phone number are identical across:
 ---
 
 *Last Updated: August 20, 2025*
-*Website: https://agencypekerjaanpi.com*
+*Website: https://apsumberglobal.com*

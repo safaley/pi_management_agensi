@@ -1,473 +1,204 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { usePageMeta } from '../hooks/usePageMeta';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    // SEO optimization for homepage
-    document.title = 'Agensi Pekerjaan Sumber Global - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services';
-    
+  usePageMeta(
+    'Agensi Pekerjaan Sumber Global - Professional Manpower Recruitment Agency Malaysia | Worker Supply Services',
+    'Leading manpower recruitment agency in Malaysia. Agensi Pekerjaan Sumber Global provides professional local and foreign worker supply, legal immigration services, and comprehensive workforce solutions for over 10 years in Johor Bahru.'
+  );
 
-
-    
-    // Update meta description dynamically
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Leading manpower recruitment agency in Malaysia. Agensi Pekerjaan Sumber Global provides professional local and foreign worker supply, legal immigration services, and comprehensive workforce solutions for over 10 years in Johor Bahru.');
+  useScrollAnimation(
+    ['#aboutText', '#servicesContainer', '#contactContainer', '#recruitmentSourcesContainer'],
+    {
+      staggerChildren: {
+        'recruitment-sources-container': { selector: '.country-item', delay: 50 },
+        'new-services-container': { selector: '.service-card', delay: 150 },
+      },
     }
-
-    // Scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible', 'animate');
-          
-          // Special handling for recruitment sources section to animate country items
-          if (entry.target.classList.contains('recruitment-sources-container')) {
-            const countryItems = entry.target.querySelectorAll('.country-item');
-            countryItems.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add('animate');
-              }, index * 50);
-            });
-          }
-          
-          // Special handling for services section to animate service cards
-          if (entry.target.classList.contains('new-services-container')) {
-            const serviceCards = entry.target.querySelectorAll('.new-value-item');
-            serviceCards.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add('animate');
-              }, index * 150);
-            });
-          }
-        }
-      });
-    }, observerOptions);
-
-    // Observe elements
-    const aboutContent = document.getElementById('aboutText');
-    const servicesContainer = document.getElementById('servicesContainer');
-    // const clientsContainer = document.getElementById('clientsContainer'); // Hidden section
-    const contactContainer = document.getElementById('contactContainer');
-    const recruitmentSourcesContainer = document.getElementById('recruitmentSourcesContainer');
-
-    if (aboutContent) observer.observe(aboutContent);
-    if (servicesContainer) observer.observe(servicesContainer);
-    // if (clientsContainer) observer.observe(clientsContainer); // Hidden section
-    if (contactContainer) observer.observe(contactContainer);
-    if (recruitmentSourcesContainer) observer.observe(recruitmentSourcesContainer);
-
-    return () => observer.disconnect();
-  }, []);
+  );
 
   return (
-    <div data-page="home">
-      {/* Full Screen Image Hero */}
-      <div id="home" className="hero">
-        <img
-          src="/images/thumbnails/hero/home-hero-bg.jpg"
-          alt="Petronas Tower - Professional Manpower Solutions Malaysia"
-          className="hero-video"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center',
-            zIndex: 1,
-            filter: 'brightness(1.2)'
-          }}
-          loading="eager"
-        />
-        
-        <div className="hero-overlay" style={{ zIndex: 4 }}></div>
-        <div className="hero-content" style={{ zIndex: 5 }}>
-          <h1 className="hero-headline">Agensi Pekerjaan Sumber Global - Professional Manpower Solutions Malaysia</h1>
-          <div className="hero-sub">Leading Worker Recruitment Agency in Malaysia<br/>Connecting Businesses with Skilled Local & Foreign Workers</div>
-          <button className="hero-btn" onClick={() => navigate('/contact')}>Get Workers Now</button>
+    <div>
+      {/* Hero */}
+      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        <img src="/images/thumbnails/hero/home-hero-bg.jpg" alt="Petronas Tower - Professional Manpower Solutions Malaysia" className="absolute inset-0 w-full h-full object-cover object-center z-[1]" loading="eager" />
+        <div className="absolute inset-0 bg-black/40 z-[4]" />
+        <div className="relative z-[5] text-center text-white max-w-4xl px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] mb-4 sm:mb-6 tracking-tight opacity-0 animate-[fadeInUp_1s_ease-out_0.2s_forwards] [text-shadow:_0_2px_20px_rgba(0,0,0,0.3)]">
+            Professional Manpower Solutions Malaysia
+          </h1>
+          <p className="text-base sm:text-xl lg:text-2xl mb-8 sm:mb-10 text-brand-blue-100 font-light leading-relaxed opacity-0 animate-[fadeInUp_1s_ease-out_0.5s_forwards] [text-shadow:_0_1px_10px_rgba(0,0,0,0.3)]">
+            Leading Worker Recruitment Agency in Malaysia<br />Connecting Businesses with Skilled Local &amp; Foreign Workers
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block bg-brand-green text-white text-base sm:text-lg font-semibold px-8 sm:px-10 py-3.5 sm:py-4 rounded-full border-none cursor-pointer shadow-green-lg hover:bg-brand-green-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(8,96,54,0.4)] transition-all duration-300 opacity-0 animate-[fadeInUp_1s_ease-out_0.8s_forwards] no-underline"
+          >
+            Get Workers Now
+          </Link>
         </div>
-      </div>
+      </section>
 
-      {/* About Section */}
-      <section id="about" className="about-section">
-        <div className="about-container">
-          <div className="about-content" id="aboutText">
-            <div className="about-badge">
-              <div className="badge-circle"></div>
-              <span>About Our Agency</span>
+      {/* About */}
+      <section className="py-12 sm:py-20 lg:py-28 px-4 sm:px-6 bg-white flex items-center justify-center">
+        <div className="max-w-3xl mx-auto text-center animate-on-scroll" id="aboutText">
+          <div className="inline-flex items-center gap-2 bg-brand-blue-50 border border-brand-blue-100 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-6 sm:mb-8 text-xs sm:text-sm font-medium text-brand-blue">
+            <span className="w-2 h-2 bg-brand-blue rounded-full" />
+            About Our Agency
+          </div>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
+            Malaysia's Trusted Manpower Recruitment Agency for Over a Decade
+          </h2>
+          <p className="text-base sm:text-lg text-gray-500 leading-relaxed mb-8 sm:mb-12 max-w-2xl mx-auto">
+            Established for more than 10 years, <strong className="text-gray-700">Agensi Pekerjaan Sumber Global Sdn Bhd</strong> is a licensed Class C manpower supply company specializing in professional recruitment services. As a leading <strong className="text-gray-700">worker recruitment agency in Malaysia</strong>, we provide comprehensive <strong className="text-gray-700">local and foreign worker supply</strong> solutions across various industries.
+          </p>
+
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 py-4 sm:py-6">
+            {[
+              { num: '10+', label: 'Years Experience' },
+              { num: '500+', label: 'Clients Served' },
+              { num: '100%', label: 'Legal Compliance' },
+            ].map((s) => (
+              <div key={s.label} className="text-center">
+                <div className="text-2xl sm:text-4xl font-extrabold text-brand-blue mb-1 sm:mb-2">{s.num}</div>
+                <div className="text-[10px] sm:text-sm text-gray-500 font-medium uppercase tracking-wider">{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <Link to="/about" className="inline-block bg-brand-blue text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full hover:bg-brand-blue-light hover:-translate-y-0.5 hover:shadow-brand-lg transition-all duration-300 no-underline">
+            Learn More About Our Agency
+          </Link>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-12 sm:py-20 lg:py-28 px-4 sm:px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto new-services-container animate-on-scroll" id="servicesContainer">
+          <h2 className="text-2xl sm:text-4xl font-bold text-center text-gray-900 mb-10 sm:mb-16 tracking-tight">
+            Professional Manpower &amp; Recruitment Services
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {[
+              { title: 'Immigration/KDN/JTK Cases', desc: 'Complete legal assistance for immigration cases and compliance with government regulations.', tags: ['Legal Compliance', 'Government Relations', 'Professional Support'], color: 'bg-brand-blue' },
+              { title: 'Foreign Worker Approval', desc: 'Streamlined application process for foreign worker permits and approvals with full documentation support.', tags: ['Fast Processing', 'Complete Documentation', 'Government Approved'], color: 'bg-brand-green' },
+              { title: 'Local & Foreign Workers', desc: 'Professional recruitment of skilled local and foreign workers for all industries with thorough background verification.', tags: ['Skilled Workers', 'Background Verified', 'Industry Experienced'], color: 'bg-brand-blue' },
+              { title: 'Domestic Helper Supply', desc: 'Reliable domestic helpers and maids with thorough screening and verification for household and commercial needs.', tags: ['Thoroughly Screened', 'Experienced', 'Reliable Service'], color: 'bg-brand-green' },
+              { title: 'Accommodation & Transportation', desc: 'Complete accommodation and transportation services for foreign workers ensuring comfort and compliance.', tags: ['Safe Accommodation', 'Transportation', 'Compliance Standards'], color: 'bg-brand-blue' },
+              { title: 'Passport & Insurance Renewal', desc: 'Complete documentation services including passport, permit, and insurance renewal with ongoing support.', tags: ['Document Renewal', 'Insurance Coverage', 'Ongoing Support'], color: 'bg-brand-green' },
+            ].map((service) => (
+              <div key={service.title} className="service-card group bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 border border-gray-100 hover:border-brand-blue/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl ${service.color} mb-4 sm:mb-6 flex items-center justify-center`}>
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-brand-blue transition-colors">{service.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-4 sm:mb-5">{service.desc}</p>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                  {service.tags.map((tag) => (
+                    <span key={tag} className="text-[11px] sm:text-xs font-medium text-brand-green bg-brand-green-50 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recruitment Sources */}
+      <section className="py-12 sm:py-20 lg:py-28 px-4 sm:px-6 bg-white relative">
+        <div className="max-w-5xl mx-auto text-center recruitment-sources-container animate-on-scroll" id="recruitmentSourcesContainer">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-3 tracking-tight">Where We Recruit Your Workers</h2>
+          <div className="w-12 sm:w-16 h-1 bg-brand-blue rounded-full mx-auto mb-8 sm:mb-16" />
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
+            {[
+              { name: 'Malaysia', flag: '/images/flags/malaysia.png', h: 107 },
+              { name: 'Nepal', flag: '/images/flags/nepal.png', h: 195 },
+              { name: 'Bangladesh', flag: '/images/flags/bangladesh.png', h: 96 },
+              { name: 'Myanmar', flag: '/images/flags/myanmar.png', h: 107 },
+              { name: 'Vietnam', flag: '/images/flags/vietnam.png', h: 107 },
+              { name: 'India', flag: '/images/flags/india.svg', h: 107 },
+              { name: 'Pakistan', flag: '/images/flags/pakistan.svg', h: 107 },
+            ].map((country) => (
+              <div key={country.name} className="country-item flex flex-col items-center gap-2 sm:gap-3 group">
+                <div className="w-16 h-12 sm:w-24 sm:h-16 bg-gray-50 border border-gray-200 rounded-lg sm:rounded-xl flex items-center justify-center p-1.5 sm:p-2 group-hover:border-brand-blue/30 group-hover:shadow-brand transition-all duration-300">
+                  <img src={country.flag} alt={`${country.name} flag - We recruit workers from ${country.name}`} loading="eager" decoding="async" className="max-w-full max-h-full object-contain" width="160" height={country.h} />
+                </div>
+                <div>
+                  <h3 className="text-xs sm:text-sm font-bold text-gray-900">{country.name}</h3>
+                  <p className="text-[10px] sm:text-[11px] text-gray-400">Worker Source Country</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <Link to="/recruitment" className="inline-block bg-brand-blue-900 text-white text-xs sm:text-sm font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full hover:bg-brand-blue-dark hover:-translate-y-0.5 transition-all duration-300 uppercase tracking-wider no-underline">
+            View Recruitment Process
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-12 sm:py-20 lg:py-28 px-4 sm:px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center animate-on-scroll" id="contactContainer">
+          <div>
+            <div className="inline-flex items-center gap-2 bg-white border border-brand-green-100 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-6 sm:mb-8 text-xs sm:text-sm font-medium text-brand-green">
+              <span className="w-2 h-2 bg-brand-green rounded-full" />
+              Get In Touch
             </div>
-            <h2 className="about-title">Malaysia's Trusted Manpower Recruitment Agency for Over a Decade</h2>
-            <p className="about-desc">
-              Established for more than 10 years, <strong>Agensi Pekerjaan Sumber Global Sdn Bhd</strong> is a licensed Class C manpower supply company specializing in professional recruitment services. As a leading <strong>worker recruitment agency in Malaysia</strong>, we provide comprehensive <strong>local and foreign worker supply</strong> solutions across various industries in Johor Bahru and throughout Malaysia. Our expertise includes <strong>immigration services</strong>, work permit processing, and complete workforce management solutions for businesses seeking reliable manpower.
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4 sm:mb-6 leading-tight tracking-tight">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-base sm:text-lg text-gray-500 leading-relaxed mb-6 sm:mb-8">
+              Take the next step in finding the perfect manpower solution for your industry. Our experienced team is ready to provide professional consultation and customized recruitment services.
             </p>
-            <div className="about-stats">
-              <div className="stat-item">
-                <div className="stat-number">10+</div>
-                <div className="stat-label">Years Experience</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">500+</div>
-                <div className="stat-label">Clients Served</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">100%</div>
-                <div className="stat-label">Legal Compliance</div>
-              </div>
-            </div>
-            <button className="about-btn" onClick={() => navigate('/about')}>Learn More</button>
-          </div>
-        </div>
-      </section>
 
-      <section id="services" className="new-services-section">
-        <div className="new-services-container" id="servicesContainer">
-          <h2 className="new-section-title">Professional Manpower & Recruitment Services in Malaysia</h2>
-          <div className="new-services-grid">
-            <div className="new-value-item theme-legal" data-delay="0">
-              <div className="value-content">
-                <h3 className="new-value-title">Immigration/KDN/JTK Cases</h3>
-                <p className="new-value-text">Complete legal assistance for immigration cases and compliance with government regulations.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Legal Compliance</span>
-                  <span className="feature-tag">✓ Government Relations</span>
-                  <span className="feature-tag">✓ Professional Support</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10">
+              {[
+                'Free consultation and assessment',
+                'Customized recruitment solutions',
+                'Legal compliance guaranteed',
+                '24/7 professional support',
+              ].map((feature) => (
+                <div key={feature} className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-green flex items-center justify-center text-white text-[10px] sm:text-xs font-bold flex-shrink-0">&#10003;</div>
+                  <span className="text-sm font-medium text-gray-700">{feature}</span>
                 </div>
-              </div>
+              ))}
             </div>
 
-            <div className="new-value-item theme-processing" data-delay="200">
-              <div className="value-content">
-                <h3 className="new-value-title">Foreign Worker Approval</h3>
-                <p className="new-value-text">Streamlined application process for foreign worker permits and approvals with full documentation support.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Fast Processing</span>
-                  <span className="feature-tag">✓ Complete Documentation</span>
-                  <span className="feature-tag">✓ Government Approved</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-workforce" data-delay="400">
-              <div className="value-content">
-                <h3 className="new-value-title">Local & Foreign Workers</h3>
-                <p className="new-value-text">Professional recruitment of skilled local and foreign workers for all industries with thorough background verification.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Skilled Workers</span>
-                  <span className="feature-tag">✓ Background Verified</span>
-                  <span className="feature-tag">✓ Industry Experienced</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-domestic" data-delay="600">
-              <div className="value-content">
-                <h3 className="new-value-title">Domestic Helper Supply</h3>
-                <p className="new-value-text">Reliable domestic helpers and maids with thorough screening and verification for household and commercial needs.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Thoroughly Screened</span>
-                  <span className="feature-tag">✓ Experienced</span>
-                  <span className="feature-tag">✓ Reliable Service</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-support" data-delay="800">
-              <div className="value-content">
-                <h3 className="new-value-title">Accommodation & Transportation</h3>
-                <p className="new-value-text">Complete accommodation and transportation services for foreign workers ensuring comfort and compliance.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Safe Accommodation</span>
-                  <span className="feature-tag">✓ Transportation</span>
-                  <span className="feature-tag">✓ Compliance Standards</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="new-value-item theme-documentation" data-delay="1000">
-              <div className="value-content">
-                <h3 className="new-value-title">Passport & Insurance Renewal</h3>
-                <p className="new-value-text">Complete documentation services including passport, permit, and insurance renewal with ongoing support.</p>
-                <div className="value-features">
-                  <span className="feature-tag">✓ Document Renewal</span>
-                  <span className="feature-tag">✓ Insurance Coverage</span>
-                  <span className="feature-tag">✓ Ongoing Support</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="recruitment" className="recruitment-sources-section">
-        <div className="recruitment-sources-container" id="recruitmentSourcesContainer">
-          <div className="recruitment-sources-header">
-            <h2 className="recruitment-sources-title">Where We Recruit Your Workers</h2>
-            <div className="title-underline"></div>
-          </div>
-          
-          <div className="countries-grid">
-            <div className="country-item" data-delay="0">
-              <div className="country-flag">
-                <img 
-                  src="/images/flags/malaysia.png" 
-                  alt="Malaysia Flag" 
-                  loading="eager"
-                  decoding="async"
-                  width="160"
-                  height="107"
-                />
-              </div>
-              <h3 className="country-name">Malaysia</h3>
-              <p className="country-label">Demographics</p>
-            </div>
-            
-            <div className="country-item" data-delay="200">
-              <div className="country-flag">
-                <img 
-                  src="/images/flags/nepal.png" 
-                  alt="Nepal Flag" 
-                  loading="eager"
-                  decoding="async"
-                  width="160"
-                  height="195"
-                />
-              </div>
-              <h3 className="country-name">Nepal</h3>
-              <p className="country-label">Demographics</p>
-            </div>
-            
-            <div className="country-item" data-delay="400">
-              <div className="country-flag">
-                <img 
-                  src="/images/flags/bangladesh.png" 
-                  alt="Bangladesh Flag" 
-                  loading="eager"
-                  decoding="async"
-                  width="160"
-                  height="96"
-                />
-              </div>
-              <h3 className="country-name">Bangladesh</h3>
-              <p className="country-label">Demographics</p>
-            </div>
-            
-            <div className="country-item" data-delay="600">
-              <div className="country-flag">
-                <img 
-                  src="/images/flags/myanmar.png" 
-                  alt="Myanmar Flag" 
-                  loading="eager"
-                  decoding="async"
-                  width="160"
-                  height="107"
-                />
-              </div>
-              <h3 className="country-name">Myanmar</h3>
-              <p className="country-label">Demographics</p>
-            </div>
-            
-            <div className="country-item" data-delay="800">
-              <div className="country-flag">
-                <img 
-                  src="/images/flags/vietnam.png" 
-                  alt="Vietnam Flag" 
-                  loading="eager"
-                  decoding="async"
-                  width="160"
-                  height="107"
-                />
-              </div>
-              <h3 className="country-name">Vietnam</h3>
-              <p className="country-label">Demographics</p>
-            </div>
-            
-            <div className="country-item" data-delay="1000">
-              <div className="country-flag">
-                <img 
-                  src="/images/flags/india.svg" 
-                  alt="India Flag" 
-                  loading="eager"
-                  decoding="async"
-                  width="160"
-                  height="107"
-                />
-              </div>
-              <h3 className="country-name">India</h3>
-              <p className="country-label">Demographics</p>
-            </div>
-            
-            <div className="country-item" data-delay="1200">
-              <div className="country-flag">
-                <img 
-                  src="/images/flags/pakistan.svg" 
-                  alt="Pakistan Flag" 
-                  loading="eager"
-                  decoding="async"
-                  width="160"
-                  height="107"
-                />
-              </div>
-              <h3 className="country-name">Pakistan</h3>
-              <p className="country-label">Demographics</p>
-            </div>
-          </div>
-          
-          <div className="recruitment-sources-footer">
-            <button className="more-sources-btn" onClick={() => navigate('/recruitment')}>MORE SOURCES</button>
-          </div>
-        </div>
-        
-        {/* Globe Background */}
-        <div className="globe-background">
-          <div className="globe-dots"></div>
-        </div>
-      </section>
-
-      <section className="clients-section hidden">
-        <div className="clients-container" id="clientsContainer">
-          <div className="clients-header">
-            <h2 className="clients-title">Our Clients</h2>
-            <p className="clients-subtitle">Forward-thinking brands trust us to drive scalable growth and engagement. We partner with companies ready to embrace the future of digital solutions.</p>
-          </div>
-          <div className="clients-grid">
-            <div className="client-item">
-              <div className="client-icon">in</div>
-              <span className="client-name">LinkedIn</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon travelata">t</div>
-              <span className="client-name">Travelata</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon tele2">t2</div>
-              <span className="client-name">Tele2</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon s7">S7</div>
-              <span className="client-name">S7</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon joom">J</div>
-              <span className="client-name">Joom</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon lazada">laz</div>
-              <span className="client-name">Lazada</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon ff">ff</div>
-              <span className="client-name">Facebook</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon binomo">⚡</div>
-              <span className="client-name">Binomo</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon hoff">Hoff</div>
-              <span className="client-name">Hoff</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon binance">◈</div>
-              <span className="client-name">Binance</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon alibaba">🟠</div>
-              <span className="client-name">Alibaba Group</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon exness">Ex</div>
-              <span className="client-name">Exness</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon alibaba-text">alibaba.com</div>
-              <span className="client-name">Alibaba.com</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon sunlight">☀️</div>
-              <span className="client-name">Sunlight</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon indrive">iD</div>
-              <span className="client-name">inDrive</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon joom2">Joom</div>
-              <span className="client-name">Joom</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon kion">Ki</div>
-              <span className="client-name">Kion</span>
-            </div>
-            <div className="client-item">
-              <div className="client-icon binance2">◈</div>
-              <span className="client-name">Binance</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="get-in-touch-section">
-        <div className="get-in-touch-container" id="contactContainer">
-          <div className="get-in-touch-content">
-            <div className="get-in-touch-badge">
-              <div className="badge-circle"></div>
-              <span>Get In Touch</span>
-            </div>
-            <h2 className="get-in-touch-title">Ready to Transform Your Business?</h2>
-            <p className="get-in-touch-description">
-              Take the next step in finding the perfect manpower solution for your industry. Our experienced team is ready to provide professional consultation and customized recruitment services that meet your specific business needs. From local workforce to international talent, we connect you with the right people for sustainable growth.
-            </p>
-            <div className="get-in-touch-features">
-              <div className="feature-item">
-                <div className="feature-icon">✓</div>
-                <span>Free consultation and assessment</span>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">✓</div>
-                <span>Customized recruitment solutions</span>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">✓</div>
-                <span>Legal compliance guaranteed</span>
-              </div>
-              <div className="feature-item">
-                <div className="feature-icon">✓</div>
-                <span>24/7 professional support</span>
-              </div>
-            </div>
-            <div className="get-in-touch-cta">
-              <button className="contact-us-btn" onClick={() => navigate('/contact')}>Contact Us</button>
-              <p className="contact-info">
-                Call us directly at <a href="tel:+60167702098">+60 16-770 2098</a> or 
-                <a href="tel:+60112102954">+60 11-2102 9545</a>
+            <div>
+              <Link to="/contact" className="inline-block bg-brand-green text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full hover:bg-brand-green-light hover:-translate-y-0.5 hover:shadow-green-lg transition-all duration-300 mb-3 sm:mb-4 no-underline">
+                Contact Us
+              </Link>
+              <p className="text-xs sm:text-sm text-gray-400">
+                Call us directly at{' '}
+                <a href="tel:+60167702098" className="text-brand-blue hover:text-brand-blue-light font-medium no-underline">+60 16-770 2098</a>
+                {' or '}
+                <a href="tel:+60112102954" className="text-brand-blue hover:text-brand-blue-light font-medium no-underline">+60 11-2102 9545</a>
               </p>
             </div>
           </div>
-          
-          <div className="get-in-touch-visual">
-            <div className="visual-bg">
-              <div className="floating-elements">
-                <div className="floating-card">
-                  <div className="card-icon">👥</div>
-                  <span>Professional Team</span>
-                </div>
-                <div className="floating-card">
-                  <div className="card-icon">🌏</div>
-                  <span>Global Network</span>
-                </div>
-                <div className="floating-card">
-                  <div className="card-icon">⚡</div>
-                  <span>Fast Processing</span>
-                </div>
+
+          <div className="hidden lg:flex items-center justify-center">
+            <div className="relative w-full max-w-sm">
+              <div className="absolute inset-0 bg-brand-blue-50 rounded-3xl" />
+              <div className="relative grid grid-cols-1 gap-4 p-8">
+                {[
+                  { icon: '👥', label: 'Professional Team' },
+                  { icon: '🌏', label: 'Global Network' },
+                  { icon: '⚡', label: 'Fast Processing' },
+                ].map((card) => (
+                  <div key={card.label} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-brand transition-shadow">
+                    <div className="text-2xl">{card.icon}</div>
+                    <span className="text-sm font-semibold text-gray-800">{card.label}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

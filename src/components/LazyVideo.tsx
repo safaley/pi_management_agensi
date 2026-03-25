@@ -4,7 +4,6 @@ interface LazyVideoProps {
   videoSrc: string;
   placeholderSrc: string;
   className?: string;
-  style?: React.CSSProperties;
   autoPlay?: boolean;
   loop?: boolean;
   muted?: boolean;
@@ -15,7 +14,6 @@ const LazyVideo: React.FC<LazyVideoProps> = ({
   videoSrc,
   placeholderSrc,
   className = '',
-  style = {},
   autoPlay = true,
   loop = true,
   muted = true,
@@ -27,40 +25,26 @@ const LazyVideo: React.FC<LazyVideoProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Start loading after delay
-    const timer = setTimeout(() => {
-      console.log('LazyVideo: Starting video load');
-      setShouldLoadVideo(true);
-    }, delay);
-
+    const timer = setTimeout(() => setShouldLoadVideo(true), delay);
     return () => clearTimeout(timer);
   }, [delay]);
 
   useEffect(() => {
     if (shouldLoadVideo && videoRef.current) {
       const video = videoRef.current;
-      
+
       const handleLoad = () => {
-        console.log('LazyVideo: Video loaded');
         setVideoLoaded(true);
         setVideoError(false);
       };
-
-      const handleError = (e: any) => {
-        console.error('LazyVideo: Video failed to load', e);
-        setVideoError(true);
-      };
+      const handleError = () => setVideoError(true);
 
       video.addEventListener('canplay', handleLoad);
       video.addEventListener('loadeddata', handleLoad);
       video.addEventListener('error', handleError);
 
-      // Fallback timeout
       const timeout = setTimeout(() => {
-        if (!videoLoaded) {
-          console.warn('LazyVideo: Timeout - falling back to image');
-          setVideoError(true);
-        }
+        if (!videoLoaded) setVideoError(true);
       }, 8000);
 
       return () => {
@@ -72,26 +56,21 @@ const LazyVideo: React.FC<LazyVideoProps> = ({
     }
   }, [shouldLoadVideo, videoLoaded]);
 
+  const isReady = videoLoaded && !videoError;
+
   return (
-    <div style={{ position: 'relative', ...style }} className={className}>
-      {/* Placeholder Image */}
+    <div className={`relative ${className}`}>
+      {/* Placeholder */}
       <div
+        className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
           backgroundImage: `url(${placeholderSrc})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: videoLoaded && !videoError ? 0 : 1,
-          transition: 'opacity 1s ease-in-out',
-          zIndex: videoLoaded && !videoError ? 0 : 1
+          opacity: isReady ? 0 : 1,
+          zIndex: isReady ? 0 : 1
         }}
       />
 
-      {/* Video Element */}
+      {/* Video */}
       {shouldLoadVideo && !videoError && (
         <video
           ref={videoRef}
@@ -99,65 +78,18 @@ const LazyVideo: React.FC<LazyVideoProps> = ({
           loop={loop}
           muted={muted}
           playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: videoLoaded ? 1 : 0,
-            transition: 'opacity 1s ease-in-out',
-            zIndex: videoLoaded ? 1 : 0
-          }}
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+          style={{ opacity: videoLoaded ? 1 : 0, zIndex: videoLoaded ? 1 : 0 }}
         >
           <source src={videoSrc} type="video/mp4" />
-          <source src={`${process.env.PUBLIC_URL}${videoSrc}`} type="video/mp4" />
         </video>
       )}
 
-      {/* Loading Indicator */}
+      {/* Loading */}
       {shouldLoadVideo && !videoLoaded && !videoError && (
-        <div style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          background: 'rgba(0,0,0,0.7)',
-          color: 'white',
-          padding: '8px 16px',
-          borderRadius: '20px',
-          fontSize: '0.9rem',
-          zIndex: 2,
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px'
-        }}>
-          <div style={{
-            width: '16px',
-            height: '16px',
-            border: '2px solid rgba(255,255,255,0.3)',
-            borderTop: '2px solid white',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite'
-          }}></div>
+        <div className="absolute top-5 right-5 z-[2] bg-black/70 text-white px-4 py-2 rounded-full text-sm flex items-center gap-2">
+          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
           Loading video...
-        </div>
-      )}
-
-      {/* Error Indicator (development only) */}
-      {process.env.NODE_ENV === 'development' && videoError && (
-        <div style={{
-          position: 'absolute',
-          top: '60px',
-          right: '20px',
-          background: 'rgba(220, 38, 38, 0.9)',
-          color: 'white',
-          padding: '8px 16px',
-          borderRadius: '20px',
-          fontSize: '0.8rem',
-          zIndex: 2
-        }}>
-          Video failed - using image
         </div>
       )}
     </div>

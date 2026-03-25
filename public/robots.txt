@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.agencypekerjaanpi.com/sitemap.xml
+Sitemap: https://www.apsumberglobal.com/sitemap.xml
 
 # Specific crawl rules
 Allow: /about
@@ -12,8 +12,6 @@ Allow: /contact
 Allow: /images/
 
 # Block unnecessary files
-Disallow: /static/js/
-Disallow: /static/css/
 Disallow: /*.json$
 Disallow: /manifest.json
 
@@ -28,4 +26,4 @@ Allow: /
 Crawl-delay: 1
 
 # Host directive
-Host: https://www.agencypekerjaanpi.com
+Host: https://www.apsumberglobal.com

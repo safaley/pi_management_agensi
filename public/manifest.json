@@ -1,6 +1,6 @@
 {
-  "short_name": "PI Management",
-  "name": "Agensi Pekerjaan PI Management - Professional Manpower Solutions",
+  "short_name": "Sumber Global",
+  "name": "Agensi Pekerjaan Sumber Global - Manpower Recruitment Agency Malaysia",
   "icons": [
     {
       "src": "android-chrome-192x192.png",
@@ -31,7 +31,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#4CAF50",
+  "theme_color": "#025384",
   "background_color": "#ffffff",
   "description": "Professional manpower recruitment agency providing local and foreign worker supply, immigration services, and comprehensive workforce solutions in Malaysia",
   "categories": ["business", "productivity"]

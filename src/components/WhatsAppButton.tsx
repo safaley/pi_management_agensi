@@ -3,7 +3,7 @@ import React from 'react';
 const WhatsAppButton: React.FC = () => {
   const phoneNumber = '+60167702098';
   const message = 'Hello! I would like to inquire about your manpower recruitment services.';
-  
+
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber.replace('+', '')}?text=${encodedMessage}`;
@@ -12,14 +12,13 @@ const WhatsAppButton: React.FC = () => {
 
   return (
     <button
-      className="whatsapp-float-btn"
+      className="fixed bottom-6 right-6 z-[1000] w-14 h-14 md:w-[60px] md:h-[60px] bg-brand-green text-white rounded-full border-none cursor-pointer flex items-center justify-center shadow-[0_4px_20px_rgba(10,96,54,0.4)] hover:bg-brand-green-hover hover:scale-110 active:scale-95 transition-all duration-300"
       onClick={handleWhatsAppClick}
       aria-label="Contact us on WhatsApp"
       title="Chat with us on WhatsApp"
     >
       <svg
-        width="24"
-        height="24"
+        className="w-6 h-6 md:w-7 md:h-7"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
